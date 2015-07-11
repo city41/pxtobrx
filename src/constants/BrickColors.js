@@ -146,29 +146,206 @@ export default {
       ]
     }
   },
-  // Flesh: {
+  // Nougat: {
   //   id: 18,
   //   officialName: 'Nougat',
   //   commonName: 'Flesh',
   //   color: 'rgb(214, 114, 64)'
   // },
-  Red: {
+  'Bright Red': {
     id: 21,
     officialName: 'Bright Red',
     commonName: 'Red',
-    color: 'rgb(222, 0, 13)'
+    color: 'rgb(222, 0, 13)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 35}),//
+        new PieceDef({width: 10, height: 1, cost: 45}),//
+        new PieceDef({width: 12, height: 1, cost: 55})
+      ],
+      plate: [
+        new PieceDef({width: 1, height: 1, cost: 10}),
+        new PieceDef({width: 2, height: 1, cost: 10}),
+        new PieceDef({width: 3, height: 1, cost: 10}),
+        new PieceDef({width: 4, height: 1, cost: 15}),
+        new PieceDef({width: 6, height: 1, cost: 20}),
+        new PieceDef({width: 8, height: 1, cost: 25}),
+        new PieceDef({width: 2, height: 2, cost: 15}),
+        new PieceDef({width: 3, height: 2, cost: 20}),
+        new PieceDef({width: 4, height: 2, cost: 20}),
+        new PieceDef({width: 6, height: 2, cost: 25}),
+        new PieceDef({width: 8, height: 2, cost: 35}),
+        new PieceDef({width: 10, height: 2, cost: 35}),
+        new PieceDef({width: 4, height: 4, cost: 30}),
+        new PieceDef({width: 6, height: 4, cost: 60}),
+        // rotated
+        new PieceDef({height: 1, width: 1, cost: 10}),
+        new PieceDef({height: 2, width: 1, cost: 10}),
+        new PieceDef({height: 3, width: 1, cost: 10}),
+        new PieceDef({height: 4, width: 1, cost: 15}),
+        new PieceDef({height: 6, width: 1, cost: 20}),
+        new PieceDef({height: 8, width: 1, cost: 25}),
+        new PieceDef({height: 2, width: 2, cost: 15}),
+        new PieceDef({height: 3, width: 2, cost: 20}),
+        new PieceDef({height: 4, width: 2, cost: 20}),
+        new PieceDef({height: 6, width: 2, cost: 25}),
+        new PieceDef({height: 8, width: 2, cost: 35}),
+        new PieceDef({height: 10, width: 2, cost: 35}),
+        new PieceDef({height: 4, width: 4, cost: 30}),
+        new PieceDef({height: 6, width: 4, cost: 60})
+      ],
+      flat: [
+        new PieceDef({width: 1, height: 1, cost: 10}),
+        new PieceDef({width: 2, height: 1, cost: 10}),
+        new PieceDef({width: 3, height: 1, cost: 20}),
+        new PieceDef({width: 4, height: 1, cost: 20}),
+        new PieceDef({width: 6, height: 1, cost: 20}),
+        new PieceDef({width: 8, height: 1, cost: 20}),
+        new PieceDef({width: 2, height: 2, cost: 10}),
+        new PieceDef({width: 4, height: 2, cost: 30}),
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),
+        new PieceDef({height: 3, width: 1, cost: 20}),
+        new PieceDef({height: 4, width: 1, cost: 20}),
+        new PieceDef({height: 6, width: 1, cost: 20}),
+        new PieceDef({height: 8, width: 1, cost: 20}),
+        new PieceDef({height: 2, width: 2, cost: 10}),
+        new PieceDef({height: 4, width: 2, cost: 30})
+      ]
+    }
   },
-  Blue: {
+  'Bright Blue': {
     id: 23,
     officialName: 'Bright Blue',
     commonName: 'Blue',
-    color: 'rgb(0, 87, 168)'
+    color: 'rgb(0, 87, 168)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 35}),//
+        new PieceDef({width: 8, height: 1, cost: 40})
+      ],
+      plate: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 25}),//
+        new PieceDef({width: 2, height: 2, cost: 15}),//
+        new PieceDef({width: 3, height: 2, cost: 20}),//
+        new PieceDef({width: 4, height: 2, cost: 20}),//
+        new PieceDef({width: 6, height: 2, cost: 25}),//
+        new PieceDef({width: 8, height: 2, cost: 35}),//
+        new PieceDef({width: 4, height: 4, cost: 30}),//
+        new PieceDef({width: 6, height: 4, cost: 60}),//
+        new PieceDef({width: 8, height: 4, cost: 65}),//
+        new PieceDef({width: 6, height: 6, cost: 70}),//
+        new PieceDef({width: 8, height: 6, cost: 85}),//
+        // rotated
+        new PieceDef({height: 1, width: 1, cost: 10}),//
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 3, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 8, width: 1, cost: 25}),//
+        new PieceDef({height: 2, width: 2, cost: 15}),//
+        new PieceDef({height: 3, width: 2, cost: 20}),//
+        new PieceDef({height: 4, width: 2, cost: 20}),//
+        new PieceDef({height: 6, width: 2, cost: 25}),//
+        new PieceDef({height: 8, width: 2, cost: 35}),//
+        new PieceDef({height: 4, width: 4, cost: 30}),//
+        new PieceDef({height: 6, width: 4, cost: 60}),//
+        new PieceDef({height: 8, width: 4, cost: 65}),//
+        new PieceDef({height: 6, width: 6, cost: 70}),//
+        new PieceDef({height: 8, width: 6, cost: 85})
+      ],
+      flat: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 20}),//
+        new PieceDef({width: 2, height: 2, cost: 10}),//
+        new PieceDef({width: 4, height: 2, cost: 30}),//
+        // rotated
+        new PieceDef({height: 1, width: 1, cost: 10}),//
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 20}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 8, width: 1, cost: 20}),//
+        new PieceDef({height: 2, width: 2, cost: 10}),//
+        new PieceDef({height: 4, width: 2, cost: 30})
+      ]
+    }
   },
-  Yellow: {
+  'Bright Yellow': {
     id: 24,
     officialName: 'Bright Yellow',
     commonName: 'Yellow',
-    color: 'rgb(254, 196, 0)'
+    color: 'rgb(254, 196, 0)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 35}),//
+        new PieceDef({width: 8, height: 1, cost: 40})
+      ],
+      plate: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 25}),//
+        new PieceDef({width: 2, height: 2, cost: 15}),//
+        new PieceDef({width: 3, height: 2, cost: 20}),//
+        new PieceDef({width: 4, height: 2, cost: 20}),//
+        new PieceDef({width: 6, height: 2, cost: 25}),//
+        new PieceDef({width: 8, height: 2, cost: 35}),//
+        new PieceDef({width: 6, height: 4, cost: 60}),//
+        // rotated
+        new PieceDef({height: 1, width: 1, cost: 10}),//
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 3, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 8, width: 1, cost: 25}),//
+        new PieceDef({height: 2, width: 2, cost: 15}),//
+        new PieceDef({height: 3, width: 2, cost: 20}),//
+        new PieceDef({height: 4, width: 2, cost: 20}),//
+        new PieceDef({height: 6, width: 2, cost: 25}),//
+        new PieceDef({height: 8, width: 2, cost: 35}),//
+        new PieceDef({height: 6, width: 4, cost: 60})
+      ],
+      flat: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 20}),//
+        new PieceDef({width: 2, height: 2, cost: 10}),//
+        new PieceDef({width: 4, height: 2, cost: 30}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),
+        new PieceDef({height: 3, width: 1, cost: 20}),
+        new PieceDef({height: 4, width: 1, cost: 20}),
+        new PieceDef({height: 6, width: 1, cost: 20}),
+        new PieceDef({height: 8, width: 1, cost: 20}),
+        new PieceDef({height: 2, width: 2, cost: 10}),
+        new PieceDef({height: 4, width: 2, cost: 30})
+      ]
+    }
   },
   Black: {
     id: 26,
@@ -177,15 +354,15 @@ export default {
     color: 'rgb(0, 0, 0)',
     availablePieces: {
       brick: [
-        new PieceDef({width: 1, height: 1, cost: 10}),
-        new PieceDef({width: 2, height: 1, cost: 15}),
-        new PieceDef({width: 3, height: 1, cost: 20}),
-        new PieceDef({width: 4, height: 1, cost: 20}),
-        new PieceDef({width: 6, height: 1, cost: 35}),
-        new PieceDef({width: 8, height: 1, cost: 40}),
-        new PieceDef({width: 10, height: 1, cost: 45}),
-        new PieceDef({width: 12, height: 1, cost: 55}),
-        new PieceDef({width: 16, height: 1, cost: 70})
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 35}),//
+        new PieceDef({width: 8, height: 1, cost: 40}),//
+        new PieceDef({width: 10, height: 1, cost: 45}),//
+        new PieceDef({width: 12, height: 1, cost: 55}),//
+        new PieceDef({width: 16, height: 1, cost: 70})//
       ],
       plate: [
         new PieceDef({width: 1, height: 1, cost: 10}),
@@ -234,14 +411,14 @@ export default {
         new PieceDef({height: 8, width: 6, cost: 85})
       ],
       flat: [
-        new PieceDef({width: 1, height: 1, cost: 10}),
-        new PieceDef({width: 2, height: 1, cost: 10}),
-        new PieceDef({width: 3, height: 1, cost: 20}),
-        new PieceDef({width: 4, height: 1, cost: 20}),
-        new PieceDef({width: 6, height: 1, cost: 20}),
-        new PieceDef({width: 8, height: 1, cost: 20}),
-        new PieceDef({width: 2, height: 2, cost: 10}),
-        new PieceDef({width: 4, height: 2, cost: 30}),
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 20}),//
+        new PieceDef({width: 2, height: 2, cost: 10}),//
+        new PieceDef({width: 4, height: 2, cost: 30}),//
         // rotated
         new PieceDef({height: 2, width: 1, cost: 10}),
         new PieceDef({height: 3, width: 1, cost: 20}),

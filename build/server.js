@@ -959,29 +959,143 @@ module.exports =
         new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 })]
       }
     },
-    // Flesh: {
+    // Nougat: {
     //   id: 18,
     //   officialName: 'Nougat',
     //   commonName: 'Flesh',
     //   color: 'rgb(214, 114, 64)'
     // },
-    Red: {
+    'Bright Red': {
       id: 21,
       officialName: 'Bright Red',
       commonName: 'Red',
-      color: 'rgb(222, 0, 13)'
+      color: 'rgb(222, 0, 13)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 1, cost: 45 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 1, cost: 55 })],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), new _brixPieceDef2['default']({ width: 10, height: 2, cost: 35 }), new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 10, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 4, width: 4, cost: 30 }), new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 })]
+      }
     },
-    Blue: {
+    'Bright Blue': {
       id: 23,
       officialName: 'Bright Blue',
       commonName: 'Blue',
-      color: 'rgb(0, 87, 168)'
+      color: 'rgb(0, 87, 168)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 })],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 6, cost: 85 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 6, cost: 70 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 6, cost: 85 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 })]
+      }
     },
-    Yellow: {
+    'Bright Yellow': {
       id: 24,
       officialName: 'Bright Yellow',
       commonName: 'Yellow',
-      color: 'rgb(254, 196, 0)'
+      color: 'rgb(254, 196, 0)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 })],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 })]
+      }
     },
     Black: {
       id: 26,
