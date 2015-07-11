@@ -54,21 +54,21 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  __webpack_require__(128);
+  __webpack_require__(130);
 
-  var _lodash = __webpack_require__(14);
+  var _lodash = __webpack_require__(13);
 
   var _lodash2 = _interopRequireDefault(_lodash);
 
-  var _fs = __webpack_require__(150);
+  var _fs = __webpack_require__(151);
 
   var _fs2 = _interopRequireDefault(_fs);
 
-  var _path = __webpack_require__(52);
+  var _path = __webpack_require__(53);
 
   var _path2 = _interopRequireDefault(_path);
 
-  var _express = __webpack_require__(148);
+  var _express = __webpack_require__(149);
 
   var _express2 = _interopRequireDefault(_express);
 
@@ -76,11 +76,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  __webpack_require__(31);
+  __webpack_require__(32);
 
   __webpack_require__(49);
 
-  var _componentsApp = __webpack_require__(114);
+  var _componentsApp = __webpack_require__(117);
 
   var _componentsApp2 = _interopRequireDefault(_componentsApp);
 
@@ -209,7 +209,7 @@ module.exports =
     return it;
   }
 
-  var $ = module.exports = __webpack_require__(56)({
+  var $ = module.exports = __webpack_require__(57)({
     g: global,
     core: core,
     html: global.document && document.documentElement,
@@ -529,7 +529,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   var global = __webpack_require__(1).g
-    , store  = __webpack_require__(27)('wks');
+    , store  = __webpack_require__(29)('wks');
   module.exports = function(name){
     return store[name] || (store[name] =
       global.Symbol && global.Symbol[name] || __webpack_require__(10).safe('Symbol.' + name));
@@ -558,7 +558,7 @@ module.exports =
     , assertObject      = assert.obj
     , SYMBOL_ITERATOR   = __webpack_require__(9)('iterator')
     , FF_ITERATOR       = '@@iterator'
-    , Iterators         = __webpack_require__(27)('iterators')
+    , Iterators         = __webpack_require__(29)('iterators')
     , IteratorPrototype = {};
   // 25.1.2.1.1 %IteratorPrototype%[@@iterator]()
   setIterator(IteratorPrototype, $.that);
@@ -637,6 +637,12 @@ module.exports =
 
 /***/ },
 /* 13 */
+/***/ function(module, exports) {
+
+  module.exports = require("lodash");
+
+/***/ },
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
   // Optional / simple context binding
@@ -660,12 +666,6 @@ module.exports =
   };
 
 /***/ },
-/* 14 */
-/***/ function(module, exports) {
-
-  module.exports = require("lodash");
-
-/***/ },
 /* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -680,7 +680,7 @@ module.exports =
 /* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
-  var ctx  = __webpack_require__(13)
+  var ctx  = __webpack_require__(14)
     , get  = __webpack_require__(11).get
     , call = __webpack_require__(40);
   module.exports = function(iterable, entries, fn, that){
@@ -706,7 +706,7 @@ module.exports =
   // 5 -> Array#find
   // 6 -> Array#findIndex
   var $   = __webpack_require__(1)
-    , ctx = __webpack_require__(13);
+    , ctx = __webpack_require__(14);
   module.exports = function(TYPE){
     var IS_MAP        = TYPE == 1
       , IS_FILTER     = TYPE == 2
@@ -776,7 +776,7 @@ module.exports =
         , chain = inst[ADDER](IS_WEAK ? {} : -0, 1)
         , buggyZero;
       // wrap for init collections from iterable
-      if(!__webpack_require__(24)(function(iter){ new C(iter); })){ // eslint-disable-line no-new
+      if(!__webpack_require__(26)(function(iter){ new C(iter); })){ // eslint-disable-line no-new
         C = wrapper(function(target, iterable){
           assertInstance(target, C, NAME);
           var that = new Base;
@@ -870,7 +870,7 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _coreDispatcher = __webpack_require__(31);
+  var _coreDispatcher = __webpack_require__(32);
 
   var _coreDispatcher2 = _interopRequireDefault(_coreDispatcher);
 
@@ -914,6 +914,1073 @@ module.exports =
 
 /***/ },
 /* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _brixPieceDef = __webpack_require__(110);
+
+  var _brixPieceDef2 = _interopRequireDefault(_brixPieceDef);
+
+  exports['default'] = {
+    White: {
+      id: 1,
+      officialName: 'White',
+      commonName: 'White',
+      color: 'rgb(255, 255, 255)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 }), new _brixPieceDef2['default']({ width: 10, height: 1, cost: 45 }), new _brixPieceDef2['default']({ width: 12, height: 1, cost: 55 }), new _brixPieceDef2['default']({ width: 16, height: 1, cost: 70 })],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), new _brixPieceDef2['default']({ width: 10, height: 1, cost: 25 }), new _brixPieceDef2['default']({ width: 12, height: 1, cost: 35 }), new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), new _brixPieceDef2['default']({ width: 10, height: 2, cost: 35 }), new _brixPieceDef2['default']({ width: 12, height: 2, cost: 40 }), new _brixPieceDef2['default']({ width: 16, height: 2, cost: 70 }), new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), new _brixPieceDef2['default']({ width: 10, height: 4, cost: 75 }), new _brixPieceDef2['default']({ width: 12, height: 4, cost: 80 }), new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), new _brixPieceDef2['default']({ width: 8, height: 6, cost: 85 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), new _brixPieceDef2['default']({ height: 10, width: 1, cost: 25 }), new _brixPieceDef2['default']({ height: 12, width: 1, cost: 35 }), new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 10, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 12, width: 2, cost: 40 }), new _brixPieceDef2['default']({ height: 16, width: 2, cost: 70 }), new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), new _brixPieceDef2['default']({ height: 10, width: 4, cost: 75 }), new _brixPieceDef2['default']({ height: 12, width: 4, cost: 80 }), new _brixPieceDef2['default']({ height: 8, width: 6, cost: 85 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 })]
+      }
+    },
+    'Brick Yellow': {
+      id: 5,
+      officialName: 'Brick Yellow',
+      commonName: 'Tan',
+      color: 'rgb(217, 187, 123)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 }), new _brixPieceDef2['default']({ width: 10, height: 1, cost: 45 })],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), new _brixPieceDef2['default']({ width: 10, height: 2, cost: 35 }), new _brixPieceDef2['default']({ width: 16, height: 2, cost: 70 }), new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), new _brixPieceDef2['default']({ width: 16, height: 8, cost: 215 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 10, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 16, width: 2, cost: 70 }), new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), new _brixPieceDef2['default']({ height: 16, width: 8, cost: 215 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 })]
+      }
+    },
+    // Nougat: {
+    //   id: 18,
+    //   officialName: 'Nougat',
+    //   commonName: 'Flesh',
+    //   color: 'rgb(214, 114, 64)'
+    // },
+    'Bright Red': {
+      id: 21,
+      officialName: 'Bright Red',
+      commonName: 'Red',
+      color: 'rgb(222, 0, 13)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 1, cost: 45 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 1, cost: 55 })],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), new _brixPieceDef2['default']({ width: 10, height: 2, cost: 35 }), new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 10, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 4, width: 4, cost: 30 }), new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 })]
+      }
+    },
+    'Bright Blue': {
+      id: 23,
+      officialName: 'Bright Blue',
+      commonName: 'Blue',
+      color: 'rgb(0, 87, 168)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 })],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 6, cost: 85 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 6, cost: 70 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 6, cost: 85 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 })]
+      }
+    },
+    'Bright Yellow': {
+      id: 24,
+      officialName: 'Bright Yellow',
+      commonName: 'Yellow',
+      color: 'rgb(254, 196, 0)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 })],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 })]
+      }
+    },
+    Black: {
+      id: 26,
+      officialName: 'Black',
+      commonName: 'Black',
+      color: 'rgb(0, 0, 0)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 1, cost: 45 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 1, cost: 55 }), //
+        new _brixPieceDef2['default']({ width: 16, height: 1, cost: 70 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 2, cost: 40 }), //
+        new _brixPieceDef2['default']({ width: 16, height: 2, cost: 70 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 4, cost: 75 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 4, cost: 80 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 6, cost: 85 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), new _brixPieceDef2['default']({ height: 10, width: 1, cost: 25 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 10, width: 2, cost: 35 }), new _brixPieceDef2['default']({ height: 12, width: 2, cost: 40 }), new _brixPieceDef2['default']({ height: 16, width: 2, cost: 70 }), new _brixPieceDef2['default']({ height: 4, width: 4, cost: 30 }), new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), new _brixPieceDef2['default']({ height: 10, width: 4, cost: 75 }), new _brixPieceDef2['default']({ height: 12, width: 4, cost: 80 }), new _brixPieceDef2['default']({ height: 6, width: 6, cost: 70 }), new _brixPieceDef2['default']({ height: 8, width: 6, cost: 85 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDef2['default']({ height: 3, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 })]
+      }
+    },
+    'Dark Green': {
+      id: 28,
+      officialName: 'Dark Green',
+      commonName: 'Green',
+      color: 'rgb(0, 123, 40)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }) //
+
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 6, cost: 85 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 8, cost: 110 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 6, cost: 85 })],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 })]
+      }
+    },
+    'Bright Green': {
+      id: 37,
+      officialName: 'Bright Green',
+      commonName: 'Bright Green',
+      color: 'rgb(0, 150, 36)',
+      availablePieces: {
+        brick: [],
+        plate: [new _brixPieceDef2['default']({ width: 16, height: 16, cost: 425 }), new _brixPieceDef2['default']({ width: 12, height: 6, cost: 200 }), new _brixPieceDef2['default']({ width: 16, height: 8, cost: 215 }),
+        // rotated
+        new _brixPieceDef2['default']({ height: 16, width: 16, cost: 425 }), new _brixPieceDef2['default']({ height: 12, width: 6, cost: 200 }), new _brixPieceDef2['default']({ height: 16, width: 8, cost: 215 })],
+        flat: []
+      }
+    },
+    // 'Dark Orange': {
+    //   id: 38,
+    //   officialName: 'Dark Orange',
+    //   commonName: 'Dark Orange',
+    //   color: 'rgb(168, 61, 21)'
+    // },
+    'Medium Blue': {
+      id: 102,
+      officialName: 'Medium Blue',
+      commonName: 'Medium Blue',
+      color: 'rgb(71, 140, 198)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }) //
+        ]
+      }
+    },
+    'Bright Orange': {
+      id: 106,
+      officialName: 'Bright Orange',
+      commonName: 'Orange',
+      color: 'rgb(231, 99, 24)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }) //
+        ]
+      }
+    },
+    'Bright Yellowish-Green': {
+      id: 119,
+      officialName: 'Bright Yellowish-Green',
+      commonName: 'Lime',
+      color: 'rgb(149, 185, 11)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }) //
+        ]
+      }
+    },
+    'Bright Reddish Violet': {
+      id: 124,
+      officialName: 'Bright Reddish Violet',
+      commonName: 'Magenta',
+      color: 'rgb(156, 0, 107)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }) //
+        ],
+        plate: [],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }) //
+        ]
+      }
+    },
+    // 'Sand Blue': {
+    //   id: 135,
+    //   officialName: 'Sand Blue',
+    //   commonName: 'Sand Blue',
+    //   color: 'rgb(94, 116, 140)'
+    // },
+    'Sand Yellow': {
+      id: 138,
+      officialName: 'Sand Yellow',
+      commonName: 'Dark Tan',
+      color: 'rgb(141, 116, 82)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }) //
+        ]
+      }
+    },
+    'Earth Blue': {
+      id: 140,
+      officialName: 'Earth Blue',
+      commonName: 'Dark Blue',
+      color: 'rgb(0, 37, 65)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }) //
+        ],
+        flat: []
+      }
+    },
+    'Earth Green': {
+      id: 141,
+      officialName: 'Earth Green',
+      commonName: 'Dark Green',
+      color: 'rgb(0, 52, 22)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }) //
+        ],
+        flat: []
+      }
+    },
+    // 'Sand Green': {
+    //   id: 151,
+    //   officialName: 'Sand Green',
+    //   commonName: 'Sand Green',
+    //   color: 'rgb(95, 130, 101)'
+    // },
+    'New Dark Red': {
+      id: 154,
+      officialName: 'New Dark Red',
+      commonName: 'Dark Red',
+      color: 'rgb(128, 8, 27)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }) //
+        ]
+      }
+    },
+    'Flame Yellowish Orange': {
+      id: 191,
+      officialName: 'Flame Yellowish Orange',
+      commonName: 'Bright Light Orange',
+      color: 'rgb(244, 155, 0)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 })],
+        flat: []
+      }
+    },
+    'Reddish Brown': {
+      id: 192,
+      officialName: 'Reddish Brown',
+      commonName: 'Reddish Brown',
+      color: 'rgb(91, 28, 12)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 10, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 6, cost: 70 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 30 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 30 }) //
+        ]
+      }
+    },
+    'Medium Stone Grey': {
+      id: 194,
+      officialName: 'Medium Stone Grey',
+      commonName: 'Light Grey',
+      color: 'rgb(156, 146, 145)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 2, cost: 40 }), //
+        new _brixPieceDef2['default']({ width: 16, height: 2, cost: 70 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 4, cost: 75 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 4, cost: 80 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 6, cost: 85 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 6, cost: 120 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 6, cost: 200 }), //
+        new _brixPieceDef2['default']({ width: 16, height: 6, cost: 210 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 8, cost: 110 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 10, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 10, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 12, width: 2, cost: 40 }), //
+        new _brixPieceDef2['default']({ height: 16, width: 2, cost: 70 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ height: 10, width: 4, cost: 75 }), //
+        new _brixPieceDef2['default']({ height: 12, width: 4, cost: 80 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 6, cost: 85 }), //
+        new _brixPieceDef2['default']({ height: 10, width: 6, cost: 120 }), //
+        new _brixPieceDef2['default']({ height: 12, width: 6, cost: 200 }), //
+        new _brixPieceDef2['default']({ height: 16, width: 6, cost: 210 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }) //
+        ]
+      }
+    },
+    'Dark Stone Grey': {
+      id: 199,
+      officialName: 'Dark Stone Grey',
+      commonName: 'Dark Grey',
+      color: 'rgb(76, 81, 86)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 40 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 1, cost: 45 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 1, cost: 55 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 2, cost: 40 }), //
+        new _brixPieceDef2['default']({ width: 16, height: 2, cost: 70 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 4, cost: 30 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 6, cost: 85 }), //
+        new _brixPieceDef2['default']({ width: 10, height: 6, cost: 120 }), //
+        new _brixPieceDef2['default']({ width: 12, height: 6, cost: 200 }), //
+        new _brixPieceDef2['default']({ width: 14, height: 6, cost: 240 }), //
+        new _brixPieceDef2['default']({ width: 16, height: 6, cost: 210 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 8, cost: 110 }), //
+        new _brixPieceDef2['default']({ height: 16, width: 16, cost: 425 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 2, cost: 35 }), //
+        new _brixPieceDef2['default']({ height: 12, width: 2, cost: 40 }), //
+        new _brixPieceDef2['default']({ height: 16, width: 2, cost: 70 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 4, cost: 65 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 6, cost: 85 }), //
+        new _brixPieceDef2['default']({ height: 10, width: 6, cost: 120 }), //
+        new _brixPieceDef2['default']({ height: 12, width: 6, cost: 200 }), //
+        new _brixPieceDef2['default']({ height: 14, width: 6, cost: 240 }), //
+        new _brixPieceDef2['default']({ height: 16, width: 6, cost: 210 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 3, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 8, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 3, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }) //
+        ]
+      }
+    },
+    // 'Very Light Grey': {
+    //   id: 208,
+    //   officialName: 'Light Stone Grey',
+    //   commonName: 'Very Light Grey',
+    //   color: 'rgb(228, 228, 218)'
+    // },
+    // 'Light Blue': {
+    //   id: 212,
+    //   officialName: 'Light Royal Blue',
+    //   commonName: 'Light Blue',
+    //   color: 'rgb(135, 192, 234)'
+    // },
+    'Bright Purple': {
+      id: 221,
+      officialName: 'Bright Purple',
+      commonName: 'Bright Pink',
+      color: 'rgb(222, 55, 139)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }),
+        // rotated
+        new _brixPieceDef2['default']({ width: 1, height: 2, cost: 10 })],
+        flat: []
+      }
+    },
+    'Light Purple': {
+      id: 222,
+      officialName: 'Light Purple',
+      commonName: 'Light Pink',
+      color: 'rgb(238, 157, 195)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 10 }) //
+        ]
+      }
+    },
+    'Cool Yellow': {
+      id: 226,
+      officialName: 'Cool Yellow',
+      commonName: 'Blonde',
+      color: 'rgb(255, 255, 153)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [],
+        flat: []
+      }
+    },
+    'Medium Lilac': {
+      id: 268,
+      officialName: 'Medium Lilac',
+      commonName: 'Dark Purple',
+      color: 'rgb(44, 21, 119)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 3, height: 2, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 3, width: 2, cost: 20 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }) //
+        ]
+      }
+    },
+    // 'Light Nougat': {
+    //   id: 283,
+    //   officialName: 'Light Nougat',
+    //   commonName: 'Light Flesh',
+    //   color: 'rgb(245, 193, 137)'
+    // },
+    'Dark Brown': {
+      id: 308,
+      officialName: 'Dark Brown',
+      commonName: 'Dark Brown',
+      color: 'rgb(48, 15, 6)',
+      availablePieces: {
+        brick: [],
+        plate: [new _brixPieceDef2['default']({ width: 8, height: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 8, width: 1, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }) //
+        ]
+      }
+    },
+    // 'Medium Nougat': {
+    //   id: 312,
+    //   officialName: 'Medium Nougat',
+    //   commonName: 'Medium Dark Flesh',
+    //   color: 'rgb(170, 125, 85)'
+    // },
+    'Dark Azur': {
+      id: 321,
+      officialName: 'Dark Azur',
+      commonName: 'Dark Azur',
+      color: 'rgb(70, 155, 195)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }) //
+        ],
+        flat: []
+      }
+    },
+    'Medium Azur': {
+      id: 322,
+      officialName: 'Medium Azur',
+      commonName: 'Azure',
+      color: 'rgb(104, 195, 226)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 1, cost: 35 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 4, cost: 60 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 4, cost: 60 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }) //
+        ]
+      }
+    },
+    // 'Unikitty Blue': {
+    //   id: 323,
+    //   officialName: 'Aqua',
+    //   commonName: 'Unikitty Blue',
+    //   color: 'rgb(211, 242, 234)'
+    // },
+    'Medium Lavender': {
+      id: 324,
+      officialName: 'Medium Lavender',
+      commonName: 'Medium Lavender',
+      color: 'rgb(160, 110, 185)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 1, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }) //
+        ],
+        flat: []
+      }
+    },
+    // Lavender: {
+    //   id: 325,
+    //   officialName: 'Lavender',
+    //   commonName: 'Lavender',
+    //   color: 'rgb(205, 164, 222)'
+    // },
+    // 'White Glow': {
+    //   id: 329,
+    //   officialName: 'White Glow',
+    //   commonName: 'Glow-in-the-dark',
+    //   color: 'rgb(245, 243, 215)'
+    // },
+    'Bright Yellowish Green': {
+      id: 326,
+      officialName: 'Bright Yellowish Green',
+      commonName: 'Unikitty Green',
+      color: 'rgb(226, 249, 154)',
+      availablePieces: {
+        brick: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }) //
+        ],
+        plate: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ width: 6, height: 6, cost: 70 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 2, width: 2, cost: 15 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 2, cost: 20 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 2, cost: 25 }), //
+        new _brixPieceDef2['default']({ height: 6, width: 6, cost: 70 }) //
+        ],
+        flat: [new _brixPieceDef2['default']({ width: 1, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ width: 4, height: 1, cost: 20 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }), //
+        new _brixPieceDef2['default']({ height: 4, width: 1, cost: 20 }) //
+        ]
+      }
+    },
+    'Olive Green': {
+      id: 330,
+      officialName: 'Olive Green',
+      commonName: 'Olive Green',
+      color: 'rgb(119, 119, 78)',
+      availablePieces: {
+        brick: [],
+        plate: [new _brixPieceDef2['default']({ width: 2, height: 1, cost: 10 }), //
+        // rotated
+        new _brixPieceDef2['default']({ height: 2, width: 1, cost: 10 }) //
+        ],
+        flat: []
+      }
+    }
+    // 'Medium-Yellowish Green': {
+    //   id: 331,
+    //   officialName: 'Medium-Yellowish Green',
+    //   commonName: 'Dark Lime; Medium Lime',
+    //   color: 'rgb(150, 185, 59)'
+    // }
+    // 'Silver': {
+    //   id: 131,
+    //   officialName: 'Silver',
+    //   commonName: 'Pearl Light Grey',
+    //   color: 'rgb(141, 148, 150)'
+    // },
+    // 'Metallic Dark Grey': {
+    //   id: 148,
+    //   officialName: 'Metallic Dark Grey',
+    //   commonName: 'Pearl Dark Grey',
+    //   color: 'rgb(73, 63, 59)'
+    // },
+    // 'Phosphorescent Green': {
+    //   id: 294,
+    //   officialName: 'Phosphorescent Green',
+    //   commonName: 'Glow In Dark Trans Green',
+    //   color: 'rgb(254, 252, 213)'
+    // },
+    // 'Warm Gold': {
+    //   id: 297,
+    //   officialName: 'Warm Gold',
+    //   commonName: 'Pearl Gold',
+    //   color: 'rgb(170, 127, 46)'
+    // }
+    // 'Metalized Silver': {
+    //   id: 309,
+    //   officialName: 'Metalized Silver',
+    //   commonName: 'Metalized Silver',
+    //   color: 'rgb(206, 206, 206)'
+    // },
+    // 'Metalized Gold': {
+    //   id: 310,
+    //   officialName: 'Metalized Gold',
+    //   commonName: 'Metalized Gold',
+    //   color: 'rgb(223, 193, 118)'
+    // },
+    // 'Silver Metallic': {
+    //   id: 315,
+    //   officialName: 'Silver Metallic',
+    //   commonName: 'Silver Metallic',
+    //   color: 'rgb(140, 140, 140)'
+    // },
+    // 'Titanium Metallic': {
+    //   id: 316,
+    //   officialName: 'Titanium Metallic',
+    //   commonName: 'Titanium Metallic',
+    //   color: 'rgb(62, 60, 57)'
+    // }
+  };
+  module.exports = exports['default'];
+
+/***/ },
+/* 24 */
+/***/ function(module, exports) {
+
+  module.exports = require("color");
+
+/***/ },
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $def            = __webpack_require__(2)
@@ -968,7 +2035,7 @@ module.exports =
   };
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
   var SYMBOL_ITERATOR = __webpack_require__(9)('iterator')
@@ -992,7 +2059,7 @@ module.exports =
   };
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports) {
 
   'use strict';
@@ -1006,7 +2073,7 @@ module.exports =
   };
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
   // Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -1021,7 +2088,7 @@ module.exports =
     set: Object.setPrototypeOf || ('__proto__' in {} // eslint-disable-line
       ? function(buggy, set){
           try {
-            set = __webpack_require__(13)(Function.call, $.getDesc(Object.prototype, '__proto__').set, 2);
+            set = __webpack_require__(14)(Function.call, $.getDesc(Object.prototype, '__proto__').set, 2);
             set({}, []);
           } catch(e){ buggy = true; }
           return function setPrototypeOf(O, proto){
@@ -1036,7 +2103,7 @@ module.exports =
   };
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $      = __webpack_require__(1)
@@ -1047,7 +2114,7 @@ module.exports =
   };
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
   // true  -> String#at
@@ -1069,7 +2136,7 @@ module.exports =
   };
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports) {
 
   module.exports = function(exec){
@@ -1082,320 +2149,7 @@ module.exports =
   };
 
 /***/ },
-/* 30 */
-/***/ function(module, exports) {
-
-  'use strict';
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-  exports['default'] = {
-    White: {
-      id: 1,
-      officialName: 'White',
-      commonName: 'White',
-      color: 'rgb(255, 255, 255)'
-    },
-    Tan: {
-      id: 5,
-      officialName: 'Brick Yellow',
-      commonName: 'Tan',
-      color: 'rgb(217, 187, 123)'
-    },
-    // Flesh: {
-    //   id: 18,
-    //   officialName: 'Nougat',
-    //   commonName: 'Flesh',
-    //   color: 'rgb(214, 114, 64)'
-    // },
-    Red: {
-      id: 21,
-      officialName: 'Bright Red',
-      commonName: 'Red',
-      color: 'rgb(222, 0, 13)'
-    },
-    Blue: {
-      id: 23,
-      officialName: 'Bright Blue',
-      commonName: 'Blue',
-      color: 'rgb(0, 87, 168)'
-    },
-    Yellow: {
-      id: 24,
-      officialName: 'Bright Yellow',
-      commonName: 'Yellow',
-      color: 'rgb(254, 196, 0)'
-    },
-    Black: {
-      id: 26,
-      officialName: 'Black',
-      commonName: 'Black',
-      color: 'rgb(0, 0, 0)'
-    },
-    Green: {
-      id: 28,
-      officialName: 'Dark Green',
-      commonName: 'Green',
-      color: 'rgb(0, 123, 40)'
-    },
-    'Bright Green': {
-      id: 37,
-      officialName: 'Bright Green',
-      commonName: 'Bright Green',
-      color: 'rgb(0, 150, 36)'
-    },
-    'Dark Orange': {
-      id: 38,
-      officialName: 'Dark Orange',
-      commonName: 'Dark Orange',
-      color: 'rgb(168, 61, 21)'
-    },
-    'Medium Blue': {
-      id: 102,
-      officialName: 'Medium Blue',
-      commonName: 'Medium Blue',
-      color: 'rgb(71, 140, 198)'
-    },
-    Orange: {
-      id: 106,
-      officialName: 'Bright Orange',
-      commonName: 'Orange',
-      color: 'rgb(231, 99, 24)'
-    },
-    Lime: {
-      id: 119,
-      officialName: 'Bright Yellowish-Green',
-      commonName: 'Lime',
-      color: 'rgb(149, 185, 11)'
-    },
-    Magenta: {
-      id: 124,
-      officialName: 'Bright Reddish Violet',
-      commonName: 'Magenta',
-      color: 'rgb(156, 0, 107)'
-    },
-    'Sand Blue': {
-      id: 135,
-      officialName: 'Sand Blue',
-      commonName: 'Sand Blue',
-      color: 'rgb(94, 116, 140)'
-    },
-    'Dark Tan': {
-      id: 138,
-      officialName: 'Sand Yellow',
-      commonName: 'Dark Tan',
-      color: 'rgb(141, 116, 82)'
-    },
-    'Dark Blue': {
-      id: 140,
-      officialName: 'Earth Blue',
-      commonName: 'Dark Blue',
-      color: 'rgb(0, 37, 65)'
-    },
-    'Dark Green': {
-      id: 141,
-      officialName: 'Earth Green',
-      commonName: 'Dark Green',
-      color: 'rgb(0, 52, 22)'
-    },
-    'Sand Green': {
-      id: 151,
-      officialName: 'Sand Green',
-      commonName: 'Sand Green',
-      color: 'rgb(95, 130, 101)'
-    },
-    'Dark Red': {
-      id: 154,
-      officialName: 'Dark Red',
-      commonName: 'Dark Red',
-      color: 'rgb(128, 8, 27)'
-    },
-    'Bright Light Orange': {
-      id: 191,
-      officialName: 'Flame Yellowish Orange',
-      commonName: 'Bright Light Orange',
-      color: 'rgb(244, 155, 0)'
-    },
-    'Reddish Brown': {
-      id: 192,
-      officialName: 'Reddish Brown',
-      commonName: 'Reddish Brown',
-      color: 'rgb(91, 28, 12)'
-    },
-    'Light Grey': {
-      id: 194,
-      officialName: 'Medium Stone Grey',
-      commonName: 'Light Grey',
-      color: 'rgb(156, 146, 145)'
-    },
-    'Dark Grey': {
-      id: 199,
-      officialName: 'Dark Stone Grey',
-      commonName: 'Dark Grey',
-      color: 'rgb(76, 81, 86)'
-    },
-    // 'Very Light Grey': {
-    //   id: 208,
-    //   officialName: 'Light Stone Grey',
-    //   commonName: 'Very Light Grey',
-    //   color: 'rgb(228, 228, 218)'
-    // },
-    // 'Light Blue': {
-    //   id: 212,
-    //   officialName: 'Light Royal Blue',
-    //   commonName: 'Light Blue',
-    //   color: 'rgb(135, 192, 234)'
-    // },
-    'Bright Pink': {
-      id: 221,
-      officialName: 'Bright Purple',
-      commonName: 'Bright Pink',
-      color: 'rgb(222, 55, 139)'
-    },
-    'Light Pink': {
-      id: 222,
-      officialName: 'Light Purple',
-      commonName: 'Light Pink',
-      color: 'rgb(238, 157, 195)'
-    },
-    Blonde: {
-      id: 226,
-      officialName: 'Cool Yellow',
-      commonName: 'Blonde',
-      color: 'rgb(255, 255, 153)'
-    },
-    'Dark Purple': {
-      id: 268,
-      officialName: 'Medium Lilac',
-      commonName: 'Dark Purple',
-      color: 'rgb(44, 21, 119)'
-    },
-    // 'Light Flesh': {
-    //   id: 283,
-    //   officialName: 'Light Nougat',
-    //   commonName: 'Light Flesh',
-    //   color: 'rgb(245, 193, 137)'
-    // },
-    'Dark Brown': {
-      id: 308,
-      officialName: 'Dark Brown',
-      commonName: 'Dark Brown',
-      color: 'rgb(48, 15, 6)'
-    },
-    // 'Medium Dark Flesh': {
-    //   id: 312,
-    //   officialName: 'Medium Nougat',
-    //   commonName: 'Medium Dark Flesh',
-    //   color: 'rgb(170, 125, 85)'
-    // },
-    'Dark Azur': {
-      id: 321,
-      officialName: 'Dark Azur',
-      commonName: 'Dark Azur',
-      color: 'rgb(70, 155, 195)'
-    },
-    // Azure: {
-    //   id: 322,
-    //   officialName: 'Medium Azur',
-    //   commonName: 'Azure',
-    //   color: 'rgb(104, 195, 226)'
-    // },
-    // 'Unikitty Blue': {
-    //   id: 323,
-    //   officialName: 'Aqua',
-    //   commonName: 'Unikitty Blue',
-    //   color: 'rgb(211, 242, 234)'
-    // },
-    'Medium Lavender': {
-      id: 324,
-      officialName: 'Medium Lavender',
-      commonName: 'Medium Lavender',
-      color: 'rgb(160, 110, 185)'
-    },
-    Lavender: {
-      id: 325,
-      officialName: 'Lavender',
-      commonName: 'Lavender',
-      color: 'rgb(205, 164, 222)'
-    },
-    // 'Glow-in-the-dark': {
-    //   id: 329,
-    //   officialName: 'White Glow',
-    //   commonName: 'Glow-in-the-dark',
-    //   color: 'rgb(245, 243, 215)'
-    // },
-    'Unikitty Green': {
-      id: 326,
-      officialName: 'Spring Yellowish Green',
-      commonName: 'Unikitty Green',
-      color: 'rgb(226, 249, 154)'
-    },
-    'Olive Green': {
-      id: 330,
-      officialName: 'Olive Green',
-      commonName: 'Olive Green',
-      color: 'rgb(119, 119, 78)'
-    },
-    'Dark Lime; Medium Lime': {
-      id: 331,
-      officialName: 'Medium-Yellowish green',
-      commonName: 'Dark Lime; Medium Lime',
-      color: 'rgb(150, 185, 59)'
-    }
-    // 'Pearl Light Grey': {
-    //   id: 131,
-    //   officialName: 'Silver',
-    //   commonName: 'Pearl Light Grey',
-    //   color: 'rgb(141, 148, 150)'
-    // },
-    // 'Pearl Dark Grey': {
-    //   id: 148,
-    //   officialName: 'Metallic Dark Grey',
-    //   commonName: 'Pearl Dark Grey',
-    //   color: 'rgb(73, 63, 59)'
-    // },
-    // 'Glow In Dark Trans Green': {
-    //   id: 294,
-    //   officialName: 'Phosphorescent Green',
-    //   commonName: 'Glow In Dark Trans Green',
-    //   color: 'rgb(254, 252, 213)'
-    // },
-    // 'Pearl Gold': {
-    //   id: 297,
-    //   officialName: 'Warm Gold',
-    //   commonName: 'Pearl Gold',
-    //   color: 'rgb(170, 127, 46)'
-    // }
-    // 'Metalized Silver': {
-    //   id: 309,
-    //   officialName: 'Metalized Silver',
-    //   commonName: 'Metalized Silver',
-    //   color: 'rgb(206, 206, 206)'
-    // },
-    // 'Metalized Gold': {
-    //   id: 310,
-    //   officialName: 'Metalized Gold',
-    //   commonName: 'Metalized Gold',
-    //   color: 'rgb(223, 193, 118)'
-    // },
-    // 'Silver Metallic': {
-    //   id: 315,
-    //   officialName: 'Silver Metallic',
-    //   commonName: 'Silver Metallic',
-    //   color: 'rgb(140, 140, 140)'
-    // },
-    // 'Titanium Metallic': {
-    //   id: 316,
-    //   officialName: 'Titanium Metallic',
-    //   commonName: 'Titanium Metallic',
-    //   color: 'rgb(62, 60, 57)'
-    // }
-  };
-  module.exports = exports['default'];
-
-/***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -1404,16 +2158,10 @@ module.exports =
     value: true
   });
 
-  var _flux = __webpack_require__(149);
+  var _flux = __webpack_require__(150);
 
   exports['default'] = new _flux.Dispatcher();
   module.exports = exports['default'];
-
-/***/ },
-/* 32 */
-/***/ function(module, exports) {
-
-  module.exports = require("color");
 
 /***/ },
 /* 33 */
@@ -1443,7 +2191,7 @@ module.exports =
 
   'use strict';
   var $        = __webpack_require__(1)
-    , ctx      = __webpack_require__(13)
+    , ctx      = __webpack_require__(14)
     , safe     = __webpack_require__(10).safe
     , assert   = __webpack_require__(5)
     , forOf    = __webpack_require__(16)
@@ -1575,7 +2323,7 @@ module.exports =
     // add .keys, .values, .entries, [@@iterator]
     // 23.1.3.4, 23.1.3.8, 23.1.3.11, 23.1.3.12, 23.2.3.5, 23.2.3.8, 23.2.3.10, 23.2.3.11
     setIter: function(C, NAME, IS_MAP){
-      __webpack_require__(23)(C, NAME, function(iterated, kind){
+      __webpack_require__(25)(C, NAME, function(iterated, kind){
         set(this, ITER, {o: iterated, k: kind});
       }, function(){
         var iter  = this[ITER]
@@ -1855,7 +2603,7 @@ module.exports =
 
   'use strict';
   var $      = __webpack_require__(1)
-    , ctx    = __webpack_require__(13)
+    , ctx    = __webpack_require__(14)
     , cof    = __webpack_require__(8)
     , invoke = __webpack_require__(19)
     , cel    = __webpack_require__(37)
@@ -1948,7 +2696,7 @@ module.exports =
   // 22.1.3.13 Array.prototype.keys()
   // 22.1.3.29 Array.prototype.values()
   // 22.1.3.30 Array.prototype[@@iterator]()
-  __webpack_require__(23)(Array, 'Array', function(iterated, kind){
+  __webpack_require__(25)(Array, 'Array', function(iterated, kind){
     $.set(this, ITER, {o: $.toObject(iterated), i: 0, k: kind});
   // 22.1.5.2.1 %ArrayIteratorPrototype%.next()
   }, function(){
@@ -1992,11 +2740,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _color = __webpack_require__(32);
+  var _color = __webpack_require__(24);
 
   var _color2 = _interopRequireDefault(_color);
 
-  var _PieceLess = __webpack_require__(136);
+  var _PieceLess = __webpack_require__(138);
 
   var _PieceLess2 = _interopRequireDefault(_PieceLess);
 
@@ -2140,7 +2888,7 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _reactLibKeyMirror = __webpack_require__(144);
+  var _reactLibKeyMirror = __webpack_require__(146);
 
   var _reactLibKeyMirror2 = _interopRequireDefault(_reactLibKeyMirror);
 
@@ -2165,15 +2913,15 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _lodash = __webpack_require__(14);
+  var _lodash = __webpack_require__(13);
 
   var _lodash2 = _interopRequireDefault(_lodash);
 
-  var _eventemitter3 = __webpack_require__(147);
+  var _eventemitter3 = __webpack_require__(148);
 
   var _eventemitter32 = _interopRequireDefault(_eventemitter3);
 
-  var _coreDispatcher = __webpack_require__(31);
+  var _coreDispatcher = __webpack_require__(32);
 
   var _coreDispatcher2 = _interopRequireDefault(_coreDispatcher);
 
@@ -2181,21 +2929,21 @@ module.exports =
 
   var _constantsActionTypes2 = _interopRequireDefault(_constantsActionTypes);
 
-  var _brixConvertFromImageData = __webpack_require__(110);
+  var _brixConvertFromImageData = __webpack_require__(112);
 
   var _brixConvertFromImageData2 = _interopRequireDefault(_brixConvertFromImageData);
 
-  var _brixRectCalculation = __webpack_require__(113);
+  var _brixRectCalculation = __webpack_require__(115);
 
   var _brixRectCalculation2 = _interopRequireDefault(_brixRectCalculation);
 
-  var _brixDivideRect = __webpack_require__(111);
+  var _brixAssignColorAndGetPieces = __webpack_require__(111);
 
-  var _brixDivideRect2 = _interopRequireDefault(_brixDivideRect);
+  var _brixAssignColorAndGetPieces2 = _interopRequireDefault(_brixAssignColorAndGetPieces);
 
-  var _constantsPieceSets = __webpack_require__(126);
+  var _constantsBrickColors = __webpack_require__(23);
 
-  var _constantsPieceSets2 = _interopRequireDefault(_constantsPieceSets);
+  var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
 
   var CHANGE_EVENT = 'change';
 
@@ -2207,25 +2955,28 @@ module.exports =
 
   var directions = [{ x: 1, y: 1 }, { x: -1, y: 1 }, { x: 1, y: -1 }, { x: -1, y: -1 }];
 
+  function scaleRects(rects, scale) {
+    return _lodash2['default'].map(rects, function (r) {
+      r.x *= scale;
+      r.y *= scale;
+      r.width *= scale;
+      r.height *= scale;
+      r.area = r.width * r.height;
+      return r;
+    });
+  }
+
   function calcNeededPieces(input, type, scale) {
-    if (!input || !type) {
+    if (!input || !type || !scale) {
       return [];
     }
 
     var neededPieceCandidates = _lodash2['default'].map(directions, function (direction) {
       var rects = (0, _brixRectCalculation2['default'])(input, direction);
-
-      rects = _lodash2['default'].map(rects, function (r) {
-        r.x *= scale;
-        r.y *= scale;
-        r.width *= scale;
-        r.height *= scale;
-        r.area = r.width * r.height;
-        return r;
-      });
+      rects = scaleRects(rects, scale);
 
       return _lodash2['default'].flatten(_lodash2['default'].map(rects, function (rect) {
-        return (0, _brixDivideRect2['default'])(rect, _constantsPieceSets2['default'][type], rect.value);
+        return (0, _brixAssignColorAndGetPieces2['default'])(rect, rect.value, type, _constantsBrickColors2['default']);
       }));
     });
 
@@ -2432,21 +3183,27 @@ module.exports =
 /* 52 */
 /***/ function(module, exports) {
 
-  module.exports = require("path");
+  module.exports = require("color-difference");
 
 /***/ },
 /* 53 */
+/***/ function(module, exports) {
+
+  module.exports = require("path");
+
+/***/ },
+/* 54 */
 /***/ function(module, exports, __webpack_require__) {
 
   /* WEBPACK VAR INJECTION */(function(module) {"use strict";
 
-  var _toolsProtectJs2 = __webpack_require__(54);
+  var _toolsProtectJs2 = __webpack_require__(55);
 
   var _toolsProtectJs3 = _interopRequireDefault(_toolsProtectJs2);
 
-  __webpack_require__(106);
-
   __webpack_require__(107);
+
+  __webpack_require__(108);
 
   _toolsProtectJs3["default"](module);
 
@@ -2456,10 +3213,10 @@ module.exports =
     throw new Error("only one instance of babel/polyfill is allowed");
   }
   global._babelPolyfill = true;
-  /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(145)(module)))
+  /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(147)(module)))
 
 /***/ },
-/* 54 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
   "use strict";
@@ -2468,7 +3225,7 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-  var _path = __webpack_require__(52);
+  var _path = __webpack_require__(53);
 
   var _path2 = _interopRequireDefault(_path);
 
@@ -2483,7 +3240,7 @@ module.exports =
   module.exports = exports["default"];
 
 /***/ },
-/* 55 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $        = __webpack_require__(1)
@@ -2507,7 +3264,7 @@ module.exports =
   };
 
 /***/ },
-/* 56 */
+/* 57 */
 /***/ function(module, exports) {
 
   module.exports = function($){
@@ -2517,7 +3274,7 @@ module.exports =
   };
 
 /***/ },
-/* 57 */
+/* 58 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $ = __webpack_require__(1);
@@ -2531,7 +3288,7 @@ module.exports =
   };
 
 /***/ },
-/* 58 */
+/* 59 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2559,7 +3316,7 @@ module.exports =
   };
 
 /***/ },
-/* 59 */
+/* 60 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $                = __webpack_require__(1)
@@ -2850,7 +3607,7 @@ module.exports =
   });
 
   // 21.1.3.25 / 15.5.4.20 String.prototype.trim()
-  $def($def.P, 'String', {trim: __webpack_require__(25)(/^\s*([\s\S]*\S)?\s*$/, '$1')});
+  $def($def.P, 'String', {trim: __webpack_require__(27)(/^\s*([\s\S]*\S)?\s*$/, '$1')});
 
   // 20.3.3.1 / 15.9.4.4 Date.now()
   $def($def.S, 'Date', {now: function(){
@@ -2865,7 +3622,7 @@ module.exports =
   // PhantomJS and old webkit had a broken Date implementation.
   var date       = new Date(-5e13 - 1)
     , brokenDate = !(date.toISOString && date.toISOString() == '0385-07-25T07:06:39.999Z'
-        && __webpack_require__(29)(function(){ new Date(NaN).toISOString(); }));
+        && __webpack_require__(31)(function(){ new Date(NaN).toISOString(); }));
   $def($def.P + $def.F * brokenDate, 'Date', {toISOString: function(){
     if(!isFinite(this))throw RangeError('Invalid time value');
     var d = this
@@ -2884,7 +3641,7 @@ module.exports =
   };
 
 /***/ },
-/* 60 */
+/* 61 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2918,7 +3675,7 @@ module.exports =
   __webpack_require__(15)('copyWithin');
 
 /***/ },
-/* 61 */
+/* 62 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2940,7 +3697,7 @@ module.exports =
   __webpack_require__(15)('fill');
 
 /***/ },
-/* 62 */
+/* 63 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2959,7 +3716,7 @@ module.exports =
   __webpack_require__(15)(KEY);
 
 /***/ },
-/* 63 */
+/* 64 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -2978,15 +3735,15 @@ module.exports =
   __webpack_require__(15)(KEY);
 
 /***/ },
-/* 64 */
+/* 65 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $     = __webpack_require__(1)
-    , ctx   = __webpack_require__(13)
+    , ctx   = __webpack_require__(14)
     , $def  = __webpack_require__(2)
     , $iter = __webpack_require__(11)
     , call  = __webpack_require__(40);
-  $def($def.S + $def.F * !__webpack_require__(24)(function(iter){ Array.from(iter); }), 'Array', {
+  $def($def.S + $def.F * !__webpack_require__(26)(function(iter){ Array.from(iter); }), 'Array', {
     // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
     from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
       var O       = Object($.assertDefined(arrayLike))
@@ -3015,7 +3772,7 @@ module.exports =
   });
 
 /***/ },
-/* 65 */
+/* 66 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $def = __webpack_require__(2);
@@ -3033,13 +3790,13 @@ module.exports =
   });
 
 /***/ },
-/* 66 */
+/* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
   __webpack_require__(21)(Array);
 
 /***/ },
-/* 67 */
+/* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $             = __webpack_require__(1)
@@ -3055,7 +3812,7 @@ module.exports =
   }});
 
 /***/ },
-/* 68 */
+/* 69 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3078,7 +3835,7 @@ module.exports =
   });
 
 /***/ },
-/* 69 */
+/* 70 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3100,7 +3857,7 @@ module.exports =
   }, strong, true);
 
 /***/ },
-/* 70 */
+/* 71 */
 /***/ function(module, exports, __webpack_require__) {
 
   var Infinity = 1 / 0
@@ -3230,7 +3987,7 @@ module.exports =
   });
 
 /***/ },
-/* 71 */
+/* 72 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3279,7 +4036,7 @@ module.exports =
   }
 
 /***/ },
-/* 72 */
+/* 73 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $     = __webpack_require__(1)
@@ -3319,15 +4076,15 @@ module.exports =
   });
 
 /***/ },
-/* 73 */
+/* 74 */
 /***/ function(module, exports, __webpack_require__) {
 
   // 19.1.3.1 Object.assign(target, source)
   var $def = __webpack_require__(2);
-  $def($def.S, 'Object', {assign: __webpack_require__(55)});
+  $def($def.S, 'Object', {assign: __webpack_require__(56)});
 
 /***/ },
-/* 74 */
+/* 75 */
 /***/ function(module, exports, __webpack_require__) {
 
   // 19.1.3.10 Object.is(value1, value2)
@@ -3337,15 +4094,15 @@ module.exports =
   });
 
 /***/ },
-/* 75 */
+/* 76 */
 /***/ function(module, exports, __webpack_require__) {
 
   // 19.1.3.19 Object.setPrototypeOf(O, proto)
   var $def = __webpack_require__(2);
-  $def($def.S, 'Object', {setPrototypeOf: __webpack_require__(26).set});
+  $def($def.S, 'Object', {setPrototypeOf: __webpack_require__(28).set});
 
 /***/ },
-/* 76 */
+/* 77 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $        = __webpack_require__(1)
@@ -3386,7 +4143,7 @@ module.exports =
   });
 
 /***/ },
-/* 77 */
+/* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3401,17 +4158,17 @@ module.exports =
   }
 
 /***/ },
-/* 78 */
+/* 79 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
   var $        = __webpack_require__(1)
-    , ctx      = __webpack_require__(13)
+    , ctx      = __webpack_require__(14)
     , cof      = __webpack_require__(8)
     , $def     = __webpack_require__(2)
     , assert   = __webpack_require__(5)
     , forOf    = __webpack_require__(16)
-    , setProto = __webpack_require__(26).set
+    , setProto = __webpack_require__(28).set
     , same     = __webpack_require__(42)
     , species  = __webpack_require__(21)
     , SPECIES  = __webpack_require__(9)('species')
@@ -3635,7 +4392,7 @@ module.exports =
         ? x : new this(function(res){ res(x); });
     }
   });
-  $def($def.S + $def.F * !(useNative && __webpack_require__(24)(function(iter){
+  $def($def.S + $def.F * !(useNative && __webpack_require__(26)(function(iter){
     P.all(iter)['catch'](function(){});
   })), PROMISE, {
     // 25.4.4.1 Promise.all(iterable)
@@ -3667,12 +4424,12 @@ module.exports =
   });
 
 /***/ },
-/* 79 */
+/* 80 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $         = __webpack_require__(1)
     , $def      = __webpack_require__(2)
-    , setProto  = __webpack_require__(26)
+    , setProto  = __webpack_require__(28)
     , $iter     = __webpack_require__(11)
     , ITERATOR  = __webpack_require__(9)('iterator')
     , ITER      = __webpack_require__(10).safe('iter')
@@ -3817,7 +4574,7 @@ module.exports =
   $def($def.S, 'Reflect', reflect);
 
 /***/ },
-/* 80 */
+/* 81 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $       = __webpack_require__(1)
@@ -3859,13 +4616,13 @@ module.exports =
     // 21.2.5.3 get RegExp.prototype.flags()
     if(/./g.flags != 'g')$.setDesc(proto, 'flags', {
       configurable: true,
-      get: __webpack_require__(25)(/^.*\/(\w*)$/, '$1')
+      get: __webpack_require__(27)(/^.*\/(\w*)$/, '$1')
     });
   }
   __webpack_require__(21)($RegExp);
 
 /***/ },
-/* 81 */
+/* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3882,12 +4639,12 @@ module.exports =
   }, strong);
 
 /***/ },
-/* 82 */
+/* 83 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
   var $def = __webpack_require__(2)
-    , $at  = __webpack_require__(28)(false);
+    , $at  = __webpack_require__(30)(false);
   $def($def.P, 'String', {
     // 21.1.3.3 String.prototype.codePointAt(pos)
     codePointAt: function codePointAt(pos){
@@ -3896,7 +4653,7 @@ module.exports =
   });
 
 /***/ },
-/* 83 */
+/* 84 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3906,7 +4663,7 @@ module.exports =
     , toLength = $.toLength;
 
   // should throw error on regex
-  $def($def.P + $def.F * !__webpack_require__(29)(function(){ 'q'.endsWith(/./); }), 'String', {
+  $def($def.P + $def.F * !__webpack_require__(31)(function(){ 'q'.endsWith(/./); }), 'String', {
     // 21.1.3.6 String.prototype.endsWith(searchString [, endPosition])
     endsWith: function endsWith(searchString /*, endPosition = @length */){
       if(cof(searchString) == 'RegExp')throw TypeError();
@@ -3920,7 +4677,7 @@ module.exports =
   });
 
 /***/ },
-/* 84 */
+/* 85 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $def    = __webpack_require__(2)
@@ -3948,7 +4705,7 @@ module.exports =
   });
 
 /***/ },
-/* 85 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -3965,17 +4722,17 @@ module.exports =
   });
 
 /***/ },
-/* 86 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
   var set   = __webpack_require__(1).set
-    , $at   = __webpack_require__(28)(true)
+    , $at   = __webpack_require__(30)(true)
     , ITER  = __webpack_require__(10).safe('iter')
     , $iter = __webpack_require__(11)
     , step  = $iter.step;
 
   // 21.1.3.27 String.prototype[@@iterator]()
-  __webpack_require__(23)(String, 'String', function(iterated){
+  __webpack_require__(25)(String, 'String', function(iterated){
     set(this, ITER, {o: String(iterated), i: 0});
   // 21.1.5.2.1 %StringIteratorPrototype%.next()
   }, function(){
@@ -3990,7 +4747,7 @@ module.exports =
   });
 
 /***/ },
-/* 87 */
+/* 88 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $    = __webpack_require__(1)
@@ -4012,7 +4769,7 @@ module.exports =
   });
 
 /***/ },
-/* 88 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $def = __webpack_require__(2);
@@ -4023,7 +4780,7 @@ module.exports =
   });
 
 /***/ },
-/* 89 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4032,7 +4789,7 @@ module.exports =
     , $def = __webpack_require__(2);
 
   // should throw error on regex
-  $def($def.P + $def.F * !__webpack_require__(29)(function(){ 'q'.startsWith(/./); }), 'String', {
+  $def($def.P + $def.F * !__webpack_require__(31)(function(){ 'q'.startsWith(/./); }), 'String', {
     // 21.1.3.18 String.prototype.startsWith(searchString [, position ])
     startsWith: function startsWith(searchString /*, position = 0 */){
       if(cof(searchString) == 'RegExp')throw TypeError();
@@ -4044,7 +4801,7 @@ module.exports =
   });
 
 /***/ },
-/* 90 */
+/* 91 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4052,10 +4809,10 @@ module.exports =
   var $        = __webpack_require__(1)
     , setTag   = __webpack_require__(8).set
     , uid      = __webpack_require__(10)
-    , shared   = __webpack_require__(27)
+    , shared   = __webpack_require__(29)
     , $def     = __webpack_require__(2)
     , $redef   = __webpack_require__(12)
-    , keyOf    = __webpack_require__(57)
+    , keyOf    = __webpack_require__(58)
     , enumKeys = __webpack_require__(38)
     , assertObject = __webpack_require__(5).obj
     , ObjectProto = Object.prototype
@@ -4239,7 +4996,7 @@ module.exports =
   setTag($.g.JSON, 'JSON', true);
 
 /***/ },
-/* 91 */
+/* 92 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4287,7 +5044,7 @@ module.exports =
   }
 
 /***/ },
-/* 92 */
+/* 93 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4304,7 +5061,7 @@ module.exports =
   }, weak, false, true);
 
 /***/ },
-/* 93 */
+/* 94 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4319,14 +5076,14 @@ module.exports =
   __webpack_require__(15)('includes');
 
 /***/ },
-/* 94 */
+/* 95 */
 /***/ function(module, exports, __webpack_require__) {
 
   // https://github.com/DavidBruant/Map-Set.prototype.toJSON
   __webpack_require__(35)('Map');
 
 /***/ },
-/* 95 */
+/* 96 */
 /***/ function(module, exports, __webpack_require__) {
 
   // https://gist.github.com/WebReflection/9353781
@@ -4346,7 +5103,7 @@ module.exports =
   });
 
 /***/ },
-/* 96 */
+/* 97 */
 /***/ function(module, exports, __webpack_require__) {
 
   // http://goo.gl/XkBrjD
@@ -4371,31 +5128,31 @@ module.exports =
   });
 
 /***/ },
-/* 97 */
+/* 98 */
 /***/ function(module, exports, __webpack_require__) {
 
   // https://github.com/benjamingr/RexExp.escape
   var $def = __webpack_require__(2);
   $def($def.S, 'RegExp', {
-    escape: __webpack_require__(25)(/[\\^$*+?.()|[\]{}]/g, '\\$&', true)
+    escape: __webpack_require__(27)(/[\\^$*+?.()|[\]{}]/g, '\\$&', true)
   });
 
 
 /***/ },
-/* 98 */
+/* 99 */
 /***/ function(module, exports, __webpack_require__) {
 
   // https://github.com/DavidBruant/Map-Set.prototype.toJSON
   __webpack_require__(35)('Set');
 
 /***/ },
-/* 99 */
+/* 100 */
 /***/ function(module, exports, __webpack_require__) {
 
   // https://github.com/mathiasbynens/String.prototype.at
   'use strict';
   var $def = __webpack_require__(2)
-    , $at  = __webpack_require__(28)(true);
+    , $at  = __webpack_require__(30)(true);
   $def($def.P, 'String', {
     at: function at(pos){
       return $at(this, pos);
@@ -4403,7 +5160,7 @@ module.exports =
   });
 
 /***/ },
-/* 100 */
+/* 101 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4416,7 +5173,7 @@ module.exports =
   });
 
 /***/ },
-/* 101 */
+/* 102 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -4429,7 +5186,7 @@ module.exports =
   });
 
 /***/ },
-/* 102 */
+/* 103 */
 /***/ function(module, exports, __webpack_require__) {
 
   // JavaScript 1.6 / Strawman array statics shim
@@ -4440,7 +5197,7 @@ module.exports =
   function setStatics(keys, length){
     $.each.call(keys.split(','), function(key){
       if(length == undefined && key in $Array)statics[key] = $Array[key];
-      else if(key in [])statics[key] = __webpack_require__(13)(Function.call, [][key], length);
+      else if(key in [])statics[key] = __webpack_require__(14)(Function.call, [][key], length);
     });
   }
   setStatics('pop,reverse,shift,keys,values,entries', 1);
@@ -4450,7 +5207,7 @@ module.exports =
   $def($def.S, 'Array', statics);
 
 /***/ },
-/* 103 */
+/* 104 */
 /***/ function(module, exports, __webpack_require__) {
 
   __webpack_require__(46);
@@ -4469,7 +5226,7 @@ module.exports =
   Iterators.NodeList = Iterators.HTMLCollection = ArrayValues;
 
 /***/ },
-/* 104 */
+/* 105 */
 /***/ function(module, exports, __webpack_require__) {
 
   var $def  = __webpack_require__(2)
@@ -4480,14 +5237,14 @@ module.exports =
   });
 
 /***/ },
-/* 105 */
+/* 106 */
 /***/ function(module, exports, __webpack_require__) {
 
   // ie9- setTimeout & setInterval additional parameters fix
   var $         = __webpack_require__(1)
     , $def      = __webpack_require__(2)
     , invoke    = __webpack_require__(19)
-    , partial   = __webpack_require__(58)
+    , partial   = __webpack_require__(59)
     , navigator = $.g.navigator
     , MSIE      = !!navigator && /MSIE .\./.test(navigator.userAgent); // <- dirty ie9- check
   function wrap(set){
@@ -4505,62 +5262,62 @@ module.exports =
   });
 
 /***/ },
-/* 106 */
+/* 107 */
 /***/ function(module, exports, __webpack_require__) {
 
-  __webpack_require__(59);
-  __webpack_require__(90);
-  __webpack_require__(73);
+  __webpack_require__(60);
+  __webpack_require__(91);
   __webpack_require__(74);
   __webpack_require__(75);
-  __webpack_require__(77);
   __webpack_require__(76);
+  __webpack_require__(78);
+  __webpack_require__(77);
+  __webpack_require__(69);
   __webpack_require__(68);
-  __webpack_require__(67);
-  __webpack_require__(71);
   __webpack_require__(72);
-  __webpack_require__(70);
-  __webpack_require__(84);
-  __webpack_require__(87);
-  __webpack_require__(86);
-  __webpack_require__(82);
-  __webpack_require__(83);
+  __webpack_require__(73);
+  __webpack_require__(71);
   __webpack_require__(85);
   __webpack_require__(88);
+  __webpack_require__(87);
+  __webpack_require__(83);
+  __webpack_require__(84);
+  __webpack_require__(86);
   __webpack_require__(89);
-  __webpack_require__(64);
+  __webpack_require__(90);
   __webpack_require__(65);
-  __webpack_require__(46);
   __webpack_require__(66);
-  __webpack_require__(60);
+  __webpack_require__(46);
+  __webpack_require__(67);
   __webpack_require__(61);
-  __webpack_require__(63);
   __webpack_require__(62);
-  __webpack_require__(80);
-  __webpack_require__(78);
-  __webpack_require__(69);
+  __webpack_require__(64);
+  __webpack_require__(63);
   __webpack_require__(81);
-  __webpack_require__(91);
-  __webpack_require__(92);
   __webpack_require__(79);
+  __webpack_require__(70);
+  __webpack_require__(82);
+  __webpack_require__(92);
   __webpack_require__(93);
-  __webpack_require__(99);
+  __webpack_require__(80);
+  __webpack_require__(94);
   __webpack_require__(100);
   __webpack_require__(101);
+  __webpack_require__(102);
+  __webpack_require__(98);
+  __webpack_require__(96);
   __webpack_require__(97);
   __webpack_require__(95);
-  __webpack_require__(96);
-  __webpack_require__(94);
-  __webpack_require__(98);
-  __webpack_require__(102);
+  __webpack_require__(99);
+  __webpack_require__(103);
+  __webpack_require__(106);
   __webpack_require__(105);
   __webpack_require__(104);
-  __webpack_require__(103);
   module.exports = __webpack_require__(1).core;
 
 
 /***/ },
-/* 107 */
+/* 108 */
 /***/ function(module, exports) {
 
   /**
@@ -5196,14 +5953,14 @@ module.exports =
 
 
 /***/ },
-/* 108 */
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
-  module.exports = __webpack_require__(53);
+  module.exports = __webpack_require__(54);
 
 
 /***/ },
-/* 109 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5218,7 +5975,7 @@ module.exports =
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  var _lodash = __webpack_require__(14);
+  var _lodash = __webpack_require__(13);
 
   var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -5248,7 +6005,56 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 110 */
+/* 111 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+  exports['default'] = assignColorAndGetPieces;
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _lodash = __webpack_require__(13);
+
+  var _lodash2 = _interopRequireDefault(_lodash);
+
+  var _sortByFarthest = __webpack_require__(116);
+
+  var _sortByFarthest2 = _interopRequireDefault(_sortByFarthest);
+
+  var _divideRect = __webpack_require__(113);
+
+  var _divideRect2 = _interopRequireDefault(_divideRect);
+
+  function assignColorAndGetPieces(rect, targetColor, type, allColors) {
+    var availableColors = Object.values(allColors);
+    availableColors = _lodash2['default'].clone((0, _sortByFarthest2['default'])(availableColors, targetColor));
+
+    while (availableColors.length) {
+      var currentColor = availableColors.pop();
+
+      if (!currentColor.availablePieces) {
+        continue;
+      }
+
+      var pieces = (0, _divideRect2['default'])(rect, currentColor.availablePieces[type], currentColor);
+
+      if (pieces) {
+        // should always get here, as worst case scenario it chooses white or black
+        return pieces;
+      }
+    }
+
+    throw new Error('Failed to assign a color to a set of pieces');
+  }
+
+  module.exports = exports['default'];
+
+/***/ },
+/* 112 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5260,7 +6066,7 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _nearestColor = __webpack_require__(112);
+  var _nearestColor = __webpack_require__(114);
 
   var _nearestColor2 = _interopRequireDefault(_nearestColor);
 
@@ -5303,7 +6109,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 111 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
   // TODO: support rotating pieces
@@ -5318,7 +6124,7 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _lodash = __webpack_require__(14);
+  var _lodash = __webpack_require__(13);
 
   var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -5374,8 +6180,7 @@ module.exports =
       var piece = fitBestPiece(rect, pieces);
 
       if (!piece) {
-        // this will never happen in practice, as worst case scenario is a 1x1 piece
-        throw new Error('Failed to find a piece that would fit in: ' + JSON.stringify(rect));
+        return null;
       }
 
       var remainingRects = getRemainingRects(piece, rect);
@@ -5391,26 +6196,26 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 112 */
+/* 114 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _lodash = __webpack_require__(14);
+  var _lodash = __webpack_require__(13);
 
   var _lodash2 = _interopRequireDefault(_lodash);
 
-  var _constantsBrickColors = __webpack_require__(30);
+  var _constantsBrickColors = __webpack_require__(23);
 
   var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
 
-  var _colorDifference = __webpack_require__(146);
+  var _colorDifference = __webpack_require__(52);
 
   var _colorDifference2 = _interopRequireDefault(_colorDifference);
 
-  var _color = __webpack_require__(32);
+  var _color = __webpack_require__(24);
 
   var _color2 = _interopRequireDefault(_color);
 
@@ -5439,7 +6244,7 @@ module.exports =
   };
 
 /***/ },
-/* 113 */
+/* 115 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5450,7 +6255,7 @@ module.exports =
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-  var _lodash = __webpack_require__(14);
+  var _lodash = __webpack_require__(13);
 
   var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -5605,7 +6410,53 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 114 */
+/* 116 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  var _lodash = __webpack_require__(13);
+
+  var _lodash2 = _interopRequireDefault(_lodash);
+
+  var _color = __webpack_require__(24);
+
+  var _color2 = _interopRequireDefault(_color);
+
+  var _colorDifference = __webpack_require__(52);
+
+  var _colorDifference2 = _interopRequireDefault(_colorDifference);
+
+  function toHex(rgbColor) {
+    if (_lodash2['default'].isArray(rgbColor)) {
+      return (0, _color2['default'])().rgb(rgbColor).hexString();
+    }
+
+    return (0, _color2['default'])(rgbColor).hexString();
+  }
+
+  exports['default'] = _lodash2['default'].memoize(function sortByNearness(availableColors, targetColor) {
+    var targetColorHex = toHex(targetColor.color);
+
+    return availableColors.sort(function (a, b) {
+      var aNear = _colorDifference2['default'].compare(toHex(a.color), targetColorHex);
+      var bNear = _colorDifference2['default'].compare(toHex(b.color), targetColorHex);
+
+      return bNear - aNear;
+    });
+  }, function (availableColors, targetColor) {
+    return toHex(targetColor.color);
+  });
+  module.exports = exports['default'];
+
+/***/ },
+/* 117 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5628,17 +6479,17 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _reactTabs = __webpack_require__(152);
+  var _reactTabs = __webpack_require__(153);
 
-  var _BasicsLess = __webpack_require__(130);
+  var _BasicsLess = __webpack_require__(132);
 
   var _BasicsLess2 = _interopRequireDefault(_BasicsLess);
 
-  var _AppLess = __webpack_require__(129);
+  var _AppLess = __webpack_require__(131);
 
   var _AppLess2 = _interopRequireDefault(_AppLess);
 
-  var _decoratorsWithContext = __webpack_require__(127);
+  var _decoratorsWithContext = __webpack_require__(129);
 
   var _decoratorsWithContext2 = _interopRequireDefault(_decoratorsWithContext);
 
@@ -5646,35 +6497,35 @@ module.exports =
 
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
 
-  var _Drag = __webpack_require__(118);
+  var _Drag = __webpack_require__(121);
 
   var _Drag2 = _interopRequireDefault(_Drag);
 
-  var _Sample = __webpack_require__(125);
+  var _Sample = __webpack_require__(128);
 
   var _Sample2 = _interopRequireDefault(_Sample);
 
-  var _ChoosePieceType = __webpack_require__(115);
+  var _ChoosePieceType = __webpack_require__(118);
 
   var _ChoosePieceType2 = _interopRequireDefault(_ChoosePieceType);
 
-  var _ChooseScale = __webpack_require__(116);
+  var _ChooseScale = __webpack_require__(119);
 
   var _ChooseScale2 = _interopRequireDefault(_ChooseScale);
 
-  var _PieceList = __webpack_require__(121);
+  var _PieceList = __webpack_require__(124);
 
   var _PieceList2 = _interopRequireDefault(_PieceList);
 
-  var _PieceMap = __webpack_require__(123);
+  var _PieceMap = __webpack_require__(126);
 
   var _PieceMap2 = _interopRequireDefault(_PieceMap);
 
-  var _Dimensions = __webpack_require__(117);
+  var _Dimensions = __webpack_require__(120);
 
   var _Dimensions2 = _interopRequireDefault(_Dimensions);
 
-  var _Price = __webpack_require__(124);
+  var _Price = __webpack_require__(127);
 
   var _Price2 = _interopRequireDefault(_Price);
 
@@ -5906,7 +6757,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 115 */
+/* 118 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -5925,7 +6776,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _ChoosePieceTypeLess = __webpack_require__(131);
+  var _ChoosePieceTypeLess = __webpack_require__(133);
 
   var _ChoosePieceTypeLess2 = _interopRequireDefault(_ChoosePieceTypeLess);
 
@@ -5941,11 +6792,11 @@ module.exports =
 
   var _Piece2 = _interopRequireDefault(_Piece);
 
-  var _constantsBrickColors = __webpack_require__(30);
+  var _constantsBrickColors = __webpack_require__(23);
 
   var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
 
-  var buttonDefs = [{ type: 'plate', left: 4, right: 2, color: _constantsBrickColors2['default'].Green.color }, { type: 'brick', left: 3, right: 1, color: _constantsBrickColors2['default']['Dark Orange'].color }, { type: 'flat', left: 2, right: 2, color: _constantsBrickColors2['default']['Sand Blue'].color }];
+  var buttonDefs = [{ type: 'plate', left: 4, right: 2, color: _constantsBrickColors2['default']['Dark Green'].color }, { type: 'brick', left: 3, right: 1, color: _constantsBrickColors2['default']['Bright Orange'].color }, { type: 'flat', left: 2, right: 2, color: _constantsBrickColors2['default']['Medium Blue'].color }];
 
   var ChoosePieceType = (function () {
     function ChoosePieceType() {
@@ -6004,7 +6855,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 116 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6023,7 +6874,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _ChooseScaleLess = __webpack_require__(132);
+  var _ChooseScaleLess = __webpack_require__(134);
 
   var _ChooseScaleLess2 = _interopRequireDefault(_ChooseScaleLess);
 
@@ -6093,7 +6944,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 117 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6112,7 +6963,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _DimensionsLess = __webpack_require__(133);
+  var _DimensionsLess = __webpack_require__(135);
 
   var _DimensionsLess2 = _interopRequireDefault(_DimensionsLess);
 
@@ -6203,7 +7054,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 118 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6226,7 +7077,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _DragLess = __webpack_require__(134);
+  var _DragLess = __webpack_require__(136);
 
   var _DragLess2 = _interopRequireDefault(_DragLess);
 
@@ -6238,7 +7089,7 @@ module.exports =
 
   var _actionsAppActions2 = _interopRequireDefault(_actionsAppActions);
 
-  var _DropZone = __webpack_require__(119);
+  var _DropZone = __webpack_require__(122);
 
   var _DropZone2 = _interopRequireDefault(_DropZone);
 
@@ -6355,7 +7206,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 119 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
   // ported over from https://github.com/paramaggarwal/react-dropzone
@@ -6381,11 +7232,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _mobileDetect = __webpack_require__(151);
+  var _mobileDetect = __webpack_require__(152);
 
   var _mobileDetect2 = _interopRequireDefault(_mobileDetect);
 
-  var _DropZoneLess = __webpack_require__(135);
+  var _DropZoneLess = __webpack_require__(137);
 
   var _DropZoneLess2 = _interopRequireDefault(_DropZoneLess);
 
@@ -6526,7 +7377,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 120 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6549,7 +7400,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _FullPieceListEntryLess = __webpack_require__(137);
+  var _FullPieceListEntryLess = __webpack_require__(139);
 
   var _FullPieceListEntryLess2 = _interopRequireDefault(_FullPieceListEntryLess);
 
@@ -6615,7 +7466,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 121 */
+/* 124 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6634,7 +7485,7 @@ module.exports =
 
   function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
 
-  var _lodash = __webpack_require__(14);
+  var _lodash = __webpack_require__(13);
 
   var _lodash2 = _interopRequireDefault(_lodash);
 
@@ -6642,7 +7493,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _PieceListLess = __webpack_require__(138);
+  var _PieceListLess = __webpack_require__(140);
 
   var _PieceListLess2 = _interopRequireDefault(_PieceListLess);
 
@@ -6650,15 +7501,15 @@ module.exports =
 
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
 
-  var _constantsBrickColors = __webpack_require__(30);
+  var _constantsBrickColors = __webpack_require__(23);
 
   var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
 
-  var _SimplePieceListEntryJs = __webpack_require__(122);
+  var _SimplePieceListEntryJs = __webpack_require__(125);
 
   var _SimplePieceListEntryJs2 = _interopRequireDefault(_SimplePieceListEntryJs);
 
-  var _FullPieceListEntryJs = __webpack_require__(120);
+  var _FullPieceListEntryJs = __webpack_require__(123);
 
   var _FullPieceListEntryJs2 = _interopRequireDefault(_FullPieceListEntryJs);
 
@@ -6761,7 +7612,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 122 */
+/* 125 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6784,11 +7635,11 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _color = __webpack_require__(32);
+  var _color = __webpack_require__(24);
 
   var _color2 = _interopRequireDefault(_color);
 
-  var _SimplePieceListEntryLess = __webpack_require__(139);
+  var _SimplePieceListEntryLess = __webpack_require__(141);
 
   var _SimplePieceListEntryLess2 = _interopRequireDefault(_SimplePieceListEntryLess);
 
@@ -6858,7 +7709,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 123 */
+/* 126 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6881,7 +7732,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _PieceMapLess = __webpack_require__(140);
+  var _PieceMapLess = __webpack_require__(142);
 
   var _PieceMapLess2 = _interopRequireDefault(_PieceMapLess);
 
@@ -7006,7 +7857,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 124 */
+/* 127 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7025,7 +7876,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _PriceLess = __webpack_require__(141);
+  var _PriceLess = __webpack_require__(143);
 
   var _PriceLess2 = _interopRequireDefault(_PriceLess);
 
@@ -7088,7 +7939,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 125 */
+/* 128 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7111,7 +7962,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _SampleLess = __webpack_require__(142);
+  var _SampleLess = __webpack_require__(144);
 
   var _SampleLess2 = _interopRequireDefault(_SampleLess);
 
@@ -7171,34 +8022,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 126 */
-/***/ function(module, exports, __webpack_require__) {
-
-  'use strict';
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-  var _brixPieceDefJs = __webpack_require__(109);
-
-  var _brixPieceDefJs2 = _interopRequireDefault(_brixPieceDefJs);
-
-  exports['default'] = {
-    brick: [new _brixPieceDefJs2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDefJs2['default']({ width: 2, height: 1, cost: 15 }), new _brixPieceDefJs2['default']({ width: 3, height: 1, cost: 20 }), new _brixPieceDefJs2['default']({ width: 4, height: 1, cost: 20 }), new _brixPieceDefJs2['default']({ width: 6, height: 1, cost: 35 }), new _brixPieceDefJs2['default']({ width: 8, height: 1, cost: 40 }), new _brixPieceDefJs2['default']({ width: 10, height: 1, cost: 45 }), new _brixPieceDefJs2['default']({ width: 12, height: 1, cost: 55 }), new _brixPieceDefJs2['default']({ width: 16, height: 1, cost: 70 })],
-    plate: [new _brixPieceDefJs2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDefJs2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDefJs2['default']({ width: 3, height: 1, cost: 10 }), new _brixPieceDefJs2['default']({ width: 4, height: 1, cost: 15 }), new _brixPieceDefJs2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDefJs2['default']({ width: 8, height: 1, cost: 25 }), new _brixPieceDefJs2['default']({ width: 10, height: 1, cost: 25 }), new _brixPieceDefJs2['default']({ width: 2, height: 2, cost: 15 }), new _brixPieceDefJs2['default']({ width: 3, height: 2, cost: 20 }), new _brixPieceDefJs2['default']({ width: 4, height: 2, cost: 20 }), new _brixPieceDefJs2['default']({ width: 6, height: 2, cost: 25 }), new _brixPieceDefJs2['default']({ width: 8, height: 2, cost: 35 }), new _brixPieceDefJs2['default']({ width: 10, height: 2, cost: 35 }), new _brixPieceDefJs2['default']({ width: 12, height: 2, cost: 40 }), new _brixPieceDefJs2['default']({ width: 16, height: 2, cost: 70 }), new _brixPieceDefJs2['default']({ width: 4, height: 4, cost: 30 }), new _brixPieceDefJs2['default']({ width: 6, height: 4, cost: 60 }), new _brixPieceDefJs2['default']({ width: 8, height: 4, cost: 65 }), new _brixPieceDefJs2['default']({ width: 10, height: 4, cost: 75 }), new _brixPieceDefJs2['default']({ width: 12, height: 4, cost: 80 }), new _brixPieceDefJs2['default']({ width: 6, height: 6, cost: 70 }), new _brixPieceDefJs2['default']({ width: 8, height: 6, cost: 85 }),
-    // rotated
-    new _brixPieceDefJs2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDefJs2['default']({ height: 3, width: 1, cost: 10 }), new _brixPieceDefJs2['default']({ height: 4, width: 1, cost: 15 }), new _brixPieceDefJs2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDefJs2['default']({ height: 8, width: 1, cost: 25 }), new _brixPieceDefJs2['default']({ height: 10, width: 1, cost: 25 }), new _brixPieceDefJs2['default']({ height: 2, width: 2, cost: 15 }), new _brixPieceDefJs2['default']({ height: 3, width: 2, cost: 20 }), new _brixPieceDefJs2['default']({ height: 4, width: 2, cost: 20 }), new _brixPieceDefJs2['default']({ height: 6, width: 2, cost: 25 }), new _brixPieceDefJs2['default']({ height: 8, width: 2, cost: 35 }), new _brixPieceDefJs2['default']({ height: 10, width: 2, cost: 35 }), new _brixPieceDefJs2['default']({ height: 12, width: 2, cost: 40 }), new _brixPieceDefJs2['default']({ height: 16, width: 2, cost: 70 }), new _brixPieceDefJs2['default']({ height: 4, width: 4, cost: 30 }), new _brixPieceDefJs2['default']({ height: 6, width: 4, cost: 60 }), new _brixPieceDefJs2['default']({ height: 8, width: 4, cost: 65 }), new _brixPieceDefJs2['default']({ height: 10, width: 4, cost: 75 }), new _brixPieceDefJs2['default']({ height: 12, width: 4, cost: 80 }), new _brixPieceDefJs2['default']({ height: 6, width: 6, cost: 70 }), new _brixPieceDefJs2['default']({ height: 8, width: 6, cost: 85 })],
-    flat: [new _brixPieceDefJs2['default']({ width: 1, height: 1, cost: 10 }), new _brixPieceDefJs2['default']({ width: 2, height: 1, cost: 10 }), new _brixPieceDefJs2['default']({ width: 3, height: 1, cost: 20 }), new _brixPieceDefJs2['default']({ width: 4, height: 1, cost: 20 }), new _brixPieceDefJs2['default']({ width: 6, height: 1, cost: 20 }), new _brixPieceDefJs2['default']({ width: 8, height: 1, cost: 20 }), new _brixPieceDefJs2['default']({ width: 2, height: 2, cost: 10 }), new _brixPieceDefJs2['default']({ width: 4, height: 2, cost: 30 }),
-    // rotated
-    new _brixPieceDefJs2['default']({ height: 2, width: 1, cost: 10 }), new _brixPieceDefJs2['default']({ height: 3, width: 1, cost: 20 }), new _brixPieceDefJs2['default']({ height: 4, width: 1, cost: 20 }), new _brixPieceDefJs2['default']({ height: 6, width: 1, cost: 20 }), new _brixPieceDefJs2['default']({ height: 8, width: 1, cost: 20 }), new _brixPieceDefJs2['default']({ height: 2, width: 2, cost: 10 }), new _brixPieceDefJs2['default']({ height: 4, width: 2, cost: 30 })]
-  };
-  module.exports = exports['default'];
-
-/***/ },
-/* 127 */
+/* 129 */
 /***/ function(module, exports, __webpack_require__) {
 
   /*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
@@ -7223,7 +8047,7 @@ module.exports =
 
   // eslint-disable-line no-unused-vars
 
-  var _node_modulesReactLibEmptyFunction = __webpack_require__(143);
+  var _node_modulesReactLibEmptyFunction = __webpack_require__(145);
 
   var _node_modulesReactLibEmptyFunction2 = _interopRequireDefault(_node_modulesReactLibEmptyFunction);
 
@@ -7285,112 +8109,112 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 128 */
-/***/ function(module, exports, __webpack_require__) {
-
-  module.exports = __webpack_require__(108);
-
-
-/***/ },
-/* 129 */
-/***/ function(module, exports, __webpack_require__) {
-
-  exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#FFFCFC;color:#074987}.alpha{font-size:.5em}section{width:100%;padding-bottom:40px}section.drag-section{background-color:#074987}.drag-header{color:#90a7bc}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.3}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.preview-image{width:40%;height:40%}", ""]);
-
-/***/ },
 /* 130 */
 /***/ function(module, exports, __webpack_require__) {
 
-  exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,hr,main,menu,nav,section,summary{display:block}pre,textarea{overflow:auto}fieldset,h1,h2,h3,h4,hr,legend,td,th{padding:0}fieldset,hr,img,legend{border:0}body{margin:0;background-color:#c71414}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{-ms-interpolation-mode:nearest-neighbor!important;image-rendering:-webkit-optimize-contrast!important;image-rendering:-moz-crisp-edges!important;image-rendering:-o-pixelated!important;image-rendering:pixelated!important}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:1px;border-top:1px solid #ccc;margin:1em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#222;font-weight:100;font-size:1em;font-family:'Segoe UI',HelveticaNeue-Light,sans-serif;line-height:1.375}h1,h2,h3,h4{margin:0}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{margin:0}.browserupgrade{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}", ""]);
+  module.exports = __webpack_require__(109);
+
 
 /***/ },
 /* 131 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".choose-piece-type .piece-type-container{padding:4px;height:160px;display:inline-block;margin:2px;background-color:grey;color:#000;float:left;position:relative}.choose-piece-type .focused{background-color:red;color:#fff}.choose-piece-type .piece-type-title{position:absolute;bottom:10px}", ""]);
+  exports.push([module.id, ".app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#FFFCFC;color:#074987}.alpha{font-size:.5em}section{width:100%;padding-bottom:40px}section.drag-section{background-color:#074987}.drag-header{color:#90a7bc}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.3}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.preview-image{width:40%;height:40%}", ""]);
 
 /***/ },
 /* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".choose-scale .scale-container{padding:4px;display:inline-block;margin:2px;background-color:grey;color:#000}.choose-scale .focused{background-color:red;color:#fff}", ""]);
+  exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,hr,main,menu,nav,section,summary{display:block}pre,textarea{overflow:auto}fieldset,h1,h2,h3,h4,hr,legend,td,th{padding:0}fieldset,hr,img,legend{border:0}body{margin:0;background-color:#c71414}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{-ms-interpolation-mode:nearest-neighbor!important;image-rendering:-webkit-optimize-contrast!important;image-rendering:-moz-crisp-edges!important;image-rendering:-o-pixelated!important;image-rendering:pixelated!important}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:1px;border-top:1px solid #ccc;margin:1em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#222;font-weight:100;font-size:1em;font-family:'Segoe UI',HelveticaNeue-Light,sans-serif;line-height:1.375}h1,h2,h3,h4{margin:0}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{margin:0}.browserupgrade{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}", ""]);
 
 /***/ },
 /* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, "", ""]);
+  exports.push([module.id, ".choose-piece-type .piece-type-container{padding:4px;height:160px;display:inline-block;margin:2px;background-color:grey;color:#000;float:left;position:relative}.choose-piece-type .focused{background-color:red;color:#fff}.choose-piece-type .piece-type-title{position:absolute;bottom:10px}", ""]);
 
 /***/ },
 /* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".dropzone-explanation{text-align:center;margin:auto}.error{background-color:red;color:#fff;padding:8px;font-weight:700}", ""]);
+  exports.push([module.id, ".choose-scale .scale-container{padding:4px;display:inline-block;margin:2px;background-color:grey;color:#000}.choose-scale .focused{background-color:red;color:#fff}", ""]);
 
 /***/ },
 /* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".drop-zone{border:3px dashed #90A7BC;color:#90A7BC;padding:20px;text-align:center;min-height:140px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.mobile-input-file{margin:15px 0}", ""]);
+  exports.push([module.id, "", ""]);
 
 /***/ },
 /* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".piece,.piece div,.piece-container ul{position:absolute}.piece{width:100%;height:100%;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;display:inline-block}.piece div{display:block;text-align:center;font-weight:700;color:#fff}.piece-container ul li{position:absolute;list-style:none;border-radius:20px}.piece-container ul.dotsTall li{width:29px;height:19px}.piece-container ul.dots li{width:29px;height:9.5px}", ""]);
+  exports.push([module.id, ".dropzone-explanation{text-align:center;margin:auto}.error{background-color:red;color:#fff;padding:8px;font-weight:700}", ""]);
 
 /***/ },
 /* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".full-piece-list-entry .full-field{margin:4px 30px;width:140px;display:inline-block}", ""]);
+  exports.push([module.id, ".drop-zone{border:3px dashed #90A7BC;color:#90A7BC;padding:20px;text-align:center;min-height:140px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.mobile-input-file{margin:15px 0}", ""]);
 
 /***/ },
 /* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".piece-list-container{position:relative;padding-top:40px}.piece-list-container ul{list-style-type:none}.piece-list-container .piece-list-header{position:absolute;top:0;left:0;right:0;z-index:10;background-color:#c71414;padding:4px;font-weight:700}.piece-list-container .piece-list-rows{max-height:400px;overflow-y:scroll}", ""]);
+  exports.push([module.id, ".piece,.piece div,.piece-container ul{position:absolute}.piece{width:100%;height:100%;-webkit-transform-style:preserve-3d;transform-style:preserve-3d;display:inline-block}.piece div{display:block;text-align:center;font-weight:700;color:#fff}.piece-container ul li{position:absolute;list-style:none;border-radius:20px}.piece-container ul.dotsTall li{width:29px;height:19px}.piece-container ul.dots li{width:29px;height:9.5px}", ""]);
 
 /***/ },
 /* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".simple-piece-list-entry .simple-field{margin:4px 30px;width:140px;display:inline-block}.simple-piece-list-entry .simple-color-dark{color:#fff}.simple-piece-list-entry .simple-color-light{color:#000}", ""]);
+  exports.push([module.id, ".full-piece-list-entry .full-field{margin:4px 30px;width:140px;display:inline-block}", ""]);
 
 /***/ },
 /* 140 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".PieceMap{min-height:450px;display:inline-block}.disclaimer{padding:10px;background-color:#F2A60C;font-weight:700;margin:10px 0}.disclaimer a{color:#00f;cursor:pointer}", ""]);
+  exports.push([module.id, ".piece-list-container{position:relative;padding-top:40px}.piece-list-container ul{list-style-type:none}.piece-list-container .piece-list-header{position:absolute;top:0;left:0;right:0;z-index:10;background-color:#c71414;padding:4px;font-weight:700}.piece-list-container .piece-list-rows{max-height:400px;overflow-y:scroll}", ""]);
 
 /***/ },
 /* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".dollars{font-size:3em;line-height:1em}", ""]);
+  exports.push([module.id, ".simple-piece-list-entry .simple-field{margin:4px 30px;width:140px;display:inline-block}.simple-piece-list-entry .simple-color-dark{color:#fff}.simple-piece-list-entry .simple-color-light{color:#000}", ""]);
 
 /***/ },
 /* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".sample-image{width:14%;height:14%;padding:5px;cursor:pointer}.sample-image:hover{background-color:red}.dropzone{display:inline-block}", ""]);
+  exports.push([module.id, ".PieceMap{min-height:450px;display:inline-block}.disclaimer{padding:10px;background-color:#F2A60C;font-weight:700;margin:10px 0}.disclaimer a{color:#00f;cursor:pointer}", ""]);
 
 /***/ },
 /* 143 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(4)();
+  exports.push([module.id, ".dollars{font-size:3em;line-height:1em}", ""]);
+
+/***/ },
+/* 144 */
+/***/ function(module, exports, __webpack_require__) {
+
+  exports = module.exports = __webpack_require__(4)();
+  exports.push([module.id, ".sample-image{width:14%;height:14%;padding:5px;cursor:pointer}.sample-image:hover{background-color:red}.dropzone{display:inline-block}", ""]);
+
+/***/ },
+/* 145 */
 /***/ function(module, exports) {
 
   /**
@@ -7428,7 +8252,7 @@ module.exports =
 
 
 /***/ },
-/* 144 */
+/* 146 */
 /***/ function(module, exports, __webpack_require__) {
 
   /**
@@ -7485,7 +8309,7 @@ module.exports =
 
 
 /***/ },
-/* 145 */
+/* 147 */
 /***/ function(module, exports) {
 
   module.exports = function(module) {
@@ -7501,43 +8325,37 @@ module.exports =
 
 
 /***/ },
-/* 146 */
-/***/ function(module, exports) {
-
-  module.exports = require("color-difference");
-
-/***/ },
-/* 147 */
+/* 148 */
 /***/ function(module, exports) {
 
   module.exports = require("eventemitter3");
 
 /***/ },
-/* 148 */
+/* 149 */
 /***/ function(module, exports) {
 
   module.exports = require("express");
 
 /***/ },
-/* 149 */
+/* 150 */
 /***/ function(module, exports) {
 
   module.exports = require("flux");
 
 /***/ },
-/* 150 */
+/* 151 */
 /***/ function(module, exports) {
 
   module.exports = require("fs");
 
 /***/ },
-/* 151 */
+/* 152 */
 /***/ function(module, exports) {
 
   module.exports = require("mobile-detect");
 
 /***/ },
-/* 152 */
+/* 153 */
 /***/ function(module, exports) {
 
   module.exports = require("react-tabs");

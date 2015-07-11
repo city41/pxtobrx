@@ -7,9 +7,9 @@ import Piece from '../Piece';
 import BrickColors from '../../constants/BrickColors';
 
 const buttonDefs = [
-  { type: 'plate', left: 4, right: 2, color: BrickColors.Green.color },
-  { type: 'brick', left: 3, right: 1, color: BrickColors['Dark Orange'].color },
-  { type: 'flat', left: 2, right: 2, color: BrickColors['Sand Blue'].color }
+  { type: 'plate', left: 4, right: 2, color: BrickColors['Dark Green'].color },
+  { type: 'brick', left: 3, right: 1, color: BrickColors['Bright Orange'].color },
+  { type: 'flat', left: 2, right: 2, color: BrickColors['Medium Blue'].color }
 ];
 
 @withStyles(styles)

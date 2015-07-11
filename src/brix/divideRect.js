@@ -55,8 +55,7 @@ export default function divideRect(inputRect, pieces, value) {
     let piece = fitBestPiece(rect, pieces);
 
     if (!piece) {
-      // this will never happen in practice, as worst case scenario is a 1x1 piece
-      throw new Error('Failed to find a piece that would fit in: ' + JSON.stringify(rect));
+      return null;
     }
 
     let remainingRects = getRemainingRects(piece, rect);
