@@ -670,53 +670,334 @@ export default {
       ]
     }
   },
-  'Dark Blue': {
+  'Earth Blue': {
     id: 140,
     officialName: 'Earth Blue',
     commonName: 'Dark Blue',
-    color: 'rgb(0, 37, 65)'
+    color: 'rgb(0, 37, 65)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 4, height: 1, cost: 20})//
+      ],
+      plate: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 2, cost: 20}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 4, width: 2, cost: 20})//
+      ],
+      flat: [
+      ]
+    }
   },
-  'Dark Green': {
+  'Earth Green': {
     id: 141,
     officialName: 'Earth Green',
     commonName: 'Dark Green',
-    color: 'rgb(0, 52, 22)'
+    color: 'rgb(0, 52, 22)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 4, height: 1, cost: 20})//
+      ],
+      plate: [
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 3, height: 2, cost: 20}),//
+        new PieceDef({width: 4, height: 2, cost: 20}),//
+        // rotated
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 3, width: 2, cost: 20}),//
+        new PieceDef({height: 4, width: 2, cost: 20})//
+      ],
+      flat: [
+      ]
+    }
   },
-  'Sand Green': {
-    id: 151,
-    officialName: 'Sand Green',
-    commonName: 'Sand Green',
-    color: 'rgb(95, 130, 101)'
-  },
-  'Dark Red': {
+  // 'Sand Green': {
+  //   id: 151,
+  //   officialName: 'Sand Green',
+  //   commonName: 'Sand Green',
+  //   color: 'rgb(95, 130, 101)'
+  // },
+  'New Dark Red': {
     id: 154,
-    officialName: 'Dark Red',
+    officialName: 'New Dark Red',
     commonName: 'Dark Red',
-    color: 'rgb(128, 8, 27)'
+    color: 'rgb(128, 8, 27)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 35})//
+      ],
+      plate: [
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 2, cost: 20}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 4, width: 2, cost: 20})//
+      ],
+      flat: [
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10})//
+      ]
+    }
   },
-  'Bright Light Orange': {
+  'Flame Yellowish Orange': {
     id: 191,
     officialName: 'Flame Yellowish Orange',
     commonName: 'Bright Light Orange',
-    color: 'rgb(244, 155, 0)'
+    color: 'rgb(244, 155, 0)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 4, height: 1, cost: 20})//
+      ],
+      plate: [
+        new PieceDef({height: 2, width: 2, cost: 15})
+      ],
+      flat: [
+      ]
+    }
   },
   'Reddish Brown': {
     id: 192,
     officialName: 'Reddish Brown',
     commonName: 'Reddish Brown',
-    color: 'rgb(91, 28, 12)'
+    color: 'rgb(91, 28, 12)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 35}),//
+        new PieceDef({width: 8, height: 1, cost: 40})//
+      ],
+      plate: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 25}),//
+        new PieceDef({width: 10, height: 1, cost: 25}),//
+        new PieceDef({width: 2, height: 2, cost: 15}),//
+        new PieceDef({width: 3, height: 2, cost: 20}),//
+        new PieceDef({width: 4, height: 2, cost: 20}),//
+        new PieceDef({width: 6, height: 2, cost: 25}),//
+        new PieceDef({width: 8, height: 2, cost: 35}),//
+        new PieceDef({width: 4, height: 4, cost: 30}),//
+        new PieceDef({width: 6, height: 4, cost: 60}),//
+        new PieceDef({width: 8, height: 4, cost: 65}),//
+        new PieceDef({width: 6, height: 6, cost: 70}),//
+        // rotated
+        new PieceDef({height: 1, width: 1, cost: 10}),//
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 3, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 8, width: 1, cost: 25}),//
+        new PieceDef({height: 10, width: 1, cost: 25}),//
+        new PieceDef({height: 2, width: 2, cost: 15}),//
+        new PieceDef({height: 3, width: 2, cost: 20}),//
+        new PieceDef({height: 4, width: 2, cost: 20}),//
+        new PieceDef({height: 6, width: 2, cost: 25}),//
+        new PieceDef({height: 8, width: 2, cost: 35}),//
+        new PieceDef({height: 4, width: 4, cost: 30}),//
+        new PieceDef({height: 6, width: 4, cost: 60}),//
+        new PieceDef({height: 8, width: 4, cost: 65}),//
+        new PieceDef({height: 6, width: 6, cost: 70})//
+      ],
+      flat: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 2, height: 2, cost: 10}),//
+        new PieceDef({width: 4, height: 2, cost: 30}),//
+        // rotated
+        new PieceDef({height: 1, width: 1, cost: 10}),//
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 20}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 2, width: 2, cost: 10}),//
+        new PieceDef({height: 4, width: 2, cost: 30})//
+      ]
+    }
   },
-  'Light Grey': {
+  'Medium Stone Grey': {
     id: 194,
     officialName: 'Medium Stone Grey',
     commonName: 'Light Grey',
-    color: 'rgb(156, 146, 145)'
+    color: 'rgb(156, 146, 145)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 35}),//
+        new PieceDef({width: 8, height: 1, cost: 40})//
+      ],
+      plate: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 25}),//
+        new PieceDef({width: 10, height: 1, cost: 25}),//
+        new PieceDef({width: 2, height: 2, cost: 15}),//
+        new PieceDef({width: 3, height: 2, cost: 20}),//
+        new PieceDef({width: 4, height: 2, cost: 20}),//
+        new PieceDef({width: 6, height: 2, cost: 25}),//
+        new PieceDef({width: 8, height: 2, cost: 35}),//
+        new PieceDef({width: 10, height: 2, cost: 35}),//
+        new PieceDef({width: 12, height: 2, cost: 40}),//
+        new PieceDef({width: 16, height: 2, cost: 70}),//
+        new PieceDef({width: 4, height: 4, cost: 30}),//
+        new PieceDef({width: 6, height: 4, cost: 60}),//
+        new PieceDef({width: 8, height: 4, cost: 65}),//
+        new PieceDef({width: 10, height: 4, cost: 75}),//
+        new PieceDef({width: 12, height: 4, cost: 80}),//
+        new PieceDef({width: 6, height: 6, cost: 70}),//
+        new PieceDef({width: 8, height: 6, cost: 85}),//
+        new PieceDef({width: 10, height: 6, cost: 120}),//
+        new PieceDef({width: 12, height: 6, cost: 200}),//
+        new PieceDef({width: 16, height: 6, cost: 210}),//
+        new PieceDef({width: 8, height: 8, cost: 110}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 3, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 8, width: 1, cost: 25}),//
+        new PieceDef({height: 10, width: 1, cost: 25}),//
+        new PieceDef({height: 3, width: 2, cost: 20}),//
+        new PieceDef({height: 4, width: 2, cost: 20}),//
+        new PieceDef({height: 6, width: 2, cost: 25}),//
+        new PieceDef({height: 8, width: 2, cost: 35}),//
+        new PieceDef({height: 10, width: 2, cost: 35}),//
+        new PieceDef({height: 12, width: 2, cost: 40}),//
+        new PieceDef({height: 16, width: 2, cost: 70}),//
+        new PieceDef({height: 6, width: 4, cost: 60}),//
+        new PieceDef({height: 8, width: 4, cost: 65}),//
+        new PieceDef({height: 10, width: 4, cost: 75}),//
+        new PieceDef({height: 12, width: 4, cost: 80}),//
+        new PieceDef({height: 8, width: 6, cost: 85}),//
+        new PieceDef({height: 10, width: 6, cost: 120}),//
+        new PieceDef({height: 12, width: 6, cost: 200}),//
+        new PieceDef({height: 16, width: 6, cost: 210})//
+      ],
+      flat: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 20}),//
+        new PieceDef({width: 2, height: 2, cost: 10}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 3, width: 1, cost: 20}),//
+        new PieceDef({height: 4, width: 1, cost: 20}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 8, width: 1, cost: 20})//
+      ]
+    }
   },
-  'Dark Grey': {
+  'Dark Stone Grey': {
     id: 199,
     officialName: 'Dark Stone Grey',
     commonName: 'Dark Grey',
-    color: 'rgb(76, 81, 86)'
+    color: 'rgb(76, 81, 86)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 35}),//
+        new PieceDef({width: 8, height: 1, cost: 40}),//
+        new PieceDef({width: 10, height: 1, cost: 45}),//
+        new PieceDef({width: 12, height: 1, cost: 55})//
+      ],
+      plate: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 25}),//
+        new PieceDef({width: 2, height: 2, cost: 15}),//
+        new PieceDef({width: 3, height: 2, cost: 20}),//
+        new PieceDef({width: 4, height: 2, cost: 20}),//
+        new PieceDef({width: 6, height: 2, cost: 25}),//
+        new PieceDef({width: 8, height: 2, cost: 35}),//
+        new PieceDef({width: 12, height: 2, cost: 40}),//
+        new PieceDef({width: 16, height: 2, cost: 70}),//
+        new PieceDef({width: 4, height: 4, cost: 30}),//
+        new PieceDef({width: 6, height: 4, cost: 60}),//
+        new PieceDef({width: 8, height: 4, cost: 65}),//
+        new PieceDef({width: 6, height: 6, cost: 70}),//
+        new PieceDef({width: 8, height: 6, cost: 85}),//
+        new PieceDef({width: 10, height: 6, cost: 120}),//
+        new PieceDef({width: 12, height: 6, cost: 200}),//
+        new PieceDef({width: 14, height: 6, cost: 240}),//
+        new PieceDef({width: 16, height: 6, cost: 210}),//
+        new PieceDef({width: 8, height: 8, cost: 110}),//
+        new PieceDef({height: 16, width: 16, cost: 425})//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 3, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 8, width: 1, cost: 25}),//
+        new PieceDef({height: 3, width: 2, cost: 20}),//
+        new PieceDef({height: 4, width: 2, cost: 20}),//
+        new PieceDef({height: 6, width: 2, cost: 25}),//
+        new PieceDef({height: 8, width: 2, cost: 35}),//
+        new PieceDef({height: 12, width: 2, cost: 40}),//
+        new PieceDef({height: 16, width: 2, cost: 70}),//
+        new PieceDef({height: 6, width: 4, cost: 60}),//
+        new PieceDef({height: 8, width: 4, cost: 65}),//
+        new PieceDef({height: 8, width: 6, cost: 85}),//
+        new PieceDef({height: 10, width: 6, cost: 120}),//
+        new PieceDef({height: 12, width: 6, cost: 200}),//
+        new PieceDef({height: 14, width: 6, cost: 240}),//
+        new PieceDef({height: 16, width: 6, cost: 210})//
+      ],
+      flat: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 3, height: 1, cost: 20}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 6, height: 1, cost: 20}),//
+        new PieceDef({width: 8, height: 1, cost: 20}),//
+        new PieceDef({width: 2, height: 2, cost: 10}),//
+        // rotated
+        new PieceDef({height: 1, width: 1, cost: 10}),//
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 3, width: 1, cost: 20}),//
+        new PieceDef({height: 4, width: 1, cost: 20}),//
+        new PieceDef({height: 6, width: 1, cost: 20}),//
+        new PieceDef({height: 8, width: 1, cost: 20}),//
+        new PieceDef({height: 2, width: 2, cost: 10})//
+      ]
+    }
   },
   // 'Very Light Grey': {
   //   id: 208,
@@ -730,31 +1011,94 @@ export default {
   //   commonName: 'Light Blue',
   //   color: 'rgb(135, 192, 234)'
   // },
-  'Bright Pink': {
+  'Bright Purple': {
     id: 221,
     officialName: 'Bright Purple',
     commonName: 'Bright Pink',
-    color: 'rgb(222, 55, 139)'
+    color: 'rgb(222, 55, 139)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 4, height: 1, cost: 20})//
+      ],
+      plate: [
+        new PieceDef({width: 2, height: 1, cost: 10}),
+        // rotated
+        new PieceDef({width: 1, height: 2, cost: 10}),
+      ],
+      flat: [
+      ]
+    }
   },
-  'Light Pink': {
+  'Light Purple': {
     id: 222,
     officialName: 'Light Purple',
     commonName: 'Light Pink',
-    color: 'rgb(238, 157, 195)'
+    color: 'rgb(238, 157, 195)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 4, height: 1, cost: 20})//
+      ],
+      plate: [
+        new PieceDef({width: 1, height: 1, cost: 10}),//
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 15}),//
+        new PieceDef({width: 6, height: 2, cost: 25}),//
+        // rotated
+        new PieceDef({height: 1, width: 1, cost: 10}),//
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 15}),//
+        new PieceDef({height: 6, width: 2, cost: 25})//
+      ],
+      flat: [
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        new PieceDef({width: 2, height: 2, cost: 10}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 20}),//
+        new PieceDef({height: 2, width: 2, cost: 10})//
+      ]
+    }
   },
-  Blonde: {
+  'Cool Yellow': {
     id: 226,
     officialName: 'Cool Yellow',
     commonName: 'Blonde',
-    color: 'rgb(255, 255, 153)'
+    color: 'rgb(255, 255, 153)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 2, height: 1, cost: 15}),//
+        new PieceDef({width: 4, height: 1, cost: 20})//
+      ],
+      plate: [],
+      flat: []
+    }
   },
-  'Dark Purple': {
+  'Medium Lilac': {
     id: 268,
     officialName: 'Medium Lilac',
     commonName: 'Dark Purple',
-    color: 'rgb(44, 21, 119)'
+    color: 'rgb(44, 21, 119)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 2, height: 1, cost: 15})//
+      ],
+      plate: [
+        new PieceDef({width: 3, height: 2, cost: 20}),//
+        // rotated
+        new PieceDef({height: 3, width: 2, cost: 20})//
+      ],
+      flat: [
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10})//
+      ]
+    }
   },
-  // 'Light Flesh': {
+  // 'Light Nougat': {
   //   id: 283,
   //   officialName: 'Light Nougat',
   //   commonName: 'Light Flesh',
@@ -764,9 +1108,27 @@ export default {
     id: 308,
     officialName: 'Dark Brown',
     commonName: 'Dark Brown',
-    color: 'rgb(48, 15, 6)'
+    color: 'rgb(48, 15, 6)',
+    availablePieces: {
+      brick: [
+      ],
+      plate: [
+        new PieceDef({width: 8, height: 1, cost: 25}),//
+        new PieceDef({width: 6, height: 2, cost: 25}),//
+        // rotated
+        new PieceDef({height: 8, width: 1, cost: 25}),//
+        new PieceDef({height: 6, width: 2, cost: 25})//
+      ],
+      flat: [
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        new PieceDef({width: 4, height: 1, cost: 20}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10}),//
+        new PieceDef({height: 4, width: 1, cost: 20})//
+      ]
+    }
   },
-  // 'Medium Dark Flesh': {
+  // 'Medium Nougat': {
   //   id: 312,
   //   officialName: 'Medium Nougat',
   //   commonName: 'Medium Dark Flesh',
@@ -776,7 +1138,19 @@ export default {
     id: 321,
     officialName: 'Dark Azur',
     commonName: 'Dark Azur',
-    color: 'rgb(70, 155, 195)'
+    color: 'rgb(70, 155, 195)',
+    availablePieces: {
+      brick: [
+        new PieceDef({width: 2, height: 1, cost: 15})//
+      ],
+      plate: [
+        new PieceDef({width: 2, height: 1, cost: 10}),//
+        // rotated
+        new PieceDef({height: 2, width: 1, cost: 10})//
+      ],
+      flat: [
+      ]
+    }
   },
   // Azure: {
   //   id: 322,
