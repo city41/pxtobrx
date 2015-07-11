@@ -6,8 +6,8 @@ import Dispatcher from '../core/Dispatcher';
 import ActionTypes from '../constants/ActionTypes';
 import convertFromImageData from '../brix/convertFromImageData';
 import rectCalculation from '../brix/rectCalculation';
-import divideRect from '../brix/divideRect';
-import pieceSets from '../constants/PieceSets';
+import assignColorAndGetPieces from '../brix/assignColorAndGetPieces';
+import BrickColors from '../constants/BrickColors';
 
 const CHANGE_EVENT = 'change';
 
@@ -24,25 +24,28 @@ const directions = [
   { x: -1, y: -1 }
 ];
 
+function scaleRects(rects, scale) {
+  return _.map(rects, (r) => {
+    r.x *= scale;
+    r.y *= scale;
+    r.width *= scale;
+    r.height *= scale;
+    r.area = r.width * r.height;
+    return r;
+  });
+}
+
 function calcNeededPieces(input, type, scale) {
-  if (!input || !type) {
+  if (!input || !type || !scale) {
     return [];
   }
 
   let neededPieceCandidates = _.map(directions, (direction) => {
     let rects = rectCalculation(input, direction);
-
-    rects = _.map(rects, (r) => {
-      r.x *= scale;
-      r.y *= scale;
-      r.width *= scale;
-      r.height *= scale;
-      r.area = r.width * r.height;
-      return r;
-    });
+    rects = scaleRects(rects, scale);
 
     return _.flatten(_.map(rects, (rect) => {
-      return divideRect(rect, pieceSets[type], rect.value);
+      return assignColorAndGetPieces(rect, rect.value, type, BrickColors);
     }));
   });
 

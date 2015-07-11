@@ -120,7 +120,7 @@ class App extends React.Component {
                 <Sample src="/img/samples/samus.png" />
                 <Sample src="/img/samples/thwomp.png" />
                 <Sample src="/img/samples/smb3-tanooki-mario.png" />
-                <Sample src="/img/samples/super-metroid.png" />
+                <Sample src="/img/samples/test4x4.png" />
               </div>
             </div>
           </div>
