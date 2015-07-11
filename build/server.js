@@ -5722,6 +5722,11 @@ module.exports =
             'div',
             { className: 'results-container' },
             _react2['default'].createElement(
+              'h2',
+              null,
+              'Build Instructions'
+            ),
+            _react2['default'].createElement(
               'section',
               null,
               _react2['default'].createElement(
@@ -5831,6 +5836,11 @@ module.exports =
             'section',
             { className: 'drag-section' },
             _react2['default'].createElement(
+              'h2',
+              null,
+              'Choose an Image'
+            ),
+            _react2['default'].createElement(
               'div',
               { className: 'grid' },
               _react2['default'].createElement(
@@ -5863,8 +5873,17 @@ module.exports =
           _react2['default'].createElement(
             'section',
             { className: 'choose-section' },
-            _react2['default'].createElement(_ChoosePieceType2['default'], { choosable: !!this.state.dataUrl, chosenPieceType: this.state.chosenPieceType }),
-            _react2['default'].createElement(_ChooseScale2['default'], { choosable: !!this.state.dataUrl, chosenScale: this.state.chosenScale })
+            _react2['default'].createElement(
+              'div',
+              { className: this.state.dataUrl ? 'choose-section-container choosable' : 'choose-section-container' },
+              _react2['default'].createElement(
+                'h2',
+                null,
+                'Pick Your Pieces and Sizing'
+              ),
+              _react2['default'].createElement(_ChoosePieceType2['default'], { choosable: !!this.state.dataUrl, chosenPieceType: this.state.chosenPieceType }),
+              _react2['default'].createElement(_ChooseScale2['default'], { choosable: !!this.state.dataUrl, chosenScale: this.state.chosenScale })
+            )
           ),
           this.getResults(this.state.pixelData)
         );
@@ -7277,7 +7296,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#FFFCFC;color:#074987}.alpha{font-size:.5em}section{width:100%;padding:20px}section.drag-section{background-color:#074987}.drag-header{color:#90a7bc}section.choose-section{background-color:#f2a60c}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{border:10px solid #000;padding:10px;background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.preview-image{width:40%;height:40%}", ""]);
+  exports.push([module.id, ".app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#FFFCFC;color:#074987}.alpha{font-size:.5em}section{width:100%;padding-bottom:40px}section.drag-section{background-color:#074987}.drag-header{color:#90a7bc}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.3}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.preview-image{width:40%;height:40%}", ""]);
 
 /***/ },
 /* 130 */
@@ -7291,14 +7310,14 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".choose-piece-type{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.3}.choose-piece-type.choosable{opacity:1}.choose-piece-type .piece-type-container{padding:4px;height:160px;display:inline-block;margin:2px;background-color:grey;color:#000;float:left;position:relative}.choose-piece-type .focused{background-color:red;color:#fff}.choose-piece-type .piece-type-title{position:absolute;bottom:10px}", ""]);
+  exports.push([module.id, ".choose-piece-type .piece-type-container{padding:4px;height:160px;display:inline-block;margin:2px;background-color:grey;color:#000;float:left;position:relative}.choose-piece-type .focused{background-color:red;color:#fff}.choose-piece-type .piece-type-title{position:absolute;bottom:10px}", ""]);
 
 /***/ },
 /* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".choose-scale{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.3}.choose-scale.choosable{opacity:1}.choose-scale .scale-container{padding:4px;display:inline-block;margin:2px;background-color:grey;color:#000}.choose-scale .focused{background-color:red;color:#fff}", ""]);
+  exports.push([module.id, ".choose-scale .scale-container{padding:4px;display:inline-block;margin:2px;background-color:grey;color:#000}.choose-scale .focused{background-color:red;color:#fff}", ""]);
 
 /***/ },
 /* 133 */
@@ -7312,14 +7331,14 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".dropzone{display:inline-block;color:#90A7BC}.dropzone .dropzone-explanation{text-align:center;padding:20px}.error{background-color:red;color:#fff;padding:8px;font-weight:700}", ""]);
+  exports.push([module.id, ".dropzone-explanation{text-align:center;margin:auto}.error{background-color:red;color:#fff;padding:8px;font-weight:700}", ""]);
 
 /***/ },
 /* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".drop-zone{border:3px dashed #90A7BC;color:#90A7BC;padding:20px;text-align:center;height:100%}.mobile-input-file{margin:15px 0}", ""]);
+  exports.push([module.id, ".drop-zone{border:3px dashed #90A7BC;color:#90A7BC;padding:20px;text-align:center;min-height:140px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.mobile-input-file{margin:15px 0}", ""]);
 
 /***/ },
 /* 136 */

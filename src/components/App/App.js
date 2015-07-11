@@ -51,6 +51,7 @@ class App extends React.Component {
     if (width && height && this.state.neededPieces.length) {
       return (
         <div className="results-container">
+          <h2>Build Instructions</h2>
           <section>
             <div className="grid">
               <div className="col-3-12">
@@ -105,6 +106,7 @@ class App extends React.Component {
       <div>
         <h1 className="app-title">pxtobrx <span className="alpha">(this site is not done yet!)</span></h1>
         <section className="drag-section">
+          <h2>Choose an Image</h2>
           <div className="grid">
             <div className="col-4-12">
               <Drag
@@ -124,8 +126,11 @@ class App extends React.Component {
           </div>
         </section>
         <section className="choose-section">
-          <ChoosePieceType choosable={!!this.state.dataUrl} chosenPieceType={this.state.chosenPieceType} />
-          <ChooseScale choosable={!!this.state.dataUrl} chosenScale={this.state.chosenScale} />
+          <div className={this.state.dataUrl ? 'choose-section-container choosable' : 'choose-section-container'}>
+            <h2>Pick Your Pieces and Sizing</h2>
+            <ChoosePieceType choosable={!!this.state.dataUrl} chosenPieceType={this.state.chosenPieceType} />
+            <ChooseScale choosable={!!this.state.dataUrl} chosenScale={this.state.chosenScale} />
+          </div>
         </section>
         {this.getResults(this.state.pixelData)}
       </div>

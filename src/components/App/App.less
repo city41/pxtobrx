@@ -14,7 +14,7 @@
 
 section {
   width: 100%;
-  padding: 20px;
+  padding-bottom: 40px;
 }
 
 section.drag-section {
@@ -27,6 +27,15 @@ section.drag-section {
 
 section.choose-section {
   background-color: @lego-orange;
+
+  .choose-section-container {
+    transition: opacity 0.8s;
+    opacity: 0.3;
+
+    &.choosable {
+      opacity: 1
+    }
+  }
 }
 
 section:last-of-type {
@@ -39,8 +48,6 @@ section:last-of-type {
 }
 
 .results-container {
-  border: 10px solid black;
-  padding: 10px;
   background-color: @lego-red;
   animation: fade-in 1s;
 }
