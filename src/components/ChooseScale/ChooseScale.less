@@ -1,0 +1,28 @@
+/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+
+@import '../variables.less';
+
+.choose-scale {
+  transition: opacity 0.8s;
+  opacity: 0.3;
+
+  &.choosable {
+    opacity: 1
+  }
+
+  .scale-container {
+    padding: 4px;
+    display: inline-block;
+    margin: 2px;
+    background-color: grey;
+    color: black;
+  }
+
+  .focused {
+    background-color: red;
+    color: white;
+  }
+
+  .scale-title {
+  }
+}

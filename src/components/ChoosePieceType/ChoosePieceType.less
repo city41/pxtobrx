@@ -1,0 +1,33 @@
+/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
+
+@import '../variables.less';
+
+.choose-piece-type {
+  transition: opacity 0.8s;
+  opacity: 0.3;
+
+  &.choosable {
+    opacity: 1
+  }
+
+  .piece-type-container {
+    padding: 4px;
+    height: 160px;
+    display: inline-block;
+    margin: 2px;
+    background-color: grey;
+    color: black;
+    float: left;
+    position: relative;
+  }
+
+  .focused {
+    background-color: red;
+    color: white;
+  }
+
+  .piece-type-title {
+    position: absolute;
+    bottom: 10px;
+  }
+}

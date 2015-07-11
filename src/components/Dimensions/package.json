@@ -1,0 +1,6 @@
+{
+  "name": "Dimensions",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./Dimensions.js"
+}

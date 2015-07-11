@@ -1,0 +1,51 @@
+@import '../variables.less';
+
+.app-title {
+  margin: 0;
+  padding: 0 0 0 20px;
+  width: 100%;
+  background-color: #FFFCFC;
+  color: #074987;
+}
+
+.alpha {
+  font-size: 0.5em;
+}
+
+section {
+  width: 100%;
+  padding: 20px;
+}
+
+section.drag-section {
+  background-color: @lego-blue;
+}
+
+.drag-header {
+  color: @lego-blue-lighter;
+}
+
+section.choose-section {
+  background-color: @lego-orange;
+}
+
+section:last-of-type {
+  border-bottom: 0
+}
+
+@keyframes fade-in {
+    from {opacity: 0;}
+    to {opacity: 1}
+}
+
+.results-container {
+  border: 10px solid black;
+  padding: 10px;
+  background-color: @lego-red;
+  animation: fade-in 1s;
+}
+
+.preview-image {
+  width: 40%;
+  height: 40%;
+}
