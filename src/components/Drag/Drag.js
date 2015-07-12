@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import MobileDetect from 'mobile-detect';
 import styles from './Drag.less';
 import withStyles from '../../decorators/withStyles';
 import AppActions from '../../actions/AppActions';
@@ -48,7 +49,9 @@ class Drag extends React.Component {
   }
 
   onDrop(files) {
-    if (files[0].type !== 'image/png' && files[0].type !== 'image/gif') {
+    const md = new MobileDetect(window.navigator.userAgent);
+
+    if (files[0].type !== 'image/png' && files[0].type !== 'image/gif' && !md.mobile()) {
       this.setState({
         error: 'only pngs or gifs will work'
       });
