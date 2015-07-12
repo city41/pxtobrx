@@ -6737,10 +6737,10 @@ module.exports =
                   _react2['default'].createElement(
                     'div',
                     null,
-                    _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/megaman.png' }),
                     _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/samus.png' }),
                     _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/thwomp.png' }),
                     _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/smb3-tanooki-mario.png' }),
+                    _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/megaman.png' }),
                     _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/super-metroid.png' })
                   )
                 )
