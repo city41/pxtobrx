@@ -1223,42 +1223,12 @@ export default {
   //   commonName: 'Glow-in-the-dark',
   //   color: 'rgb(245, 243, 215)'
   // },
-  'Bright Yellowish Green': {
-    id: 326,
-    officialName: 'Bright Yellowish Green',
-    commonName: 'Unikitty Green',
-    color: 'rgb(226, 249, 154)',
-    availablePieces: {
-      brick: [
-        new PieceDef({width: 1, height: 1, cost: 10}),//
-        new PieceDef({width: 2, height: 1, cost: 15}),//
-        new PieceDef({width: 4, height: 1, cost: 20})//
-      ],
-      plate: [
-        new PieceDef({width: 2, height: 1, cost: 10}),//
-        new PieceDef({width: 4, height: 1, cost: 15}),//
-        new PieceDef({width: 2, height: 2, cost: 15}),//
-        new PieceDef({width: 4, height: 2, cost: 20}),//
-        new PieceDef({width: 6, height: 2, cost: 25}),//
-        new PieceDef({width: 6, height: 6, cost: 70}),//
-        // rotated
-        new PieceDef({height: 2, width: 1, cost: 10}),//
-        new PieceDef({height: 4, width: 1, cost: 15}),//
-        new PieceDef({height: 2, width: 2, cost: 15}),//
-        new PieceDef({height: 4, width: 2, cost: 20}),//
-        new PieceDef({height: 6, width: 2, cost: 25}),//
-        new PieceDef({height: 6, width: 6, cost: 70})//
-      ],
-      flat: [
-        new PieceDef({width: 1, height: 1, cost: 10}),//
-        new PieceDef({width: 2, height: 1, cost: 10}),//
-        new PieceDef({width: 4, height: 1, cost: 20}),//
-        // rotated
-        new PieceDef({height: 2, width: 1, cost: 10}),//
-        new PieceDef({height: 4, width: 1, cost: 20})//
-      ]
-    }
-  },
+  // 'Bright Yellowish Green': {
+  //   id: 326,
+  //   officialName: 'Bright Yellowish Green',
+  //   commonName: 'Unikitty Green',
+  //   color: 'rgb(226, 249, 154)'
+  // },
   'Olive Green': {
     id: 330,
     officialName: 'Olive Green',

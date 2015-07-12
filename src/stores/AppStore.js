@@ -13,6 +13,7 @@ const CHANGE_EVENT = 'change';
 
 let calculating = false;
 let showAbout = false;
+let showAvailability = false;
 let chosenPieceType;
 let chosenScale = 1;
 let formattedPixelData = [[]];
@@ -77,6 +78,10 @@ let AppStore = Object.assign({}, EventEmitter.prototype, {
     return showAbout;
   },
 
+  getShowAvailability() {
+    return showAvailability;
+  },
+
   getNeededPieces() {
     return neededPieces;
   },
@@ -133,6 +138,11 @@ AppStore.dispatchToken = Dispatcher.register((action) => {
   switch (action.type) {
     case ActionTypes.TOGGLE_ABOUT:
       showAbout = !showAbout;
+      AppStore.emitChange();
+      break;
+
+    case ActionTypes.TOGGLE_AVAILABILITY:
+      showAvailability = !showAvailability;
       AppStore.emitChange();
       break;
 

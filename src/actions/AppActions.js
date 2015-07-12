@@ -37,5 +37,11 @@ export default {
     Dispatcher.dispatch({
       type: ActionTypes.TOGGLE_ABOUT
     });
+  },
+
+  onToggleAvailability() {
+    Dispatcher.dispatch({
+      type: ActionTypes.TOGGLE_AVAILABILITY
+    });
   }
 };

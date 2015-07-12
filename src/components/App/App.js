@@ -9,6 +9,7 @@ import About from '../About';
 import Drag from '../Drag';
 import Sample from '../Sample';
 import ChoosePieceType from '../ChoosePieceType';
+import Availability from '../Availability';
 import ChooseScale from '../ChooseScale';
 import PieceList from '../PieceList';
 import PieceMap from '../PieceMap';
@@ -22,6 +23,7 @@ function getState() {
   return {
     calculating: AppStore.getCalculating(),
     showAbout: AppStore.getShowAbout(),
+    showAvailability: AppStore.getShowAvailability(),
     pixelData: AppStore.getPixelData(),
     neededPieces: AppStore.getNeededPieces(),
     chosenPieceType: AppStore.getChosenPieceType(),
@@ -146,6 +148,10 @@ class App extends React.Component {
               <div className="col-6-12">
                 <h2>Pick Piece Type</h2>
                 <ChoosePieceType choosable={!!this.state.dataUrl} chosenPieceType={this.state.chosenPieceType} />
+                <a className="show-availability-link" onClick={AppActions.onToggleAvailability}>{this.state.showAvailability ? 'hide' : 'show'} availability</a>
+                <div style={{display: this.state.showAvailability ? 'block' : 'none'}}>
+                  <Availability />
+                </div>
               </div>
               <div className="col-6-12">
                 <h2>And Scale</h2>
