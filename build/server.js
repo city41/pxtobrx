@@ -2798,6 +2798,7 @@ module.exports =
 
   var CHANGE_EVENT = 'change';
 
+  var calculating = false;
   var showAbout = false;
   var chosenPieceType = undefined;
   var chosenScale = 1;
@@ -2818,29 +2819,38 @@ module.exports =
     });
   }
 
-  function calcNeededPieces(input, type, scale) {
-    if (!input || !type || !scale) {
-      return [];
-    }
+  function calcNeededPieces(input, type, scale, callback) {
+    setTimeout(function () {
+      if (!input || !type || !scale) {
+        callback([]);
+        return;
+      }
 
-    var neededPieceCandidates = _lodash2['default'].map(directions, function (direction) {
-      var rects = (0, _brixRectCalculation2['default'])(input, direction);
-      rects = scaleRects(rects, scale);
+      var neededPieceCandidates = _lodash2['default'].map(directions, function (direction) {
+        var rects = (0, _brixRectCalculation2['default'])(input, direction);
+        rects = scaleRects(rects, scale);
 
-      return _lodash2['default'].flatten(_lodash2['default'].map(rects, function (rect) {
-        return (0, _brixAssignColorAndGetPieces2['default'])(rect, rect.value, type, _constantsBrickColors2['default']);
-      }));
-    });
+        return _lodash2['default'].flatten(_lodash2['default'].map(rects, function (rect) {
+          return (0, _brixAssignColorAndGetPieces2['default'])(rect, rect.value, type, _constantsBrickColors2['default']);
+        }));
+      });
 
-    return _lodash2['default'].min(neededPieceCandidates, function (candidate) {
-      return _lodash2['default'].reduce(candidate, function (accum, p) {
-        // TODO: allow optimizing on different factors, such as number of pieces
-        return accum + p.cost;
-      }, 0);
-    });
+      var determinedPieces = _lodash2['default'].min(neededPieceCandidates, function (candidate) {
+        return _lodash2['default'].reduce(candidate, function (accum, p) {
+          // TODO: allow optimizing on different factors, such as number of pieces
+          return accum + p.cost;
+        }, 0);
+      });
+
+      callback(determinedPieces);
+    }, 100);
   }
 
   var AppStore = Object.assign({}, _eventemitter32['default'].prototype, {
+    getCalculating: function getCalculating() {
+      return calculating;
+    },
+
     getPixelData: function getPixelData() {
       return formattedPixelData;
     },
@@ -2871,6 +2881,7 @@ module.exports =
      * @returns {Boolean} Indication if we've emitted an event.
      */
     emitChange: function emitChange() {
+      console.log('emitChange, calculating? ' + calculating);
       return this.emit(CHANGE_EVENT);
     },
 
@@ -2894,6 +2905,12 @@ module.exports =
 
   });
 
+  function onNeededPieces(pieces) {
+    neededPieces = pieces;
+    calculating = false;
+    AppStore.emitChange();
+  }
+
   AppStore.dispatchToken = _coreDispatcher2['default'].register(function (action) {
 
     switch (action.type) {
@@ -2904,19 +2921,22 @@ module.exports =
 
       case _constantsActionTypes2['default'].IMAGE_DATA:
         formattedPixelData = (0, _brixConvertFromImageData2['default'])(action.pixels, action.width, action.height);
-        neededPieces = calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale);
+        calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale, onNeededPieces);
+        calculating = true;
         AppStore.emitChange();
         break;
 
       case _constantsActionTypes2['default'].PIECE_TYPE:
         chosenPieceType = action.pieceType;
-        neededPieces = calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale);
+        calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale, onNeededPieces);
+        calculating = true;
         AppStore.emitChange();
         break;
 
       case _constantsActionTypes2['default'].CHOSEN_SCALE:
         chosenScale = action.chosenScale;
-        neededPieces = calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale);
+        calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale, onNeededPieces);
+        calculating = true;
         AppStore.emitChange();
         break;
 
@@ -6544,6 +6564,7 @@ module.exports =
 
   function getState() {
     return {
+      calculating: _storesAppStore2['default'].getCalculating(),
       showAbout: _storesAppStore2['default'].getShowAbout(),
       pixelData: _storesAppStore2['default'].getPixelData(),
       neededPieces: _storesAppStore2['default'].getNeededPieces(),
@@ -6682,13 +6703,20 @@ module.exports =
       value: function render() {
         var about = this.state.showAbout && _react2['default'].createElement(_About2['default'], null);
 
+        console.log('this.state.calculating: ' + this.state.calculating);
+
         return _react2['default'].createElement(
           'div',
           null,
+          _react2['default'].createElement(
+            'div',
+            { style: { visibility: this.state.calculating ? '' : 'hidden' }, className: 'loading' },
+            'calculating ...'
+          ),
           about,
           _react2['default'].createElement(
             'span',
-            { className: 'about-link', style: { float: 'right' } },
+            { className: 'about-link' },
             _react2['default'].createElement(
               'a',
               { onClick: _actionsAppActions2['default'].onToggleAbout },
@@ -6707,7 +6735,7 @@ module.exports =
           ),
           _react2['default'].createElement(
             'section',
-            { className: 'drag-section' },
+            { className: 'first-section drag-section' },
             _react2['default'].createElement(
               'div',
               { className: 'grid' },
@@ -8177,7 +8205,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(5)();
-  exports.push([module.id, ".about-link,.app-title{height:50px;line-height:50px}.app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#fffcfc;color:#074987}.alpha{font-size:.5em}.about-link{margin-right:20px}.about-link a{color:#074987;text-decoration:none;cursor:pointer}section{width:100%;padding:0 0 40px 20px}section h2{padding:5px 0 20px}section.drag-section{background-color:#074987}.drag-header,section.drag-section h2{color:#90a7bc}.samples-container{margin-left:30px}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.2}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.results-container h2{text-align:center;padding:10px;background-color:#007b28;color:#fff;font-size:1.3em;margin:0 0 40px -20px}.results-container .react-tabs [role=tab]{background-color:#777}.results-container .react-tabs [role=tab]:hover,.results-container .react-tabs [role=tab][aria-selected=true]{border-radius:0;background-color:#fff}.preview-image{width:60%;height:60%}", ""]);
+  exports.push([module.id, ".about-link,.app-title,.loading{height:50px;line-height:50px;position:fixed;right:0;top:0}.loading{left:0;z-index:6;text-align:center;color:#c71414}.app-title{left:0;z-index:5;margin:0;padding:0 0 0 20px;width:100%;background-color:#fffcfc;color:#074987}.alpha{font-size:.5em}.about-link{margin-right:20px;z-index:6}.about-link a{color:#074987;text-decoration:none;cursor:pointer}section{width:100%;padding:0 0 40px 20px}section h2{padding:5px 0 20px}section.first-section{margin-top:50px}section.drag-section{background-color:#074987}.drag-header,section.drag-section h2{color:#90a7bc}.samples-container{margin-left:30px}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.2}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.results-container h2{text-align:center;padding:10px;background-color:#007b28;color:#fff;font-size:1.3em;margin:0 0 40px -20px}.results-container .react-tabs [role=tab]{background-color:#777}.results-container .react-tabs [role=tab]:hover,.results-container .react-tabs [role=tab][aria-selected=true]{border-radius:0;background-color:#fff}.preview-image{width:60%;height:60%}", ""]);
 
 /***/ },
 /* 132 */

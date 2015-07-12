@@ -2,7 +2,24 @@
 
 @title-height: 50px;
 
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: @title-height;
+  line-height: @title-height;
+  z-index: 6;
+  text-align: center;
+  color: @lego-red; 
+}
+
 .app-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
   margin: 0;
   padding: 0 0 0 20px;
   width: 100%;
@@ -20,6 +37,10 @@
   height: @title-height;
   line-height: @title-height;
   margin-right: 20px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 6;
 
   a {
     color: @lego-blue;
@@ -34,6 +55,10 @@ section {
 
   h2 {
     padding: 5px 0 20px 0;
+  }
+
+  &.first-section {
+    margin-top: @title-height;
   }
 }
 

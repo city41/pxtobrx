@@ -20,6 +20,7 @@ import AppStore from '../../stores/AppStore';
 
 function getState() {
   return {
+    calculating: AppStore.getCalculating(),
     showAbout: AppStore.getShowAbout(),
     pixelData: AppStore.getPixelData(),
     neededPieces: AppStore.getNeededPieces(),
@@ -107,14 +108,19 @@ class App extends React.Component {
   render() {
     let about = this.state.showAbout && <About />;
 
+    console.log('this.state.calculating: ' + this.state.calculating);
+
     return (
       <div>
+        <div style={{visibility: this.state.calculating ? '' : 'hidden'}} className="loading">
+          calculating ...
+        </div>
         {about}
-        <span className="about-link" style={{float: 'right'}}>
+        <span className="about-link">
           <a onClick={AppActions.onToggleAbout}>About</a>
         </span>
         <h1 className="app-title">pxtobrx <span className="alpha">v0.1</span></h1>
-        <section className="drag-section">
+        <section className="first-section drag-section">
           <div className="grid">
             <div className="col-4-12">
               <h2>Choose an Image</h2>
