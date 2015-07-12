@@ -7872,14 +7872,16 @@ module.exports =
               { className: 'toggle-button ' + (this.state.fitToWindow && 'toggled-on'), onClick: function () {
                   return _this2.setState({ fitToWindow: !_this2.state.fitToWindow });
                 } },
-              'fit to window'
+              this.state.fitToWindow && '✓',
+              ' fit to window'
             ),
             _react2['default'].createElement(
               'div',
               { className: 'toggle-button ' + (this.state.hideBorders && 'toggled-on'), onClick: function () {
                   return _this2.setState({ hideBorders: !_this2.state.hideBorders });
                 } },
-              'hide brick borders'
+              this.state.hideBorders && '✓',
+              ' hide brick borders'
             )
           ),
           _react2['default'].createElement('canvas', { ref: 'pieceMapCanvas' })

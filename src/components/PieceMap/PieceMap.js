@@ -63,10 +63,10 @@ class PieceMap extends React.Component {
       <div className="piece-map">
         <div className="piece-map-options">
           <div className={`toggle-button ${this.state.fitToWindow && 'toggled-on'}`} onClick={() => this.setState({fitToWindow: !this.state.fitToWindow})}>
-            fit to window
+            {this.state.fitToWindow && '✓'} fit to window
           </div>
           <div className={`toggle-button ${this.state.hideBorders && 'toggled-on'}`} onClick={() => this.setState({hideBorders: !this.state.hideBorders})}>
-            hide brick borders
+            {this.state.hideBorders && '✓'} hide brick borders
           </div>
         </div>
         <canvas ref="pieceMapCanvas" />
