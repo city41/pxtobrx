@@ -59,7 +59,7 @@ class PieceList extends React.Component {
         let isBagged = this.state[`${cg[1]}${sizeAndQuantity[0]}`];
 
         return (
-          <tr key={`${cg[0]}-${sizeAndQuantity.join('-')}`}>
+          <tr className={headerTd && 'header-row'} key={`${cg[0]}-${sizeAndQuantity.join('-')}`}>
             {headerTd}
             <td className={isBagged && 'bagged'}>{sizeAndQuantity[0]}</td>
             <td className={isBagged && 'bagged'}>{sizeAndQuantity[1]}</td>
@@ -72,10 +72,14 @@ class PieceList extends React.Component {
     return (
       <div className="piece-list-container">
         <table>
-          <tr>
-            <th>Color</th><th>size</th><th>quantity</th><th>bagged</th>
-          </tr>
-          {rows}
+          <thead>
+            <tr>
+              <th>Color</th><th>size</th><th>quantity</th><th>bagged</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows}
+          </tbody>
         </table>
       </div>
     );

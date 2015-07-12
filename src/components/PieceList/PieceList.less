@@ -8,13 +8,18 @@
   }
 
   th {
-    background-color: black;
-    color: white;
+    background-color: white;
+    color: black;
     font-weight: bold;
   }
 
-  tr:nth-child(odd) {
-    background: @lego-red-lighter;
+  tr{
+    &:nth-child(odd) {
+      background: @lego-red-lighter;
+    }
+    &.header-row {
+      border-top: 4px solid white;
+    }
   }
 
   td.bagged {

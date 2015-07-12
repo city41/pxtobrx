@@ -7687,7 +7687,7 @@ module.exports =
 
             return _react2['default'].createElement(
               'tr',
-              { key: cg[0] + '-' + sizeAndQuantity.join('-') },
+              { className: headerTd && 'header-row', key: cg[0] + '-' + sizeAndQuantity.join('-') },
               headerTd,
               _react2['default'].createElement(
                 'td',
@@ -7715,30 +7715,38 @@ module.exports =
             'table',
             null,
             _react2['default'].createElement(
-              'tr',
+              'thead',
               null,
               _react2['default'].createElement(
-                'th',
+                'tr',
                 null,
-                'Color'
-              ),
-              _react2['default'].createElement(
-                'th',
-                null,
-                'size'
-              ),
-              _react2['default'].createElement(
-                'th',
-                null,
-                'quantity'
-              ),
-              _react2['default'].createElement(
-                'th',
-                null,
-                'bagged'
+                _react2['default'].createElement(
+                  'th',
+                  null,
+                  'Color'
+                ),
+                _react2['default'].createElement(
+                  'th',
+                  null,
+                  'size'
+                ),
+                _react2['default'].createElement(
+                  'th',
+                  null,
+                  'quantity'
+                ),
+                _react2['default'].createElement(
+                  'th',
+                  null,
+                  'bagged'
+                )
               )
             ),
-            rows
+            _react2['default'].createElement(
+              'tbody',
+              null,
+              rows
+            )
           )
         );
       }
@@ -8223,7 +8231,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(5)();
-  exports.push([module.id, ".piece-list-container{padding-top:40px}.piece-list-container td,.piece-list-container th{padding:5px 20px}.piece-list-container th{background-color:#000;color:#fff;font-weight:700}.piece-list-container tr:nth-child(odd){background:#bd5c5c}.piece-list-container td.bagged{text-decoration:line-through}.piece-list-container .simple-color-dark{color:#fff}.piece-list-container .simple-color-light{color:#000}", ""]);
+  exports.push([module.id, ".piece-list-container{padding-top:40px}.piece-list-container td,.piece-list-container th{padding:5px 20px}.piece-list-container th{background-color:#fff;color:#000;font-weight:700}.piece-list-container tr:nth-child(odd){background:#bd5c5c}.piece-list-container tr.header-row{border-top:4px solid #fff}.piece-list-container td.bagged{text-decoration:line-through}.piece-list-container .simple-color-dark{color:#fff}.piece-list-container .simple-color-light{color:#000}", ""]);
 
 /***/ },
 /* 140 */
