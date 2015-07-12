@@ -107,7 +107,7 @@ module.exports =
               var data = {
                 title: 'pxtobrx',
                 description: 'Convert video game sprites into Lego mosaics',
-                longDescription: 'Take your favorite game characters and get instructions and a piece list for building them out of Lego. Or amaze at how expensive (and large!) entire screenshots are when made out of Lego!',
+                longDescription: 'Take your favorite game characters and get instructions and a piece list for building them out of Lego. Or be amazed at how expensive (and large!) entire screenshots are when made out of Lego!',
                 imageUrl: 'http://www.pxtobrx.com/img/metaImage.png',
                 imageWidth: 1200,
                 imageHeight: 630,
