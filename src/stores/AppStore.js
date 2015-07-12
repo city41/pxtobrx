@@ -11,6 +11,7 @@ import BrickColors from '../constants/BrickColors';
 
 const CHANGE_EVENT = 'change';
 
+let calculating = false;
 let showAbout = false;
 let chosenPieceType;
 let chosenScale = 1;
@@ -36,29 +37,38 @@ function scaleRects(rects, scale) {
   });
 }
 
-function calcNeededPieces(input, type, scale) {
-  if (!input || !type || !scale) {
-    return [];
-  }
+function calcNeededPieces(input, type, scale, callback) {
+  setTimeout(() => {
+    if (!input || !type || !scale) {
+      callback([]);
+      return;
+    }
 
-  let neededPieceCandidates = _.map(directions, (direction) => {
-    let rects = rectCalculation(input, direction);
-    rects = scaleRects(rects, scale);
+    let neededPieceCandidates = _.map(directions, (direction) => {
+      let rects = rectCalculation(input, direction);
+      rects = scaleRects(rects, scale);
 
-    return _.flatten(_.map(rects, (rect) => {
-      return assignColorAndGetPieces(rect, rect.value, type, BrickColors);
-    }));
-  });
+      return _.flatten(_.map(rects, (rect) => {
+        return assignColorAndGetPieces(rect, rect.value, type, BrickColors);
+      }));
+    });
 
-  return _.min(neededPieceCandidates, (candidate) => {
-    return _.reduce(candidate, (accum, p) => {
-      // TODO: allow optimizing on different factors, such as number of pieces
-      return accum + p.cost;
-    }, 0);
-  });
+    let determinedPieces = _.min(neededPieceCandidates, (candidate) => {
+      return _.reduce(candidate, (accum, p) => {
+        // TODO: allow optimizing on different factors, such as number of pieces
+        return accum + p.cost;
+      }, 0);
+    });
+
+    callback(determinedPieces);
+  }, 100);
 }
 
 let AppStore = Object.assign({}, EventEmitter.prototype, {
+  getCalculating() {
+    return calculating;
+  },
+
   getPixelData() {
     return formattedPixelData;
   },
@@ -89,6 +99,7 @@ let AppStore = Object.assign({}, EventEmitter.prototype, {
    * @returns {Boolean} Indication if we've emitted an event.
    */
   emitChange() {
+    console.log('emitChange, calculating? ' + calculating);
     return this.emit(CHANGE_EVENT);
   },
 
@@ -112,6 +123,12 @@ let AppStore = Object.assign({}, EventEmitter.prototype, {
 
 });
 
+function onNeededPieces(pieces) {
+  neededPieces = pieces;
+  calculating = false;
+  AppStore.emitChange();
+}
+
 AppStore.dispatchToken = Dispatcher.register((action) => {
 
   switch (action.type) {
@@ -122,19 +139,22 @@ AppStore.dispatchToken = Dispatcher.register((action) => {
 
     case ActionTypes.IMAGE_DATA:
       formattedPixelData = convertFromImageData(action.pixels, action.width, action.height);
-      neededPieces = calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale);
+      calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale, onNeededPieces);
+      calculating = true;
       AppStore.emitChange();
       break;
 
     case ActionTypes.PIECE_TYPE:
       chosenPieceType = action.pieceType;
-      neededPieces = calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale);
+      calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale, onNeededPieces);
+      calculating = true;
       AppStore.emitChange();
       break;
 
     case ActionTypes.CHOSEN_SCALE:
       chosenScale = action.chosenScale;
-      neededPieces = calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale);
+      calcNeededPieces(formattedPixelData, chosenPieceType, chosenScale, onNeededPieces);
+      calculating = true;
       AppStore.emitChange();
       break;
 
