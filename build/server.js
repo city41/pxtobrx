@@ -6450,6 +6450,16 @@ module.exports =
               ' and include the sprite image in the bug report.'
             ),
             _react2['default'].createElement(
+              'h3',
+              null,
+              'The generated mosaic isn\'t using the best pieces possible'
+            ),
+            _react2['default'].createElement(
+              'p',
+              null,
+              'The algorithm for figuring out the mosaic is a tough one to crack. The current version is pretty good, but not perfect. I hope to both make the algorithm better, and add tools that allow you to tweak the mosaic manually.'
+            ),
+            _react2['default'].createElement(
               'div',
               { className: 'about-footer' },
               'made by ',
