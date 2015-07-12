@@ -108,8 +108,6 @@ class App extends React.Component {
   render() {
     let about = this.state.showAbout && <About />;
 
-    console.log('this.state.calculating: ' + this.state.calculating);
-
     return (
       <div>
         <div style={{visibility: this.state.calculating ? '' : 'hidden'}} className="loading">

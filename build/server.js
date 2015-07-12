@@ -2881,7 +2881,6 @@ module.exports =
      * @returns {Boolean} Indication if we've emitted an event.
      */
     emitChange: function emitChange() {
-      console.log('emitChange, calculating? ' + calculating);
       return this.emit(CHANGE_EVENT);
     },
 
@@ -6702,8 +6701,6 @@ module.exports =
       key: 'render',
       value: function render() {
         var about = this.state.showAbout && _react2['default'].createElement(_About2['default'], null);
-
-        console.log('this.state.calculating: ' + this.state.calculating);
 
         return _react2['default'].createElement(
           'div',

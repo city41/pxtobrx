@@ -99,7 +99,6 @@ let AppStore = Object.assign({}, EventEmitter.prototype, {
    * @returns {Boolean} Indication if we've emitted an event.
    */
   emitChange() {
-    console.log('emitChange, calculating? ' + calculating);
     return this.emit(CHANGE_EVENT);
   },
 
