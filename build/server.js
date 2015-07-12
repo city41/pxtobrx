@@ -6699,6 +6699,13 @@ module.exports =
         }
       }
     }, {
+      key: 'onAvailabilityClick',
+      value: function onAvailabilityClick() {
+        if (this.state.dataUrl) {
+          _actionsAppActions2['default'].onToggleAvailability();
+        }
+      }
+    }, {
       key: 'render',
       value: function render() {
         var about = this.state.showAbout && _react2['default'].createElement(_About2['default'], null);
@@ -6793,7 +6800,7 @@ module.exports =
                   _react2['default'].createElement(_ChoosePieceType2['default'], { choosable: !!this.state.dataUrl, chosenPieceType: this.state.chosenPieceType }),
                   _react2['default'].createElement(
                     'a',
-                    { className: 'show-availability-link', onClick: _actionsAppActions2['default'].onToggleAvailability },
+                    { className: 'show-availability-link', onClick: this.onAvailabilityClick.bind(this) },
                     this.state.showAvailability ? 'hide' : 'show',
                     ' availability'
                   ),

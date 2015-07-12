@@ -107,6 +107,12 @@ class App extends React.Component {
     }
   }
 
+  onAvailabilityClick() {
+    if (this.state.dataUrl) {
+      AppActions.onToggleAvailability();
+    }
+  }
+
   render() {
     let about = this.state.showAbout && <About />;
 
@@ -148,7 +154,7 @@ class App extends React.Component {
               <div className="col-6-12">
                 <h2>Pick Piece Type</h2>
                 <ChoosePieceType choosable={!!this.state.dataUrl} chosenPieceType={this.state.chosenPieceType} />
-                <a className="show-availability-link" onClick={AppActions.onToggleAvailability}>{this.state.showAvailability ? 'hide' : 'show'} availability</a>
+                <a className="show-availability-link" onClick={this.onAvailabilityClick.bind(this)}>{this.state.showAvailability ? 'hide' : 'show'} availability</a>
                 <div style={{display: this.state.showAvailability ? 'block' : 'none'}}>
                   <Availability />
                 </div>
