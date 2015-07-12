@@ -7738,7 +7738,7 @@ module.exports =
               ),
               _react2['default'].createElement(
                 'td',
-                { className: isBagged && 'bagged' },
+                null,
                 _react2['default'].createElement('input', { type: 'checkbox', onClick: _this.toggleBagged.bind(_this, cg[1], sizeAndQuantity[0]) })
               )
             );
@@ -8270,7 +8270,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(5)();
-  exports.push([module.id, ".piece-list-container{padding-top:40px}.piece-list-container td,.piece-list-container th{padding:5px 20px}.piece-list-container th{background-color:#fff;color:#000;font-weight:700}.piece-list-container tr:nth-child(odd){background:#bd5c5c}.piece-list-container tr.header-row{border-top:4px solid #fff}.piece-list-container td.bagged{text-decoration:line-through}.piece-list-container .simple-color-dark{color:#fff}.piece-list-container .simple-color-light{color:#000}", ""]);
+  exports.push([module.id, ".piece-list-container{padding-top:40px}.piece-list-container td,.piece-list-container th{padding:5px 20px;font-weight:700;text-align:center;min-width:90px}.piece-list-container th{background-color:#fff;color:#000;font-weight:700}.piece-list-container tr:nth-child(odd){background:#bd5c5c}.piece-list-container tr.header-row{border-top:4px solid #fff}.piece-list-container td.bagged{text-decoration:line-through;font-weight:400}.piece-list-container .simple-color-dark{color:#fff}.piece-list-container .simple-color-light{color:#000}", ""]);
 
 /***/ },
 /* 141 */

@@ -63,7 +63,7 @@ class PieceList extends React.Component {
             {headerTd}
             <td className={isBagged && 'bagged'}>{sizeAndQuantity[0]}</td>
             <td className={isBagged && 'bagged'}>{sizeAndQuantity[1]}</td>
-            <td className={isBagged && 'bagged'}><input type="checkbox" onClick={this.toggleBagged.bind(this, cg[1], sizeAndQuantity[0])}></input></td>
+            <td><input type="checkbox" onClick={this.toggleBagged.bind(this, cg[1], sizeAndQuantity[0])}></input></td>
           </tr>
         );
       });
