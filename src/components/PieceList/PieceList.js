@@ -24,7 +24,7 @@ class PieceList extends React.Component {
     let pieceGroups = _.countBy(this.props.pieces, (p) => {
       // using max/min so that rotated pieces get grouped into same group
       // this is a temporary solution for rotated pieces, see constants/PieceSets.js too
-      return `${p.value.commonName}:${Math.max(p.width, p.height)}:${Math.min(p.width, p.height)}`;
+      return `${p.value.officialName}:${Math.max(p.width, p.height)}:${Math.min(p.width, p.height)}`;
     });
 
     pieceGroups = _.pairs(pieceGroups);

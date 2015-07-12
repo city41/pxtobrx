@@ -7534,7 +7534,7 @@ module.exports =
         var pieceGroups = _lodash2['default'].countBy(this.props.pieces, function (p) {
           // using max/min so that rotated pieces get grouped into same group
           // this is a temporary solution for rotated pieces, see constants/PieceSets.js too
-          return p.value.commonName + ':' + Math.max(p.width, p.height) + ':' + Math.min(p.width, p.height);
+          return p.value.officialName + ':' + Math.max(p.width, p.height) + ':' + Math.min(p.width, p.height);
         });
 
         pieceGroups = _lodash2['default'].pairs(pieceGroups);
