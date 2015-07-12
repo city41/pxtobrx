@@ -136,7 +136,7 @@ class App extends React.Component {
             </div>
             <div className="col-8-12">
               <div className="samples-container">
-                <h3 className="drag-header">or ... try one of these</h3>
+                <h3 className="drag-header">or ... click one of these</h3>
                 <div>
                   <Sample src="/img/samples/samus.png" />
                   <Sample src="/img/samples/thwomp.png" />

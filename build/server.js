@@ -6765,7 +6765,7 @@ module.exports =
                   _react2['default'].createElement(
                     'h3',
                     { className: 'drag-header' },
-                    'or ... try one of these'
+                    'or ... click one of these'
                   ),
                   _react2['default'].createElement(
                     'div',
