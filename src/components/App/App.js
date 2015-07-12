@@ -5,7 +5,7 @@ import appStyles from './App.less';
 import withContext from '../../decorators/withContext';
 import withStyles from '../../decorators/withStyles';
 
-import FAQ from '../FAQ';
+import About from '../About';
 import Drag from '../Drag';
 import Sample from '../Sample';
 import ChoosePieceType from '../ChoosePieceType';
@@ -20,7 +20,7 @@ import AppStore from '../../stores/AppStore';
 
 function getState() {
   return {
-    showFaq: AppStore.getShowFaq(),
+    showAbout: AppStore.getShowAbout(),
     pixelData: AppStore.getPixelData(),
     neededPieces: AppStore.getNeededPieces(),
     chosenPieceType: AppStore.getChosenPieceType(),
@@ -105,13 +105,13 @@ class App extends React.Component {
   }
 
   render() {
-    let faq = this.state.showFaq && <FAQ />;
+    let about = this.state.showAbout && <About />;
 
     return (
       <div>
-        {faq}
-        <span className="faq-link" style={{float: 'right'}}>
-          <a onClick={AppActions.onToggleFaq}>FAQ</a>
+        {about}
+        <span className="about-link" style={{float: 'right'}}>
+          <a onClick={AppActions.onToggleAbout}>About</a>
         </span>
         <h1 className="app-title">pxtobrx <span className="alpha">v0.1</span></h1>
         <section className="drag-section">

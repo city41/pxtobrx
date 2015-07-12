@@ -33,9 +33,9 @@ export default {
     });
   },
 
-  onToggleFaq() {
+  onToggleAbout() {
     Dispatcher.dispatch({
-      type: ActionTypes.TOGGLE_FAQ
+      type: ActionTypes.TOGGLE_ABOUT
     });
   }
 };

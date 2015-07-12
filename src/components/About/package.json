@@ -1,6 +1,6 @@
 {
-  "name": "FAQ",
+  "name": "About",
   "version": "0.0.0",
   "private": true,
-  "main": "./FAQ.js"
+  "main": "./About.js"
 }

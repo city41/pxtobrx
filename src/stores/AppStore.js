@@ -11,7 +11,7 @@ import BrickColors from '../constants/BrickColors';
 
 const CHANGE_EVENT = 'change';
 
-let showFaq = false;
+let showAbout = false;
 let chosenPieceType;
 let chosenScale = 1;
 let formattedPixelData = [[]];
@@ -63,8 +63,8 @@ let AppStore = Object.assign({}, EventEmitter.prototype, {
     return formattedPixelData;
   },
 
-  getShowFaq() {
-    return showFaq;
+  getShowAbout() {
+    return showAbout;
   },
 
   getNeededPieces() {
@@ -115,8 +115,8 @@ let AppStore = Object.assign({}, EventEmitter.prototype, {
 AppStore.dispatchToken = Dispatcher.register((action) => {
 
   switch (action.type) {
-    case ActionTypes.TOGGLE_FAQ:
-      showFaq = !showFaq;
+    case ActionTypes.TOGGLE_ABOUT:
+      showAbout = !showAbout;
       AppStore.emitChange();
       break;
 

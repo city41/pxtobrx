@@ -80,7 +80,7 @@ module.exports =
 
   __webpack_require__(49);
 
-  var _componentsApp = __webpack_require__(117);
+  var _componentsApp = __webpack_require__(118);
 
   var _componentsApp2 = _interopRequireDefault(_componentsApp);
 
@@ -728,9 +728,9 @@ module.exports =
       });
     },
 
-    onToggleFaq: function onToggleFaq() {
+    onToggleAbout: function onToggleAbout() {
       _coreDispatcher2['default'].dispatch({
-        type: _constantsActionTypes2['default'].TOGGLE_FAQ
+        type: _constantsActionTypes2['default'].TOGGLE_ABOUT
       });
     }
   };
@@ -2902,7 +2902,7 @@ module.exports =
     IMAGE_DATA: null,
     PIECE_TYPE: null,
     CHOSEN_SCALE: null,
-    TOGGLE_FAQ: null
+    TOGGLE_ABOUT: null
   });
   module.exports = exports['default'];
 
@@ -2954,7 +2954,7 @@ module.exports =
 
   var CHANGE_EVENT = 'change';
 
-  var showFaq = false;
+  var showAbout = false;
   var chosenPieceType = undefined;
   var chosenScale = 1;
   var formattedPixelData = [[]];
@@ -3001,8 +3001,8 @@ module.exports =
       return formattedPixelData;
     },
 
-    getShowFaq: function getShowFaq() {
-      return showFaq;
+    getShowAbout: function getShowAbout() {
+      return showAbout;
     },
 
     getNeededPieces: function getNeededPieces() {
@@ -3053,8 +3053,8 @@ module.exports =
   AppStore.dispatchToken = _coreDispatcher2['default'].register(function (action) {
 
     switch (action.type) {
-      case _constantsActionTypes2['default'].TOGGLE_FAQ:
-        showFaq = !showFaq;
+      case _constantsActionTypes2['default'].TOGGLE_ABOUT:
+        showAbout = !showAbout;
         AppStore.emitChange();
         break;
 
@@ -6490,6 +6490,140 @@ module.exports =
 
   var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
+  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+  var _react = __webpack_require__(3);
+
+  var _react2 = _interopRequireDefault(_react);
+
+  var _AboutLess = __webpack_require__(132);
+
+  var _AboutLess2 = _interopRequireDefault(_AboutLess);
+
+  var _decoratorsWithStyles = __webpack_require__(5);
+
+  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
+
+  var _actionsAppActions = __webpack_require__(16);
+
+  var _actionsAppActions2 = _interopRequireDefault(_actionsAppActions);
+
+  var About = (function () {
+    function About() {
+      _classCallCheck(this, _About);
+    }
+
+    var _About = About;
+
+    _createClass(_About, [{
+      key: 'render',
+      value: function render() {
+        return _react2['default'].createElement(
+          'div',
+          null,
+          _react2['default'].createElement('div', { onClick: _actionsAppActions2['default'].onToggleAbout, className: 'about-mask' }),
+          _react2['default'].createElement(
+            'div',
+            { className: 'about' },
+            _react2['default'].createElement(
+              'div',
+              { className: 'about-close', onClick: _actionsAppActions2['default'].onToggleAbout },
+              'X'
+            ),
+            _react2['default'].createElement(
+              'h2',
+              null,
+              'pxtobrx v0.1'
+            ),
+            _react2['default'].createElement(
+              'p',
+              null,
+              'A Lego mosaic generator, targeted at video game sprites'
+            ),
+            _react2['default'].createElement(
+              'h3',
+              null,
+              'Found a bug?'
+            ),
+            _react2['default'].createElement(
+              'p',
+              null,
+              'You can report it on ',
+              _react2['default'].createElement(
+                'a',
+                { href: 'https://github.com/city41/pxtobrx/issues' },
+                'GitHub'
+              ),
+              '  or ',
+              _react2['default'].createElement(
+                'a',
+                { href: 'mailto:matt.e.greer@gmail.com' },
+                'email me'
+              )
+            ),
+            _react2['default'].createElement(
+              'h3',
+              null,
+              'The mosaic looks crappy!'
+            ),
+            _react2['default'].createElement(
+              'p',
+              null,
+              'That is either a limitation of the bricks and colors Lego makes, the algorithm, or both. Some colors are only available in a tiny number of brick sizes. Sometimes the algorithm has to fall back and use a different color because of that. The algorithm is certainly not perfect, and will be improved over time.'
+            ),
+            _react2['default'].createElement(
+              'p',
+              null,
+              'If a certain sprite looks ',
+              _react2['default'].createElement(
+                'em',
+                null,
+                'really'
+              ),
+              ' bad as a mosaic, please ',
+              _react2['default'].createElement(
+                'a',
+                { href: 'https://github.com/city41/pxtobrx/issues' },
+                'file a bug'
+              ),
+              ' and include the sprite image in the bug report.'
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'about-footer' },
+              'made by ',
+              _react2['default'].createElement(
+                'a',
+                { href: 'http://mattgreer.org' },
+                'Matt Greer'
+              )
+            )
+          )
+        );
+      }
+    }]);
+
+    About = (0, _decoratorsWithStyles2['default'])(_AboutLess2['default'])(About) || About;
+    return About;
+  })();
+
+  exports['default'] = About;
+  module.exports = exports['default'];
+
+/***/ },
+/* 118 */
+/***/ function(module, exports, __webpack_require__) {
+
+  'use strict';
+
+  Object.defineProperty(exports, '__esModule', {
+    value: true
+  });
+
+  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
   var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; desc = parent = getter = undefined; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
 
   function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
@@ -6504,11 +6638,11 @@ module.exports =
 
   var _reactTabs = __webpack_require__(155);
 
-  var _BasicsLess = __webpack_require__(133);
+  var _BasicsLess = __webpack_require__(134);
 
   var _BasicsLess2 = _interopRequireDefault(_BasicsLess);
 
-  var _AppLess = __webpack_require__(132);
+  var _AppLess = __webpack_require__(133);
 
   var _AppLess2 = _interopRequireDefault(_AppLess);
 
@@ -6520,11 +6654,11 @@ module.exports =
 
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
 
-  var _FAQ = __webpack_require__(123);
+  var _About = __webpack_require__(117);
 
-  var _FAQ2 = _interopRequireDefault(_FAQ);
+  var _About2 = _interopRequireDefault(_About);
 
-  var _Drag = __webpack_require__(121);
+  var _Drag = __webpack_require__(122);
 
   var _Drag2 = _interopRequireDefault(_Drag);
 
@@ -6532,11 +6666,11 @@ module.exports =
 
   var _Sample2 = _interopRequireDefault(_Sample);
 
-  var _ChoosePieceType = __webpack_require__(118);
+  var _ChoosePieceType = __webpack_require__(119);
 
   var _ChoosePieceType2 = _interopRequireDefault(_ChoosePieceType);
 
-  var _ChooseScale = __webpack_require__(119);
+  var _ChooseScale = __webpack_require__(120);
 
   var _ChooseScale2 = _interopRequireDefault(_ChooseScale);
 
@@ -6548,7 +6682,7 @@ module.exports =
 
   var _PieceMap2 = _interopRequireDefault(_PieceMap);
 
-  var _Dimensions = __webpack_require__(120);
+  var _Dimensions = __webpack_require__(121);
 
   var _Dimensions2 = _interopRequireDefault(_Dimensions);
 
@@ -6566,7 +6700,7 @@ module.exports =
 
   function getState() {
     return {
-      showFaq: _storesAppStore2['default'].getShowFaq(),
+      showAbout: _storesAppStore2['default'].getShowAbout(),
       pixelData: _storesAppStore2['default'].getPixelData(),
       neededPieces: _storesAppStore2['default'].getNeededPieces(),
       chosenPieceType: _storesAppStore2['default'].getChosenPieceType(),
@@ -6702,19 +6836,19 @@ module.exports =
     }, {
       key: 'render',
       value: function render() {
-        var faq = this.state.showFaq && _react2['default'].createElement(_FAQ2['default'], null);
+        var about = this.state.showAbout && _react2['default'].createElement(_About2['default'], null);
 
         return _react2['default'].createElement(
           'div',
           null,
-          faq,
+          about,
           _react2['default'].createElement(
             'span',
-            { className: 'faq-link', style: { float: 'right' } },
+            { className: 'about-link', style: { float: 'right' } },
             _react2['default'].createElement(
               'a',
-              { onClick: _actionsAppActions2['default'].onToggleFaq },
-              'FAQ'
+              { onClick: _actionsAppActions2['default'].onToggleAbout },
+              'About'
             )
           ),
           _react2['default'].createElement(
@@ -6822,7 +6956,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 118 */
+/* 119 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6841,7 +6975,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _ChoosePieceTypeLess = __webpack_require__(134);
+  var _ChoosePieceTypeLess = __webpack_require__(135);
 
   var _ChoosePieceTypeLess2 = _interopRequireDefault(_ChoosePieceTypeLess);
 
@@ -6924,7 +7058,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 119 */
+/* 120 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -6943,7 +7077,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _ChooseScaleLess = __webpack_require__(135);
+  var _ChooseScaleLess = __webpack_require__(136);
 
   var _ChooseScaleLess2 = _interopRequireDefault(_ChooseScaleLess);
 
@@ -7013,7 +7147,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 120 */
+/* 121 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7032,7 +7166,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _DimensionsLess = __webpack_require__(136);
+  var _DimensionsLess = __webpack_require__(137);
 
   var _DimensionsLess2 = _interopRequireDefault(_DimensionsLess);
 
@@ -7123,7 +7257,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 121 */
+/* 122 */
 /***/ function(module, exports, __webpack_require__) {
 
   'use strict';
@@ -7146,7 +7280,7 @@ module.exports =
 
   var _react2 = _interopRequireDefault(_react);
 
-  var _DragLess = __webpack_require__(137);
+  var _DragLess = __webpack_require__(138);
 
   var _DragLess2 = _interopRequireDefault(_DragLess);
 
@@ -7158,7 +7292,7 @@ module.exports =
 
   var _actionsAppActions2 = _interopRequireDefault(_actionsAppActions);
 
-  var _DropZone = __webpack_require__(122);
+  var _DropZone = __webpack_require__(123);
 
   var _DropZone2 = _interopRequireDefault(_DropZone);
 
@@ -7275,7 +7409,7 @@ module.exports =
   module.exports = exports['default'];
 
 /***/ },
-/* 122 */
+/* 123 */
 /***/ function(module, exports, __webpack_require__) {
 
   // ported over from https://github.com/paramaggarwal/react-dropzone
@@ -7305,7 +7439,7 @@ module.exports =
 
   var _mobileDetect2 = _interopRequireDefault(_mobileDetect);
 
-  var _DropZoneLess = __webpack_require__(138);
+  var _DropZoneLess = __webpack_require__(139);
 
   var _DropZoneLess2 = _interopRequireDefault(_DropZoneLess);
 
@@ -7443,140 +7577,6 @@ module.exports =
   };
 
   exports['default'] = DropZone;
-  module.exports = exports['default'];
-
-/***/ },
-/* 123 */
-/***/ function(module, exports, __webpack_require__) {
-
-  'use strict';
-
-  Object.defineProperty(exports, '__esModule', {
-    value: true
-  });
-
-  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-  function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
-  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
-
-  var _react = __webpack_require__(3);
-
-  var _react2 = _interopRequireDefault(_react);
-
-  var _FAQLess = __webpack_require__(139);
-
-  var _FAQLess2 = _interopRequireDefault(_FAQLess);
-
-  var _decoratorsWithStyles = __webpack_require__(5);
-
-  var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
-
-  var _actionsAppActions = __webpack_require__(16);
-
-  var _actionsAppActions2 = _interopRequireDefault(_actionsAppActions);
-
-  var FAQ = (function () {
-    function FAQ() {
-      _classCallCheck(this, _FAQ);
-    }
-
-    var _FAQ = FAQ;
-
-    _createClass(_FAQ, [{
-      key: 'render',
-      value: function render() {
-        return _react2['default'].createElement(
-          'div',
-          null,
-          _react2['default'].createElement('div', { onClick: _actionsAppActions2['default'].onToggleFaq, className: 'faq-mask' }),
-          _react2['default'].createElement(
-            'div',
-            { className: 'faq' },
-            _react2['default'].createElement(
-              'div',
-              { className: 'faq-close', onClick: _actionsAppActions2['default'].onToggleFaq },
-              'X'
-            ),
-            _react2['default'].createElement(
-              'h2',
-              null,
-              'pxtobrx v0.1'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'A Lego mosaic generator, targeted at video game sprites'
-            ),
-            _react2['default'].createElement(
-              'h3',
-              null,
-              'Found a bug?'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'You can report it on ',
-              _react2['default'].createElement(
-                'a',
-                { href: 'https://github.com/city41/pxtobrx/issues' },
-                'GitHub'
-              ),
-              '  or ',
-              _react2['default'].createElement(
-                'a',
-                { href: 'mailto:matt.e.greer@gmail.com' },
-                'email me'
-              )
-            ),
-            _react2['default'].createElement(
-              'h3',
-              null,
-              'The mosaic looks crappy!'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'That is either a limitation of the bricks and colors Lego makes, the algorithm, or both. Some colors are only available in a tiny number of brick sizes. Sometimes the algorithm has to fall back and use a different color because of that. The algorithm is certainly not perfect, and will be improved over time.'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'If a certain sprite looks ',
-              _react2['default'].createElement(
-                'em',
-                null,
-                'really'
-              ),
-              ' bad as a mosaic, please ',
-              _react2['default'].createElement(
-                'a',
-                { href: 'https://github.com/city41/pxtobrx/issues' },
-                'file a bug'
-              ),
-              ' and include the sprite image in the bug report.'
-            ),
-            _react2['default'].createElement(
-              'div',
-              { className: 'faq-footer' },
-              'made by ',
-              _react2['default'].createElement(
-                'a',
-                { href: 'http://mattgreer.org' },
-                'Matt Greer'
-              )
-            )
-          )
-        );
-      }
-    }]);
-
-    FAQ = (0, _decoratorsWithStyles2['default'])(_FAQLess2['default'])(FAQ) || FAQ;
-    return FAQ;
-  })();
-
-  exports['default'] = FAQ;
   module.exports = exports['default'];
 
 /***/ },
@@ -8288,56 +8288,56 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".app-title,.faq-link{height:50px;line-height:50px}.app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#fffcfc;color:#074987}.alpha{font-size:.5em}.faq-link{margin-right:20px}.faq-link a{color:#074987;text-decoration:none;cursor:pointer}section{width:100%;padding:0 0 40px 20px}section h2{padding:5px 0 20px}section.drag-section{background-color:#074987}.drag-header,section.drag-section h2{color:#90a7bc}.samples-container{margin-left:30px}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.2}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.results-container h2{text-align:center;padding:10px;background-color:#007b28;color:#fff;font-size:1.3em;margin:0 0 40px -20px}.results-container .react-tabs [role=tab]{background-color:#777}.results-container .react-tabs [role=tab]:hover,.results-container .react-tabs [role=tab][aria-selected=true]{border-radius:0;background-color:#fff}.preview-image{width:60%;height:60%}", ""]);
+  exports.push([module.id, ".about-mask{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(255,255,255,.7)}.about{position:fixed;z-index:10;top:15%;left:15%;width:70%;padding:20px 20px 40px;background-color:#074987;color:#90a7bc;border:4px solid #fff;-webkit-box-shadow:7px 9px 20px 0 #575757;box-shadow:7px 9px 20px 0 #575757}.about .about-close,.about .about-footer{position:absolute;right:0;height:30px;line-height:30px;background-color:#fff}.about a{color:#fff}.about .about-close{top:0;width:30px;color:#074987;text-align:center;cursor:pointer}.about .about-footer{bottom:0;left:0;color:#074987;text-align:right;padding-right:20px;font-size:.8em}.about .about-footer a{color:#074987;text-decoration:underline}", ""]);
 
 /***/ },
 /* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,hr,main,menu,nav,section,summary{display:block}pre,textarea{overflow:auto}fieldset,h1,h2,h3,h4,hr,legend,td,th{padding:0}fieldset,hr,img,legend{border:0}body{margin:0;background-color:#c71414}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{-ms-interpolation-mode:nearest-neighbor!important;image-rendering:-webkit-optimize-contrast!important;image-rendering:-moz-crisp-edges!important;image-rendering:-o-pixelated!important;image-rendering:pixelated!important}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:1px;border-top:1px solid #ccc;margin:1em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#222;font-weight:100;font-size:1em;font-family:'Segoe UI',HelveticaNeue-Light,sans-serif;line-height:1.375}h1,h2,h3,h4{margin:0}.focused{background-color:#fff!important}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{margin:0}.browserupgrade{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}", ""]);
+  exports.push([module.id, ".about-link,.app-title{height:50px;line-height:50px}.app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#fffcfc;color:#074987}.alpha{font-size:.5em}.about-link{margin-right:20px}.about-link a{color:#074987;text-decoration:none;cursor:pointer}section{width:100%;padding:0 0 40px 20px}section h2{padding:5px 0 20px}section.drag-section{background-color:#074987}.drag-header,section.drag-section h2{color:#90a7bc}.samples-container{margin-left:30px}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.2}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.results-container h2{text-align:center;padding:10px;background-color:#007b28;color:#fff;font-size:1.3em;margin:0 0 40px -20px}.results-container .react-tabs [role=tab]{background-color:#777}.results-container .react-tabs [role=tab]:hover,.results-container .react-tabs [role=tab][aria-selected=true]{border-radius:0;background-color:#fff}.preview-image{width:60%;height:60%}", ""]);
 
 /***/ },
 /* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".choose-piece-type .piece-type-container{padding:4px;height:120px;display:inline-block;margin:2px;background-color:#777;color:#000;float:left;position:relative;cursor:pointer}.choose-piece-type .piece-type-container.choosable:hover{background-color:#fff}.choose-piece-type .piece-type-title{position:absolute;bottom:10px}", ""]);
+  exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,hr,main,menu,nav,section,summary{display:block}pre,textarea{overflow:auto}fieldset,h1,h2,h3,h4,hr,legend,td,th{padding:0}fieldset,hr,img,legend{border:0}body{margin:0;background-color:#c71414}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{-ms-interpolation-mode:nearest-neighbor!important;image-rendering:-webkit-optimize-contrast!important;image-rendering:-moz-crisp-edges!important;image-rendering:-o-pixelated!important;image-rendering:pixelated!important}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:1px;border-top:1px solid #ccc;margin:1em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#222;font-weight:100;font-size:1em;font-family:'Segoe UI',HelveticaNeue-Light,sans-serif;line-height:1.375}h1,h2,h3,h4{margin:0}.focused{background-color:#fff!important}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{margin:0}.browserupgrade{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}", ""]);
 
 /***/ },
 /* 135 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".choose-scale{margin-top:20px}.choose-scale .scale-container{padding:10px;display:inline-block;margin:2px;background-color:#777;color:#000;cursor:pointer}.choose-scale .scale-container:hover{background-color:#fff}.choose-scale .scale-title{font-size:2em}", ""]);
+  exports.push([module.id, ".choose-piece-type .piece-type-container{padding:4px;height:120px;display:inline-block;margin:2px;background-color:#777;color:#000;float:left;position:relative;cursor:pointer}.choose-piece-type .piece-type-container.choosable:hover{background-color:#fff}.choose-piece-type .piece-type-title{position:absolute;bottom:10px}", ""]);
 
 /***/ },
 /* 136 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, "", ""]);
+  exports.push([module.id, ".choose-scale{margin-top:20px}.choose-scale .scale-container{padding:10px;display:inline-block;margin:2px;background-color:#777;color:#000;cursor:pointer}.choose-scale .scale-container:hover{background-color:#fff}.choose-scale .scale-title{font-size:2em}", ""]);
 
 /***/ },
 /* 137 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".dropzone-explanation{text-align:center;margin:auto}.error{background-color:red;color:#fff;padding:8px;font-weight:700}", ""]);
+  exports.push([module.id, "", ""]);
 
 /***/ },
 /* 138 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".drop-zone{border:3px dashed #90A7BC;color:#90a7bc;padding:20px;text-align:center;min-height:140px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.mobile-input-file{margin:15px 0;color:#90a7bc}", ""]);
+  exports.push([module.id, ".dropzone-explanation{text-align:center;margin:auto}.error{background-color:red;color:#fff;padding:8px;font-weight:700}", ""]);
 
 /***/ },
 /* 139 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".faq,.faq-mask{position:fixed}.faq-mask{top:0;left:0;right:0;bottom:0;background-color:rgba(255,255,255,.5)}.faq{z-index:10;top:15%;left:15%;width:70%;padding:20px 20px 40px;background-color:#074987;color:#90a7bc;border:4px solid #fff}.faq .faq-close,.faq .faq-footer{position:absolute;right:0;height:30px;line-height:30px;background-color:#fff}.faq a{color:#fff}.faq .faq-close{top:0;width:30px;color:#074987;text-align:center;cursor:pointer}.faq .faq-footer{bottom:0;left:0;color:#074987;text-align:right;padding-right:20px;font-size:.8em}.faq .faq-footer a{color:#074987;text-decoration:underline}", ""]);
+  exports.push([module.id, ".drop-zone{border:3px dashed #90A7BC;color:#90a7bc;padding:20px;text-align:center;min-height:140px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.mobile-input-file{margin:15px 0;color:#90a7bc}", ""]);
 
 /***/ },
 /* 140 */

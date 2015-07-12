@@ -1,17 +1,17 @@
 import React from 'react';
-import styles from './FAQ.less';
+import styles from './About.less';
 import withStyles from '../../decorators/withStyles';
 
 import AppActions from '../../actions/AppActions';
 
 @withStyles(styles)
-class FAQ {
+class About {
   render() {
     return (
       <div>
-        <div onClick={AppActions.onToggleFaq} className="faq-mask"></div>
-        <div className="faq">
-          <div className="faq-close" onClick={AppActions.onToggleFaq}>X</div>
+        <div onClick={AppActions.onToggleAbout} className="about-mask"></div>
+        <div className="about">
+          <div className="about-close" onClick={AppActions.onToggleAbout}>X</div>
           <h2>pxtobrx v0.1</h2>
           <p>A Lego mosaic generator, targeted at video game sprites</p>
           <h3>Found a bug?</h3>
@@ -26,7 +26,7 @@ class FAQ {
             is certainly not perfect, and will be improved over time.
           </p>
           <p>If a certain sprite looks <em>really</em> bad as a mosaic, please <a href="https://github.com/city41/pxtobrx/issues">file a bug</a> and include the sprite image in the bug report.</p>
-          <div className="faq-footer">
+          <div className="about-footer">
             made by <a href="http://mattgreer.org">Matt Greer</a>
           </div>
         </div>
@@ -35,4 +35,4 @@ class FAQ {
   }
 }
 
-export default FAQ;
+export default About;

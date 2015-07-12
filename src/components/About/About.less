@@ -2,16 +2,16 @@
 
 @import '../variables.less';
 
-.faq-mask {
+.about-mask {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
-.faq {
+.about {
   position: fixed;
   z-index: 10;
   top: 15%;
@@ -23,11 +23,15 @@
   color: @lego-blue-lighter;
   border: 4px solid white;
 
+  -webkit-box-shadow: 7px 9px 20px 0px rgba(87,87,87,1);
+  -moz-box-shadow: 7px 9px 20px 0px rgba(87,87,87,1);
+  box-shadow: 7px 9px 20px 0px rgba(87,87,87,1);
+
   a {
     color: white;
   }
 
-  .faq-close {
+  .about-close {
     position: absolute;
     top: 0;
     right: 0;
@@ -40,7 +44,7 @@
     cursor: pointer;
   }
 
-  .faq-footer {
+  .about-footer {
     position: absolute;
     bottom: 0;
     left: 0;
