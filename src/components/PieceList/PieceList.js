@@ -1,11 +1,9 @@
 import _ from 'lodash';
+import Color from 'color';
 import React, { PropTypes } from 'react';
 import styles from './PieceList.less';
 import withStyles from '../../decorators/withStyles';
 import BrickColors from '../../constants/BrickColors';
-
-import SimplePieceListEntry from './SimplePieceListEntry.js';
-import FullPieceListEntry from './FullPieceListEntry.js';
 
 @withStyles(styles)
 class PieceList extends React.Component {
@@ -20,49 +18,68 @@ class PieceList extends React.Component {
     this.state = {showPieces: false};
   }
 
+  toggleBagged(color, size) {
+    let state = {};
+    let key = `${color}${size}`;
+    state[key] = !this.state[key];
+    this.setState(state);
+  }
+
   render() {
-    let pieceGroups = _.countBy(this.props.pieces, (p) => {
-      // using max/min so that rotated pieces get grouped into same group
-      // this is a temporary solution for rotated pieces, see constants/PieceSets.js too
-      return `${p.value.officialName}:${Math.max(p.width, p.height)}:${Math.min(p.width, p.height)}`;
+    let colorGroups = _.groupBy(this.props.pieces, (p) => {
+      return p.value.officialName;
     });
 
-    pieceGroups = _.pairs(pieceGroups);
-
-    pieceGroups = _.sortByAll(pieceGroups, (pg) => {
-      return pg[0].split(':')[0];
-    }, (pg) => {
-      return Number(pg[0].split(':')[1]);
-    }, (pg) => {
-      return Number(pg[0].split(':')[2]);
+    colorGroups = _.pairs(colorGroups);
+    colorGroups = _.sortBy(colorGroups, (cg) => {
+      return cg[0];
     });
+
+    colorGroups = _.map(colorGroups, (cg) => {
+      let sizeGroups = _.countBy(cg[1], (p) => {
+        return `${Math.min(p.width, p.height)}x${Math.max(p.width, p.height)}`;
+      });
+      sizeGroups = _.pairs(sizeGroups);
+      sizeGroups = _.sortBy(sizeGroups, '0');
+
+      return [cg[0], sizeGroups];
+    });
+
+    // [    ['black', ['1x1', 4], ['1x2', 6]],  [...]  ]
+    let rows = _.flatten(_.map(colorGroups, (cg) => {
+      return _.map(cg[1], (sizeAndQuantity, i) => {
+        let headerTd;
+        if (i === 0) {
+          let legoColor = BrickColors[cg[0]].color;
+          let isDark = Color(legoColor).dark();
+          let className = isDark ? 'simple-color-dark' : 'simple-color-light';
+          headerTd = <td rowSpan={cg[1].length} className={className} style={{backgroundColor: legoColor}}>{cg[0]}</td>;
+        }
+
+        let isBagged = this.state[`${cg[1]}${sizeAndQuantity[0]}`];
+
+        return (
+          <tr key={`${cg[0]}-${sizeAndQuantity.join('-')}`}>
+            {headerTd}
+            <td className={isBagged && 'bagged'}>{sizeAndQuantity[0]}</td>
+            <td className={isBagged && 'bagged'}>{sizeAndQuantity[1]}</td>
+            <td className={isBagged && 'bagged'}><input type="checkbox" onClick={this.toggleBagged.bind(this, cg[1], sizeAndQuantity[0])}></input></td>
+          </tr>
+        );
+      });
+    }));
 
     return (
       <div className="piece-list-container">
-        <div className="piece-list-rows">
-          <ul>
-          {_.map(pieceGroups, (pg) => {
-            let pieceSpecs = pg[0].split(':');
-            let legoColor = BrickColors[pieceSpecs[0]];
-            let entry;
-
-            if (this.state.showPieces) {
-              entry = <FullPieceListEntry type={this.props.chosenPieceType} count={pg[1]} l={pieceSpecs[1]} r={pieceSpecs[2]} legoColor={legoColor} />;
-            } else {
-              entry = <SimplePieceListEntry count={pg[1]} l={pieceSpecs[1]} r={pieceSpecs[2]} legoColor={legoColor} />;
-            }
-            return (
-              <li>
-                {entry}
-              </li>
-            );
-          })}
-          </ul>
-        </div>
+        <table>
+          <tr>
+            <th>Color</th><th>size</th><th>quantity</th><th>bagged</th>
+          </tr>
+          {rows}
+        </table>
       </div>
     );
   }
-
 }
 
 export default PieceList;

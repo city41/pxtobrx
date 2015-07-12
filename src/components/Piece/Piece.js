@@ -38,7 +38,7 @@ class Piece {
             top: l * 47 + offset,
             left: r * 47 + offset
           };
-          dots.push(<div style={baseStyle} />);
+          dots.push(<div key={`dark-stud-${a}-${l}-${r}`} style={baseStyle} />);
         }
 
         // lighter top
@@ -53,7 +53,7 @@ class Piece {
           top: l * 47 + offset,
           left: r * 47 + offset
         };
-        dots.push(<div style={topStyle} />);
+        dots.push(<div key={`light-stud-${l}-${r}`} style={topStyle} />);
       }
     }
     return dots;

@@ -1,11 +1,31 @@
-/* React Starter Kit | MIT License | http://www.reactstarterkit.com/ */
-
 @import '../variables.less';
 
 .piece-list-container {
-  position: relative;
   padding-top: 40px;
-  ul {
-    list-style-type: none;
+
+  td, th {
+    padding: 5px 20px;
+  }
+
+  th {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+  }
+
+  tr:nth-child(odd) {
+    background: @lego-red-lighter;
+  }
+
+  td.bagged {
+    text-decoration: line-through;
+  }
+
+  .simple-color-dark {
+    color: white;
+  }
+
+  .simple-color-light {
+    color: black;
   }
 }
