@@ -17,7 +17,13 @@ export default _.memoize(function sortByNearness(availableColors, targetColor) {
     let aNear = colorDifference.compare(toHex(a.color), targetColorHex);
     let bNear = colorDifference.compare(toHex(b.color), targetColorHex);
 
-    return bNear - aNear;
+    if (bNear === aNear) {
+      // in case of color ties, sort by most plates available
+      // TODO: take desired piece type into account when doing this
+      return a.availablePieces.plate.length - b.availablePieces.plate.length;
+    } else {
+      return bNear - aNear;
+    }
   });
 }, (availableColors, targetColor) => {
   return toHex(targetColor.color);

@@ -6448,7 +6448,13 @@ module.exports =
       var aNear = _colorDifference2['default'].compare(toHex(a.color), targetColorHex);
       var bNear = _colorDifference2['default'].compare(toHex(b.color), targetColorHex);
 
-      return bNear - aNear;
+      if (bNear === aNear) {
+        // in case of color ties, sort by most plates available
+        // TODO: take desired piece type into account when doing this
+        return a.availablePieces.plate.length - b.availablePieces.plate.length;
+      } else {
+        return bNear - aNear;
+      }
     });
   }, function (availableColors, targetColor) {
     return toHex(targetColor.color);
