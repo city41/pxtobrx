@@ -39,11 +39,6 @@ class PieceList extends React.Component {
 
     return (
       <div className="piece-list-container">
-        <div className="piece-list-header simple-piece-list-entry">
-          <span className="simple-field">color</span>
-          <span className="simple-field">size</span>
-          <span className="simple-field">quantity</span>
-        </div>
         <div className="piece-list-rows">
           <ul>
           {_.map(pieceGroups, (pg) => {

@@ -77,7 +77,7 @@ class DropZone extends React.Component {
     if (md.mobile()) {
       return (
         <div>
-          <h2 className="drag-header">Choose some pixel art</h2>
+          <h3 className="drag-header">Choose some pixel art</h3>
           <input className="mobile-input-file" type='file'
                  ref='fileInput'
                  onChange={this.onDrop.bind(this)} />

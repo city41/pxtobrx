@@ -23,7 +23,7 @@ class SimplePieceListEntry extends React.Component {
     return (
       <div className="simple-piece-list-entry">
         <span className={colorFieldClassName} style={{backgroundColor: this.props.legoColor.color}}>{this.props.legoColor.officialName}</span>
-        <span className="simple-field simple-dimensions">{this.props.l}x{this.props.r}</span>
+        <span className="simple-field simple-dimensions narrower">{this.props.l}x{this.props.r}</span>
         <span className="simple-field simple-count">{this.props.count}</span>
       </div>
     );

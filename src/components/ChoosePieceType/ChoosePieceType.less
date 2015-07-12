@@ -3,18 +3,17 @@
 .choose-piece-type {
   .piece-type-container {
     padding: 4px;
-    height: 160px;
+    height: 120px;
     display: inline-block;
     margin: 2px;
-    background-color: grey;
+    background-color: @not-chosen;
     color: black;
     float: left;
     position: relative;
-  }
 
-  .focused {
-    background-color: red;
-    color: white;
+    &.choosable:hover {
+      background-color: @highlight;
+    }
   }
 
   .piece-type-title {

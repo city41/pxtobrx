@@ -2,8 +2,6 @@ import React, { PropTypes } from 'react';
 import styles from './PieceMap.less';
 import withStyles from '../../decorators/withStyles';
 
-const DISCLAIMER = 'This map is rendered using the chosen Lego brick colors, so may look different from the image';
-
 @withStyles(styles)
 class PieceMap extends React.Component {
   static propTypes = {
@@ -57,17 +55,13 @@ class PieceMap extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {showDisclaimer: true};
+    this.state = {};
   }
 
   render() {
-    let disclaimer = this.state.showDisclaimer ?
-      <div className="disclaimer">{DISCLAIMER} <a onClick={() => this.setState({showDisclaimer: false})}>got it</a></div>
-      : null;
     return (
-      <div className="PieceMap">
-        {disclaimer}
-        <div>
+      <div className="piece-map">
+        <div className="piece-map-options">
           <input type="checkbox" onClick={() => this.setState({fitToWindow: !this.state.fitToWindow})} /> Fit to window
           &nbsp;
           <input type="checkbox" onClick={() => this.setState({hideBorders: !this.state.hideBorders})} /> Hide brick borders

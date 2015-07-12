@@ -51,8 +51,8 @@ class App extends React.Component {
     if (width && height && this.state.neededPieces.length) {
       return (
         <div className="results-container">
-          <h2>Build Instructions</h2>
           <section>
+            <h2>Here is Your Build</h2>
             <div className="grid">
               <div className="col-3-12">
                 <img className="preview-image" src={this.state.dataUrl} />
@@ -104,32 +104,42 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="app-title">pxtobrx <span className="alpha">(this site is not done yet!)</span></h1>
+        <h1 className="app-title">pxtobrx <span className="alpha">(beta)</span></h1>
         <section className="drag-section">
-          <h2>Choose an Image</h2>
           <div className="grid">
             <div className="col-4-12">
+              <h2>Choose an Image</h2>
               <Drag
                 userAgent={this.props.userAgent}
               />
             </div>
             <div className="col-8-12">
-              <h2 className="drag-header">or ... try one of these</h2>
-              <div>
-                <Sample src="/img/samples/megaman.png" />
-                <Sample src="/img/samples/samus.png" />
-                <Sample src="/img/samples/thwomp.png" />
-                <Sample src="/img/samples/smb3-tanooki-mario.png" />
-                <Sample src="/img/samples/super-metroid.png" />
+              <div className="samples-container">
+                <h3 className="drag-header">or ... try one of these</h3>
+                <div>
+                  <Sample src="/img/samples/megaman.png" />
+                  <Sample src="/img/samples/samus.png" />
+                  <Sample src="/img/samples/thwomp.png" />
+                  <Sample src="/img/samples/smb3-tanooki-mario.png" />
+                  <Sample src="/img/samples/super-metroid.png" />
+                </div>
               </div>
             </div>
           </div>
         </section>
         <section className="choose-section">
           <div className={this.state.dataUrl ? 'choose-section-container choosable' : 'choose-section-container'}>
-            <h2>Pick Your Pieces and Sizing</h2>
-            <ChoosePieceType choosable={!!this.state.dataUrl} chosenPieceType={this.state.chosenPieceType} />
-            <ChooseScale choosable={!!this.state.dataUrl} chosenScale={this.state.chosenScale} />
+            <div className="grid">
+              <div className="col-6-12">
+                <h2>Pick Piece Type</h2>
+                <ChoosePieceType choosable={!!this.state.dataUrl} chosenPieceType={this.state.chosenPieceType} />
+              </div>
+              <div className="col-6-12">
+                <h2>And Scale</h2>
+                <p>useful for building a larger version of a small sprite</p>
+                <ChooseScale choosable={!!this.state.dataUrl} chosenScale={this.state.chosenScale} />
+              </div>
+            </div>
           </div>
         </section>
         {this.getResults(this.state.pixelData)}

@@ -1,19 +1,20 @@
 @import '../variables.less';
 
 .choose-scale {
+  margin-top: 20px;
   .scale-container {
-    padding: 4px;
+    padding: 10px;
     display: inline-block;
     margin: 2px;
-    background-color: grey;
+    background-color: @not-chosen;
     color: black;
-  }
 
-  .focused {
-    background-color: red;
-    color: white;
+    &:hover {
+      background-color: @highlight;
+    }
   }
 
   .scale-title {
+    font-size: 2em;
   }
 }

@@ -14,15 +14,27 @@
 
 section {
   width: 100%;
-  padding-bottom: 40px;
+  padding: 0 0 40px 20px;
+
+  h2 {
+    padding: 5px 0 20px 0;
+  }
 }
 
 section.drag-section {
   background-color: @lego-blue;
+
+  h2 {
+    color: @lego-blue-lighter;
+  }
 }
 
 .drag-header {
   color: @lego-blue-lighter;
+}
+
+.samples-container {
+  margin-left: 30px;
 }
 
 section.choose-section {
@@ -30,7 +42,7 @@ section.choose-section {
 
   .choose-section-container {
     transition: opacity 0.8s;
-    opacity: 0.3;
+    opacity: 0.2;
 
     &.choosable {
       opacity: 1
@@ -50,9 +62,27 @@ section:last-of-type {
 .results-container {
   background-color: @lego-red;
   animation: fade-in 1s;
+
+  h2 {
+    text-align: center;
+    padding: 10px;
+    background-color: @result-header;
+    color: white;
+    font-size: 1.3em;
+    margin: 0 -20px 40px -20px;
+  }
+
+  .react-tabs [role=tab] {
+    background-color: @not-chosen;
+
+    &[aria-selected=true], &:hover {
+      border-radius: 0;
+      background-color: @highlight;
+    }
+  }
 }
 
 .preview-image {
-  width: 40%;
-  height: 40%;
+  width: 60%;
+  height: 60%;
 }

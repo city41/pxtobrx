@@ -7,9 +7,9 @@ import Piece from '../Piece';
 import BrickColors from '../../constants/BrickColors';
 
 const buttonDefs = [
-  { type: 'plate', left: 4, right: 2, color: BrickColors['Dark Green'].color },
-  { type: 'brick', left: 3, right: 1, color: BrickColors['Bright Orange'].color },
-  { type: 'flat', left: 2, right: 2, color: BrickColors['Medium Blue'].color }
+  { type: 'plate', left: 2, right: 1, color: BrickColors['Dark Green'].color },
+  { type: 'brick', left: 2, right: 1, color: BrickColors['Bright Orange'].color },
+  { type: 'flat', left: 2, right: 1, color: BrickColors['Medium Blue'].color }
 ];
 
 @withStyles(styles)
@@ -21,9 +21,13 @@ class ChoosePieceType {
 
   render() {
     let typeButtons = buttonDefs.map((def) => {
+      let rootClass = 'piece-type-container';
+      if (this.props.choosable) {
+        rootClass += ' choosable';
+      }
       let onClick = this.props.choosable && AppActions.onPieceType.bind(AppActions, def.type);
       return (
-        <div key={def.type} onClick={onClick} className={this.props.chosenPieceType === def.type ? 'piece-type-container focused' : 'piece-type-container'}>
+        <div key={def.type} onClick={onClick} className={this.props.chosenPieceType === def.type ? `${rootClass} focused` : rootClass}>
           <Piece type={def.type} left={def.left} right={def.right} color={def.color} />
           <div className="piece-type-title">{def.type}s</div>
         </div>

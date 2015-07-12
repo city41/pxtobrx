@@ -6579,13 +6579,13 @@ module.exports =
             'div',
             { className: 'results-container' },
             _react2['default'].createElement(
-              'h2',
-              null,
-              'Build Instructions'
-            ),
-            _react2['default'].createElement(
               'section',
               null,
+              _react2['default'].createElement(
+                'h2',
+                null,
+                'Here is Your Build'
+              ),
               _react2['default'].createElement(
                 'div',
                 { className: 'grid' },
@@ -6686,23 +6686,23 @@ module.exports =
             _react2['default'].createElement(
               'span',
               { className: 'alpha' },
-              '(this site is not done yet!)'
+              '(beta)'
             )
           ),
           _react2['default'].createElement(
             'section',
             { className: 'drag-section' },
             _react2['default'].createElement(
-              'h2',
-              null,
-              'Choose an Image'
-            ),
-            _react2['default'].createElement(
               'div',
               { className: 'grid' },
               _react2['default'].createElement(
                 'div',
                 { className: 'col-4-12' },
+                _react2['default'].createElement(
+                  'h2',
+                  null,
+                  'Choose an Image'
+                ),
                 _react2['default'].createElement(_Drag2['default'], {
                   userAgent: this.props.userAgent
                 })
@@ -6711,18 +6711,22 @@ module.exports =
                 'div',
                 { className: 'col-8-12' },
                 _react2['default'].createElement(
-                  'h2',
-                  { className: 'drag-header' },
-                  'or ... try one of these'
-                ),
-                _react2['default'].createElement(
                   'div',
-                  null,
-                  _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/megaman.png' }),
-                  _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/samus.png' }),
-                  _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/thwomp.png' }),
-                  _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/smb3-tanooki-mario.png' }),
-                  _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/super-metroid.png' })
+                  { className: 'samples-container' },
+                  _react2['default'].createElement(
+                    'h3',
+                    { className: 'drag-header' },
+                    'or ... try one of these'
+                  ),
+                  _react2['default'].createElement(
+                    'div',
+                    null,
+                    _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/megaman.png' }),
+                    _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/samus.png' }),
+                    _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/thwomp.png' }),
+                    _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/smb3-tanooki-mario.png' }),
+                    _react2['default'].createElement(_Sample2['default'], { src: '/img/samples/super-metroid.png' })
+                  )
                 )
               )
             )
@@ -6734,12 +6738,34 @@ module.exports =
               'div',
               { className: this.state.dataUrl ? 'choose-section-container choosable' : 'choose-section-container' },
               _react2['default'].createElement(
-                'h2',
-                null,
-                'Pick Your Pieces and Sizing'
-              ),
-              _react2['default'].createElement(_ChoosePieceType2['default'], { choosable: !!this.state.dataUrl, chosenPieceType: this.state.chosenPieceType }),
-              _react2['default'].createElement(_ChooseScale2['default'], { choosable: !!this.state.dataUrl, chosenScale: this.state.chosenScale })
+                'div',
+                { className: 'grid' },
+                _react2['default'].createElement(
+                  'div',
+                  { className: 'col-6-12' },
+                  _react2['default'].createElement(
+                    'h2',
+                    null,
+                    'Pick Piece Type'
+                  ),
+                  _react2['default'].createElement(_ChoosePieceType2['default'], { choosable: !!this.state.dataUrl, chosenPieceType: this.state.chosenPieceType })
+                ),
+                _react2['default'].createElement(
+                  'div',
+                  { className: 'col-6-12' },
+                  _react2['default'].createElement(
+                    'h2',
+                    null,
+                    'And Scale'
+                  ),
+                  _react2['default'].createElement(
+                    'p',
+                    null,
+                    'useful for building a larger version of a small sprite'
+                  ),
+                  _react2['default'].createElement(_ChooseScale2['default'], { choosable: !!this.state.dataUrl, chosenScale: this.state.chosenScale })
+                )
+              )
             )
           ),
           this.getResults(this.state.pixelData)
@@ -6802,7 +6828,7 @@ module.exports =
 
   var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
 
-  var buttonDefs = [{ type: 'plate', left: 4, right: 2, color: _constantsBrickColors2['default']['Dark Green'].color }, { type: 'brick', left: 3, right: 1, color: _constantsBrickColors2['default']['Bright Orange'].color }, { type: 'flat', left: 2, right: 2, color: _constantsBrickColors2['default']['Medium Blue'].color }];
+  var buttonDefs = [{ type: 'plate', left: 2, right: 1, color: _constantsBrickColors2['default']['Dark Green'].color }, { type: 'brick', left: 2, right: 1, color: _constantsBrickColors2['default']['Bright Orange'].color }, { type: 'flat', left: 2, right: 1, color: _constantsBrickColors2['default']['Medium Blue'].color }];
 
   var ChoosePieceType = (function () {
     function ChoosePieceType() {
@@ -6817,10 +6843,14 @@ module.exports =
         var _this = this;
 
         var typeButtons = buttonDefs.map(function (def) {
+          var rootClass = 'piece-type-container';
+          if (_this.props.choosable) {
+            rootClass += ' choosable';
+          }
           var onClick = _this.props.choosable && _actionsAppActions2['default'].onPieceType.bind(_actionsAppActions2['default'], def.type);
           return _react2['default'].createElement(
             'div',
-            { key: def.type, onClick: onClick, className: _this.props.chosenPieceType === def.type ? 'piece-type-container focused' : 'piece-type-container' },
+            { key: def.type, onClick: onClick, className: _this.props.chosenPieceType === def.type ? rootClass + ' focused' : rootClass },
             _react2['default'].createElement(_Piece2['default'], { type: def.type, left: def.left, right: def.right, color: def.color }),
             _react2['default'].createElement(
               'div',
@@ -7332,7 +7362,7 @@ module.exports =
             'div',
             null,
             _react2['default'].createElement(
-              'h2',
+              'h3',
               { className: 'drag-header' },
               'Choose some pixel art'
             ),
@@ -7558,25 +7588,6 @@ module.exports =
           { className: 'piece-list-container' },
           _react2['default'].createElement(
             'div',
-            { className: 'piece-list-header simple-piece-list-entry' },
-            _react2['default'].createElement(
-              'span',
-              { className: 'simple-field' },
-              'color'
-            ),
-            _react2['default'].createElement(
-              'span',
-              { className: 'simple-field' },
-              'size'
-            ),
-            _react2['default'].createElement(
-              'span',
-              { className: 'simple-field' },
-              'quantity'
-            )
-          ),
-          _react2['default'].createElement(
-            'div',
             { className: 'piece-list-rows' },
             _react2['default'].createElement(
               'ul',
@@ -7681,7 +7692,7 @@ module.exports =
           ),
           _react2['default'].createElement(
             'span',
-            { className: 'simple-field simple-dimensions' },
+            { className: 'simple-field simple-dimensions narrower' },
             this.props.l,
             'x',
             this.props.r
@@ -7746,14 +7757,12 @@ module.exports =
 
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
 
-  var DISCLAIMER = 'This map is rendered using the chosen Lego brick colors, so may look different from the image';
-
   var PieceMap = (function (_React$Component) {
     function PieceMap(props) {
       _classCallCheck(this, _PieceMap);
 
       _get(Object.getPrototypeOf(_PieceMap.prototype), 'constructor', this).call(this, props);
-      this.state = { showDisclaimer: true };
+      this.state = {};
     }
 
     _inherits(PieceMap, _React$Component);
@@ -7811,26 +7820,12 @@ module.exports =
       value: function render() {
         var _this2 = this;
 
-        var disclaimer = this.state.showDisclaimer ? _react2['default'].createElement(
-          'div',
-          { className: 'disclaimer' },
-          DISCLAIMER,
-          ' ',
-          _react2['default'].createElement(
-            'a',
-            { onClick: function () {
-                return _this2.setState({ showDisclaimer: false });
-              } },
-            'got it'
-          )
-        ) : null;
         return _react2['default'].createElement(
           'div',
-          { className: 'PieceMap' },
-          disclaimer,
+          { className: 'piece-map' },
           _react2['default'].createElement(
             'div',
-            null,
+            { className: 'piece-map-options' },
             _react2['default'].createElement('input', { type: 'checkbox', onClick: function () {
                 return _this2.setState({ fitToWindow: !_this2.state.fitToWindow });
               } }),
@@ -8126,28 +8121,28 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#FFFCFC;color:#074987}.alpha{font-size:.5em}section{width:100%;padding-bottom:40px}section.drag-section{background-color:#074987}.drag-header{color:#90a7bc}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.3}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.preview-image{width:40%;height:40%}", ""]);
+  exports.push([module.id, ".app-title{margin:0;padding:0 0 0 20px;width:100%;background-color:#FFFCFC;color:#074987}.alpha{font-size:.5em}section{width:100%;padding:0 0 40px 20px}section h2{padding:5px 0 20px}section.drag-section{background-color:#074987}.drag-header,section.drag-section h2{color:#90a7bc}.samples-container{margin-left:30px}section.choose-section{background-color:#f2a60c}section.choose-section .choose-section-container{-webkit-transition:opacity .8s;-o-transition:opacity .8s;transition:opacity .8s;opacity:.2}section.choose-section .choose-section-container.choosable{opacity:1}section:last-of-type{border-bottom:0}@-webkit-keyframes fade-in{from{opacity:0}to{opacity:1}}@-o-keyframes fade-in{from{opacity:0}to{opacity:1}}@keyframes fade-in{from{opacity:0}to{opacity:1}}.results-container{background-color:#c71414;-webkit-animation:fade-in 1s;-o-animation:fade-in 1s;animation:fade-in 1s}.results-container h2{text-align:center;padding:10px;background-color:#007b28;color:#fff;font-size:1.3em;margin:0 -20px 40px}.results-container .react-tabs [role=tab]{background-color:#777}.results-container .react-tabs [role=tab]:hover,.results-container .react-tabs [role=tab][aria-selected=true]{border-radius:0;background-color:#fff}.preview-image{width:60%;height:60%}", ""]);
 
 /***/ },
 /* 132 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,hr,main,menu,nav,section,summary{display:block}pre,textarea{overflow:auto}fieldset,h1,h2,h3,h4,hr,legend,td,th{padding:0}fieldset,hr,img,legend{border:0}body{margin:0;background-color:#c71414}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{-ms-interpolation-mode:nearest-neighbor!important;image-rendering:-webkit-optimize-contrast!important;image-rendering:-moz-crisp-edges!important;image-rendering:-o-pixelated!important;image-rendering:pixelated!important}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:1px;border-top:1px solid #ccc;margin:1em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#222;font-weight:100;font-size:1em;font-family:'Segoe UI',HelveticaNeue-Light,sans-serif;line-height:1.375}h1,h2,h3,h4{margin:0}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{margin:0}.browserupgrade{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}", ""]);
+  exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,hr,main,menu,nav,section,summary{display:block}pre,textarea{overflow:auto}fieldset,h1,h2,h3,h4,hr,legend,td,th{padding:0}fieldset,hr,img,legend{border:0}body{margin:0;background-color:#c71414}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{-ms-interpolation-mode:nearest-neighbor!important;image-rendering:-webkit-optimize-contrast!important;image-rendering:-moz-crisp-edges!important;image-rendering:-o-pixelated!important;image-rendering:pixelated!important}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:1px;border-top:1px solid #ccc;margin:1em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#222;font-weight:100;font-size:1em;font-family:'Segoe UI',HelveticaNeue-Light,sans-serif;line-height:1.375}h1,h2,h3,h4{margin:0}.focused{background-color:#fff!important}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{margin:0}.browserupgrade{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}", ""]);
 
 /***/ },
 /* 133 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".choose-piece-type .piece-type-container{padding:4px;height:160px;display:inline-block;margin:2px;background-color:grey;color:#000;float:left;position:relative}.choose-piece-type .focused{background-color:red;color:#fff}.choose-piece-type .piece-type-title{position:absolute;bottom:10px}", ""]);
+  exports.push([module.id, ".choose-piece-type .piece-type-container{padding:4px;height:120px;display:inline-block;margin:2px;background-color:#777;color:#000;float:left;position:relative}.choose-piece-type .piece-type-container.choosable:hover{background-color:#fff}.choose-piece-type .piece-type-title{position:absolute;bottom:10px}", ""]);
 
 /***/ },
 /* 134 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".choose-scale .scale-container{padding:4px;display:inline-block;margin:2px;background-color:grey;color:#000}.choose-scale .focused{background-color:red;color:#fff}", ""]);
+  exports.push([module.id, ".choose-scale{margin-top:20px}.choose-scale .scale-container{padding:10px;display:inline-block;margin:2px;background-color:#777;color:#000}.choose-scale .scale-container:hover{background-color:#fff}.choose-scale .scale-title{font-size:2em}", ""]);
 
 /***/ },
 /* 135 */
@@ -8168,7 +8163,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".drop-zone{border:3px dashed #90A7BC;color:#90A7BC;padding:20px;text-align:center;min-height:140px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.mobile-input-file{margin:15px 0}", ""]);
+  exports.push([module.id, ".drop-zone{border:3px dashed #90A7BC;color:#90a7bc;padding:20px;text-align:center;min-height:140px;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex}.mobile-input-file{margin:15px 0;color:#90a7bc}", ""]);
 
 /***/ },
 /* 138 */
@@ -8189,21 +8184,21 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".piece-list-container{position:relative;padding-top:40px}.piece-list-container ul{list-style-type:none}.piece-list-container .piece-list-header{position:absolute;top:0;left:0;right:0;z-index:10;background-color:#c71414;padding:4px;font-weight:700}.piece-list-container .piece-list-rows{max-height:400px;overflow-y:scroll}", ""]);
+  exports.push([module.id, ".piece-list-container{position:relative;padding-top:40px}.piece-list-container ul{list-style-type:none}", ""]);
 
 /***/ },
 /* 141 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".simple-piece-list-entry .simple-field{margin:4px 30px;width:140px;display:inline-block}.simple-piece-list-entry .simple-color-dark{color:#fff}.simple-piece-list-entry .simple-color-light{color:#000}", ""]);
+  exports.push([module.id, ".simple-piece-list-entry .simple-field{margin:4px 30px;width:140px;display:inline-block}.simple-piece-list-entry .simple-field.narrower{width:40px}.simple-piece-list-entry .simple-color-dark{color:#fff}.simple-piece-list-entry .simple-color-light{color:#000}", ""]);
 
 /***/ },
 /* 142 */
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".PieceMap{min-height:450px;display:inline-block}.disclaimer{padding:10px;background-color:#F2A60C;font-weight:700;margin:10px 0}.disclaimer a{color:#00f;cursor:pointer}", ""]);
+  exports.push([module.id, ".piece-map{min-height:450px;display:inline-block}.piece-map .piece-map-options{padding:20px}", ""]);
 
 /***/ },
 /* 143 */
@@ -8217,7 +8212,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".sample-image{width:14%;height:14%;padding:5px;cursor:pointer}.sample-image:hover{background-color:red}.dropzone{display:inline-block}", ""]);
+  exports.push([module.id, ".sample-image{width:14%;height:14%;padding:5px;cursor:pointer}.sample-image:hover{background-color:#fff}.dropzone{display:inline-block}", ""]);
 
 /***/ },
 /* 145 */
