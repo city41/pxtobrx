@@ -7955,7 +7955,7 @@ module.exports =
         var us = this.props.userScale;
 
         if (this.state.fitToWindow) {
-          s = window.innerWidth * .9 / (this.props.imgWidth * us);
+          s = (window.innerWidth - 40) / (this.props.imgWidth * us);
         }
 
         var canvas = _react2['default'].findDOMNode(this.refs.pieceMapCanvas);
@@ -7993,14 +7993,20 @@ module.exports =
           _react2['default'].createElement(
             'div',
             { className: 'piece-map-options' },
-            _react2['default'].createElement('input', { type: 'checkbox', onClick: function () {
-                return _this2.setState({ fitToWindow: !_this2.state.fitToWindow });
-              } }),
-            ' Fit to window  ',
-            _react2['default'].createElement('input', { type: 'checkbox', onClick: function () {
-                return _this2.setState({ hideBorders: !_this2.state.hideBorders });
-              } }),
-            ' Hide brick borders'
+            _react2['default'].createElement(
+              'div',
+              { className: 'toggle-button ' + (this.state.fitToWindow && 'toggled-on'), onClick: function () {
+                  return _this2.setState({ fitToWindow: !_this2.state.fitToWindow });
+                } },
+              'fit to window'
+            ),
+            _react2['default'].createElement(
+              'div',
+              { className: 'toggle-button ' + (this.state.hideBorders && 'toggled-on'), onClick: function () {
+                  return _this2.setState({ hideBorders: !_this2.state.hideBorders });
+                } },
+              'hide brick borders'
+            )
           ),
           _react2['default'].createElement('canvas', { ref: 'pieceMapCanvas' })
         );
@@ -8372,7 +8378,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".piece-map{min-height:450px;display:inline-block}.piece-map .piece-map-options{padding:20px}", ""]);
+  exports.push([module.id, ".piece-map{min-height:450px;display:inline-block}.piece-map .piece-map-options{padding:20px}.toggle-button{display:inline-block;padding:10px;margin:5px;background-color:#777;color:#000;cursor:pointer}.toggle-button.toggled-on{background-color:#fff}", ""]);
 
 /***/ },
 /* 145 */

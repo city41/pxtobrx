@@ -25,7 +25,7 @@ class PieceMap extends React.Component {
     let us = this.props.userScale;
 
     if (this.state.fitToWindow) {
-      s = (window.innerWidth * .9) / (this.props.imgWidth * us);
+      s = (window.innerWidth - 40) / (this.props.imgWidth * us);
     }
 
     let canvas = React.findDOMNode(this.refs.pieceMapCanvas);
@@ -62,9 +62,12 @@ class PieceMap extends React.Component {
     return (
       <div className="piece-map">
         <div className="piece-map-options">
-          <input type="checkbox" onClick={() => this.setState({fitToWindow: !this.state.fitToWindow})} /> Fit to window
-          &nbsp;
-          <input type="checkbox" onClick={() => this.setState({hideBorders: !this.state.hideBorders})} /> Hide brick borders
+          <div className={`toggle-button ${this.state.fitToWindow && 'toggled-on'}`} onClick={() => this.setState({fitToWindow: !this.state.fitToWindow})}>
+            fit to window
+          </div>
+          <div className={`toggle-button ${this.state.hideBorders && 'toggled-on'}`} onClick={() => this.setState({hideBorders: !this.state.hideBorders})}>
+            hide brick borders
+          </div>
         </div>
         <canvas ref="pieceMapCanvas" />
       </div>
