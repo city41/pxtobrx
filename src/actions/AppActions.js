@@ -31,5 +31,11 @@ export default {
       type: ActionTypes.CHOSEN_SCALE,
       chosenScale
     });
+  },
+
+  onToggleFaq() {
+    Dispatcher.dispatch({
+      type: ActionTypes.TOGGLE_FAQ
+    });
   }
 };

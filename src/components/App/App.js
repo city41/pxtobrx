@@ -5,6 +5,7 @@ import appStyles from './App.less';
 import withContext from '../../decorators/withContext';
 import withStyles from '../../decorators/withStyles';
 
+import FAQ from '../FAQ';
 import Drag from '../Drag';
 import Sample from '../Sample';
 import ChoosePieceType from '../ChoosePieceType';
@@ -14,10 +15,12 @@ import PieceMap from '../PieceMap';
 import Dimensions from '../Dimensions';
 import Price from '../Price';
 
+import AppActions from '../../actions/AppActions';
 import AppStore from '../../stores/AppStore';
 
 function getState() {
   return {
+    showFaq: AppStore.getShowFaq(),
     pixelData: AppStore.getPixelData(),
     neededPieces: AppStore.getNeededPieces(),
     chosenPieceType: AppStore.getChosenPieceType(),
@@ -102,9 +105,15 @@ class App extends React.Component {
   }
 
   render() {
+    let faq = this.state.showFaq && <FAQ />;
+
     return (
       <div>
-        <h1 className="app-title">pxtobrx <span className="alpha">(beta)</span></h1>
+        {faq}
+        <span className="faq-link" style={{float: 'right'}}>
+          <a onClick={AppActions.onToggleFaq}>FAQ</a>
+        </span>
+        <h1 className="app-title">pxtobrx <span className="alpha">v0.1</span></h1>
         <section className="drag-section">
           <div className="grid">
             <div className="col-4-12">
@@ -136,7 +145,6 @@ class App extends React.Component {
               </div>
               <div className="col-6-12">
                 <h2>And Scale</h2>
-                <p>useful for building a larger version of a small sprite</p>
                 <ChooseScale choosable={!!this.state.dataUrl} chosenScale={this.state.chosenScale} />
               </div>
             </div>

@@ -28,11 +28,11 @@ class Dimensions {
     let secondaryDimension;
 
     if (feetW > 1 || feetH > 1) {
-      mainDimension = `${feetW.toFixed(2)}x${feetH.toFixed(2)}ft`;
-      secondaryDimension = `${inchW.toFixed(2)}x${inchH.toFixed(2)}in`;
+      mainDimension = `${feetW.toFixed(2)} x ${feetH.toFixed(2)}ft`;
+      secondaryDimension = `${inchW.toFixed(2)} x ${inchH.toFixed(2)}in`;
     } else {
-      mainDimension = `${inchW.toFixed(2)}x${inchH.toFixed(2)}in`;
-      secondaryDimension = `${feetW.toFixed(2)}x${feetH.toFixed(2)}ft`;
+      mainDimension = `${inchW.toFixed(2)} x ${inchH.toFixed(2)}in`;
+      secondaryDimension = `${feetW.toFixed(2)} x ${feetH.toFixed(2)}ft`;
     }
 
     return (

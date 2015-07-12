@@ -1,15 +1,31 @@
 @import '../variables.less';
 
+@title-height: 50px;
+
 .app-title {
   margin: 0;
   padding: 0 0 0 20px;
   width: 100%;
-  background-color: #FFFCFC;
-  color: #074987;
+  background-color: @pale-lego-grey;
+  color: @lego-blue;
+  height: @title-height;
+  line-height: @title-height;
 }
 
 .alpha {
   font-size: 0.5em;
+}
+
+.faq-link {
+  height: @title-height;
+  line-height: @title-height;
+  margin-right: 20px;
+
+  a {
+    color: @lego-blue;
+    text-decoration: none;
+    cursor: pointer;
+  }
 }
 
 section {
