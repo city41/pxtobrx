@@ -160,4 +160,37 @@ const serverConfig = merge({}, config, {
   }
 });
 
-export default [appConfig, serverConfig];
+const buildIndexConfig = merge({}, config, {
+  entry: './src/build-index.js',
+  output: {
+    path: './build',
+    filename: 'build-index.js',
+    libraryTarget: 'commonjs2'
+  },
+  target: 'node',
+  externals: /^[a-z][a-z\.\-0-9]*$/,
+  node: {
+    console: false,
+    global: false,
+    process: false,
+    Buffer: false,
+    __filename: false,
+    __dirname: false
+  },
+  devtool: DEBUG ? 'source-map' : 'cheap-module-source-map',
+  plugins: config.plugins.concat(
+    new DefinePlugin(merge(GLOBALS, {'__SERVER__': true})),
+    new BannerPlugin('require("source-map-support").install();',
+      { raw: true, entryOnly: false })
+  ),
+  module: {
+    loaders: config.module.loaders.map(function(loader) {
+      // Remove style-loader
+      return merge(loader, {
+        loader: loader.loader = loader.loader.replace(STYLE_LOADER + '!', '')
+      });
+    })
+  }
+});
+
+export default [appConfig, serverConfig, buildIndexConfig];

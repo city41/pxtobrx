@@ -138,11 +138,11 @@ class App extends React.Component {
               <div className="samples-container">
                 <h3 className="drag-header">or ... click one of these</h3>
                 <div>
-                  <Sample src="/img/samples/samus.png" />
-                  <Sample src="/img/samples/thwomp.png" />
-                  <Sample src="/img/samples/smb3-tanooki-mario.png" />
-                  <Sample src="/img/samples/megaman.png" />
-                  <Sample src="/img/samples/super-metroid.png" />
+                  <Sample src="./img/samples/samus.png" />
+                  <Sample src="./img/samples/thwomp.png" />
+                  <Sample src="./img/samples/smb3-tanooki-mario.png" />
+                  <Sample src="./img/samples/megaman.png" />
+                  <Sample src="./img/samples/super-metroid.png" />
                 </div>
               </div>
             </div>

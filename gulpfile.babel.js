@@ -80,6 +80,7 @@ gulp.task('bundle', cb => {
     }));
 
     if (++bundlerRunCount === (watch ? config.length : 1)) {
+      console.log("CB: " + cb.toString());
       return cb();
     }
   }
@@ -89,11 +90,6 @@ gulp.task('bundle', cb => {
   } else {
     bundler.run(bundle);
   }
-});
-
-// Build the app from source code
-gulp.task('build', ['clean'], cb => {
-  runSequence(['assets', 'resources'], ['bundle'], cb);
 });
 
 // Build and start watching for modifications
@@ -193,4 +189,17 @@ gulp.task('test:unit', function() {
     './test/unit/**/*.js'
   ])
   .pipe(mocha());
+});
+
+// Build the app from source code
+// dumps the js in ./build/public/app.js
+// all images/resources are placed in ./build/public
+// and index.html (which also contains all CSS inline) to ./build/public/index.html
+// the resulting ./build/public directory is ready for gh-pages
+gulp.task('build', ['clean'], cb => {
+  runSequence(['assets', 'resources'], ['bundle'], () => {
+    const buildIndex = require('./build/build-index');
+    buildIndex('./build/public/index.html');
+    cb();
+  });
 });
