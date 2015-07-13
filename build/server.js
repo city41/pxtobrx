@@ -6023,7 +6023,15 @@ module.exports =
     // TODO: allow optimizing on other factors besides price
     // possibilities include area, and max(width,length)
     return pieces.sort(function (a, b) {
-      return a.costRatio - b.costRatio;
+      var costRatioDiff = a.costRatio - b.costRatio;
+
+      if (costRatioDiff === 0) {
+        // if the two pieces have the same cost ratio,
+        // choose the bigger of the two
+        return b.width * b.height - a.width * a.height;
+      } else {
+        return costRatioDiff;
+      }
     });
   }
 
