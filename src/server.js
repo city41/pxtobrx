@@ -23,7 +23,16 @@ server.use(express.static(path.join(__dirname, 'public')));
 const templateFile = path.join(__dirname, 'templates/index.html');
 const template = _.template(fs.readFileSync(templateFile, 'utf8'));
 
+let htmlCache = {};
+
 server.get('*', async (req, res, next) => {
+  let userAgent = req.headers['user-agent'];
+
+  if (htmlCache[userAgent]) {
+    res.send(htmlCache[userAgent]);
+    return;
+  }
+
   try {
     let css = [];
     let data = {
@@ -41,15 +50,15 @@ server.get('*', async (req, res, next) => {
         onInsertCss: value => css.push(value),
         onSetMeta: (key, value) => data[key] = value
       }}
-      userAgent={req.headers['user-agent']}
+      userAgent={userAgent}
     />);
 
     data.body = React.renderToString(app);
     data.css = css.join('');
 
-    let html = template(data);
+    htmlCache[userAgent] = template(data);
 
-    res.send(html);
+    res.send(htmlCache[userAgent]);
   } catch (err) {
     next(err);
   }

@@ -97,10 +97,25 @@ module.exports =
   var templateFile = _path2['default'].join(__dirname, 'templates/index.html');
   var template = _lodash2['default'].template(_fs2['default'].readFileSync(templateFile, 'utf8'));
 
+  var htmlCache = {};
+
   server.get('*', function callee$0$0(req, res, next) {
+    var userAgent;
     return regeneratorRuntime.async(function callee$0$0$(context$1$0) {
       while (1) switch (context$1$0.prev = context$1$0.next) {
         case 0:
+          userAgent = req.headers['user-agent'];
+
+          if (!htmlCache[userAgent]) {
+            context$1$0.next = 4;
+            break;
+          }
+
+          res.send(htmlCache[userAgent]);
+          return context$1$0.abrupt('return');
+
+        case 4:
+
           try {
             (function () {
               var css = [];
@@ -123,21 +138,21 @@ module.exports =
                     return data[key] = value;
                   }
                 },
-                userAgent: req.headers['user-agent']
+                userAgent: userAgent
               });
 
               data.body = _react2['default'].renderToString(app);
               data.css = css.join('');
 
-              var html = template(data);
+              htmlCache[userAgent] = template(data);
 
-              res.send(html);
+              res.send(htmlCache[userAgent]);
             })();
           } catch (err) {
             next(err);
           }
 
-        case 1:
+        case 5:
         case 'end':
           return context$1$0.stop();
       }
