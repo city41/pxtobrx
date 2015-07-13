@@ -6415,72 +6415,87 @@ module.exports =
               'X'
             ),
             _react2['default'].createElement(
-              'h2',
-              null,
-              'pxtobrx v0.1'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'A Lego mosaic generator, targeted at video game sprites'
-            ),
-            _react2['default'].createElement(
-              'h3',
-              null,
-              'Found a bug?'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'You can report it on ',
+              'div',
+              { className: 'about-body' },
               _react2['default'].createElement(
-                'a',
-                { href: 'https://github.com/city41/pxtobrx/issues' },
-                'GitHub'
-              ),
-              '  or ',
-              _react2['default'].createElement(
-                'a',
-                { href: 'mailto:matt.e.greer@gmail.com' },
-                'email me'
-              )
-            ),
-            _react2['default'].createElement(
-              'h3',
-              null,
-              'The mosaic looks crappy!'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'That is either a limitation of the bricks and colors Lego makes, the algorithm, or both. Some colors are only available in a tiny number of brick sizes. Sometimes the algorithm has to fall back and use a different color because of that. The algorithm is certainly not perfect, and will be improved over time.'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'If a certain sprite looks ',
-              _react2['default'].createElement(
-                'em',
+                'h2',
                 null,
-                'really'
+                'pxtobrx v0.1'
               ),
-              ' bad as a mosaic, please ',
               _react2['default'].createElement(
-                'a',
-                { href: 'https://github.com/city41/pxtobrx/issues' },
-                'file a bug'
+                'p',
+                null,
+                'A Lego mosaic generator, targeted at video game sprites'
               ),
-              ' and include the sprite image in the bug report.'
-            ),
-            _react2['default'].createElement(
-              'h3',
-              null,
-              'The generated mosaic isn\'t using the best pieces possible'
-            ),
-            _react2['default'].createElement(
-              'p',
-              null,
-              'The algorithm for figuring out the mosaic is a tough one to crack. The current version is pretty good, but not perfect. I hope to both make the algorithm better, and add tools that allow you to tweak the mosaic manually.'
+              _react2['default'].createElement(
+                'h3',
+                null,
+                'Found a bug?'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'You can report it on ',
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://github.com/city41/pxtobrx/issues' },
+                  'GitHub'
+                ),
+                '  or ',
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'mailto:matt.e.greer@gmail.com' },
+                  'email me'
+                )
+              ),
+              _react2['default'].createElement(
+                'h3',
+                null,
+                'The mosaic looks crappy!'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'That is either a limitation of the bricks and colors Lego makes, the algorithm, or both. Some colors are only available in a tiny number of brick sizes. Sometimes the algorithm has to fall back and use a different color because of that.'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'If a certain sprite looks ',
+                _react2['default'].createElement(
+                  'em',
+                  null,
+                  'really'
+                ),
+                ' bad as a mosaic, please ',
+                _react2['default'].createElement(
+                  'a',
+                  { href: 'https://github.com/city41/pxtobrx/issues' },
+                  'file a bug'
+                ),
+                ' and include the sprite image in the bug report.'
+              ),
+              _react2['default'].createElement(
+                'h3',
+                null,
+                'The generated mosaic isn\'t using the best pieces possible!'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'The current algorithm for figuring out the mosaic is pretty good, but not perfect. Getting it perfect is a goal.'
+              ),
+              _react2['default'].createElement(
+                'p',
+                null,
+                'Also, the algorithm optimizes for ',
+                _react2['default'].createElement(
+                  'b',
+                  null,
+                  'lowest price'
+                ),
+                '. Sometimes bigger pieces actually cost more per stud than smaller pieces. Take a 4x8, which is 65 cents, and a 2x12 which is 40 cents. The 2x12 is smaller, but each stud costs 1.6 cents, where as for the 4x8 they cost 2 cents each. The algorithm will choose the smaller, but cheaper piece.'
+              )
             ),
             _react2['default'].createElement(
               'div',
@@ -8465,7 +8480,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(4)();
-  exports.push([module.id, ".about-mask{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(255,255,255,.7)}.about{position:fixed;z-index:10;top:15%;left:15%;width:70%;padding:20px 20px 40px;background-color:#074987;color:#90a7bc;border:4px solid #fff;-webkit-box-shadow:7px 9px 20px 0 #575757;box-shadow:7px 9px 20px 0 #575757}.about .about-close,.about .about-footer{position:absolute;right:0;height:30px;line-height:30px;background-color:#fff}.about a{color:#fff}.about .about-close{top:0;width:30px;color:#074987;text-align:center;cursor:pointer}.about .about-footer{bottom:0;left:0;color:#074987;text-align:right;padding-right:20px;font-size:.8em}.about .about-footer a{color:#074987;text-decoration:underline}", ""]);
+  exports.push([module.id, ".about-mask{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(255,255,255,.7)}.about{position:fixed;z-index:10;top:15%;left:15%;width:70%;height:70%;padding:20px 20px 40px;background-color:#074987;color:#90a7bc;border:4px solid #fff;-webkit-box-shadow:7px 9px 20px 0 #575757;box-shadow:7px 9px 20px 0 #575757}.about .about-close,.about .about-footer{position:absolute;right:0;line-height:30px;background-color:#fff}.about a,.about b,.about h3{color:#fff}.about .about-close{top:0;width:30px;height:30px;color:#074987;text-align:center;cursor:pointer}.about .about-body{height:100%;overflow-y:scroll}.about .about-footer{bottom:0;left:0;height:30px;color:#074987;text-align:right;padding-right:20px;font-size:.8em}.about .about-footer a{color:#074987;text-decoration:underline}", ""]);
 
 /***/ },
 /* 133 */

@@ -33,7 +33,6 @@ export default function buildIndex(outputPath) {
 
     // data.body = React.renderToString(app);
     data.css = css.join('');
-    console.log("CSS::: " + data.css);
 
     let html = template(data);
 
