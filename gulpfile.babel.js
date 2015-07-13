@@ -80,7 +80,6 @@ gulp.task('bundle', cb => {
     }));
 
     if (++bundlerRunCount === (watch ? config.length : 1)) {
-      console.log("CB: " + cb.toString());
       return cb();
     }
   }
