@@ -31,7 +31,7 @@ export default function buildIndex(outputPath) {
       }}
     />);
 
-    // data.body = React.renderToString(app);
+    data.body = React.renderToString(app);
     data.css = css.join('');
 
     let html = template(data);

@@ -109,7 +109,7 @@ module.exports =
           }
         });
 
-        // data.body = React.renderToString(app);
+        data.body = _react2['default'].renderToString(app);
         data.css = css.join('');
 
         var html = template(data);
