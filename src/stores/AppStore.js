@@ -7,7 +7,7 @@ import ActionTypes from '../constants/ActionTypes';
 import convertFromImageData from '../brix/convertFromImageData';
 import rectCalculation from '../brix/rectCalculation';
 import assignColorAndGetPieces from '../brix/assignColorAndGetPieces';
-import BrickColors from '../constants/BrickColors';
+import PieceColors from '../brix/PieceColors';
 
 const CHANGE_EVENT = 'change';
 
@@ -50,7 +50,7 @@ function calcNeededPieces(input, type, scale, callback) {
       rects = scaleRects(rects, scale);
 
       return _.flatten(_.map(rects, (rect) => {
-        return assignColorAndGetPieces(rect, rect.value, type, BrickColors);
+        return assignColorAndGetPieces(rect, rect.value, type, PieceColors);
       }));
     });
 

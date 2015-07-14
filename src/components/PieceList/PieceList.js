@@ -3,7 +3,7 @@ import Color from 'color';
 import React, { PropTypes } from 'react';
 import styles from './PieceList.less';
 import withStyles from '../../decorators/withStyles';
-import BrickColors from '../../constants/BrickColors';
+import PieceColors from '../../brix/PieceColors';
 
 @withStyles(styles)
 class PieceList extends React.Component {
@@ -50,7 +50,7 @@ class PieceList extends React.Component {
       return _.map(cg[1], (sizeAndQuantity, i) => {
         let headerTd;
         if (i === 0) {
-          let legoColor = BrickColors[cg[0]].color;
+          let legoColor = PieceColors[cg[0]].color;
           let isDark = Color(legoColor).dark();
           let className = isDark ? 'simple-color-dark' : 'simple-color-light';
           headerTd = <td rowSpan={cg[1].length} className={className} style={{backgroundColor: legoColor}}>{cg[0]}</td>;

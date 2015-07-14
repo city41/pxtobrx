@@ -1,5 +1,5 @@
 // TODO: support rotating pieces
-// for now, rotated pieces are defined separately in PieceSets
+// for now, rotated pieces are defined separately in PieceColors
 
 import _ from 'lodash';
 

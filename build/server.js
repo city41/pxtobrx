@@ -2789,9 +2789,9 @@ module.exports =
 
   var _brixAssignColorAndGetPieces2 = _interopRequireDefault(_brixAssignColorAndGetPieces);
 
-  var _constantsBrickColors = __webpack_require__(18);
+  var _brixPieceColors = __webpack_require__(18);
 
-  var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
+  var _brixPieceColors2 = _interopRequireDefault(_brixPieceColors);
 
   var CHANGE_EVENT = 'change';
 
@@ -2829,7 +2829,7 @@ module.exports =
         rects = scaleRects(rects, scale);
 
         return _lodash2['default'].flatten(_lodash2['default'].map(rects, function (rect) {
-          return (0, _brixAssignColorAndGetPieces2['default'])(rect, rect.value, type, _constantsBrickColors2['default']);
+          return (0, _brixAssignColorAndGetPieces2['default'])(rect, rect.value, type, _brixPieceColors2['default']);
         }));
       });
 
@@ -6032,7 +6032,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   // TODO: support rotating pieces
-  // for now, rotated pieces are defined separately in PieceSets
+  // for now, rotated pieces are defined separately in PieceColors
 
   'use strict';
 
@@ -6134,9 +6134,9 @@ module.exports =
 
   var _lodash2 = _interopRequireDefault(_lodash);
 
-  var _constantsBrickColors = __webpack_require__(18);
+  var _brixPieceColors = __webpack_require__(18);
 
-  var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
+  var _brixPieceColors2 = _interopRequireDefault(_brixPieceColors);
 
   var _colorDifference = __webpack_require__(51);
 
@@ -6158,7 +6158,7 @@ module.exports =
     color = toHex(color);
     var nearestColorDiff = 999999;
 
-    return _lodash2['default'].reduce(Object.values(_constantsBrickColors2['default']), function (nearestColor, colorCandidate) {
+    return _lodash2['default'].reduce(Object.values(_brixPieceColors2['default']), function (nearestColor, colorCandidate) {
       var diff = _colorDifference2['default'].compare(toHex(colorCandidate.color), color);
 
       if (diff < nearestColorDiff) {
@@ -6955,9 +6955,9 @@ module.exports =
 
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
 
-  var _constantsBrickColors = __webpack_require__(18);
+  var _brixPieceColors = __webpack_require__(18);
 
-  var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
+  var _brixPieceColors2 = _interopRequireDefault(_brixPieceColors);
 
   var Availability = (function (_React$Component) {
     _inherits(Availability, _React$Component);
@@ -6974,7 +6974,7 @@ module.exports =
     _createClass(Availability, [{
       key: 'getSizes',
       value: function getSizes(type) {
-        var allPieces = _lodash2['default'].flatten(_lodash2['default'].map(Object.values(_constantsBrickColors2['default']), function (color) {
+        var allPieces = _lodash2['default'].flatten(_lodash2['default'].map(Object.values(_brixPieceColors2['default']), function (color) {
           return color.availablePieces[type];
         }));
 
@@ -7023,7 +7023,7 @@ module.exports =
       value: function getRowTds() {
         var _this2 = this;
 
-        var colors = _lodash2['default'].sortBy(Object.values(_constantsBrickColors2['default']), 'officialName');
+        var colors = _lodash2['default'].sortBy(Object.values(_brixPieceColors2['default']), 'officialName');
         return _lodash2['default'].map(colors, function (color) {
           return _react2['default'].createElement(
             'tr',
@@ -7166,11 +7166,11 @@ module.exports =
 
   var _Piece2 = _interopRequireDefault(_Piece);
 
-  var _constantsBrickColors = __webpack_require__(18);
+  var _brixPieceColors = __webpack_require__(18);
 
-  var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
+  var _brixPieceColors2 = _interopRequireDefault(_brixPieceColors);
 
-  var buttonDefs = [{ type: 'plate', left: 2, right: 1, color: _constantsBrickColors2['default']['Dark Green'].color }, { type: 'brick', left: 2, right: 1, color: _constantsBrickColors2['default']['Bright Orange'].color }, { type: 'flat', left: 2, right: 1, color: _constantsBrickColors2['default']['Medium Blue'].color }];
+  var buttonDefs = [{ type: 'plate', left: 2, right: 1, color: _brixPieceColors2['default']['Dark Green'].color }, { type: 'brick', left: 2, right: 1, color: _brixPieceColors2['default']['Bright Orange'].color }, { type: 'flat', left: 2, right: 1, color: _brixPieceColors2['default']['Medium Blue'].color }];
 
   var ChoosePieceType = (function () {
     function ChoosePieceType() {
@@ -7954,9 +7954,9 @@ module.exports =
 
   var _decoratorsWithStyles2 = _interopRequireDefault(_decoratorsWithStyles);
 
-  var _constantsBrickColors = __webpack_require__(18);
+  var _brixPieceColors = __webpack_require__(18);
 
-  var _constantsBrickColors2 = _interopRequireDefault(_constantsBrickColors);
+  var _brixPieceColors2 = _interopRequireDefault(_brixPieceColors);
 
   var PieceList = (function (_React$Component) {
     _inherits(PieceList, _React$Component);
@@ -8015,7 +8015,7 @@ module.exports =
           return _lodash2['default'].map(cg[1], function (sizeAndQuantity, i) {
             var headerTd = undefined;
             if (i === 0) {
-              var legoColor = _constantsBrickColors2['default'][cg[0]].color;
+              var legoColor = _brixPieceColors2['default'][cg[0]].color;
               var isDark = (0, _color2['default'])(legoColor).dark();
               var className = isDark ? 'simple-color-dark' : 'simple-color-light';
               headerTd = _react2['default'].createElement(

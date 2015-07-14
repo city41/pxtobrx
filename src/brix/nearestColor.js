@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import BrickColors from '../constants/BrickColors';
+import PieceColors from '../brix/PieceColors';
 import colorDifference from 'color-difference';
 import Color from 'color';
 
@@ -15,7 +15,7 @@ module.exports = function(color) {
   color = toHex(color);
   let nearestColorDiff = 999999;
 
-  return _.reduce(Object.values(BrickColors), (nearestColor, colorCandidate) => {
+  return _.reduce(Object.values(PieceColors), (nearestColor, colorCandidate) => {
     let diff = colorDifference.compare(toHex(colorCandidate.color), color);
 
     if (diff < nearestColorDiff) {

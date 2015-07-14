@@ -4,12 +4,12 @@ import withStyles from '../../decorators/withStyles';
 import AppActions from '../../actions/AppActions';
 
 import Piece from '../Piece';
-import BrickColors from '../../constants/BrickColors';
+import PieceColors from '../../brix/PieceColors';
 
 const buttonDefs = [
-  { type: 'plate', left: 2, right: 1, color: BrickColors['Dark Green'].color },
-  { type: 'brick', left: 2, right: 1, color: BrickColors['Bright Orange'].color },
-  { type: 'flat', left: 2, right: 1, color: BrickColors['Medium Blue'].color }
+  { type: 'plate', left: 2, right: 1, color: PieceColors['Dark Green'].color },
+  { type: 'brick', left: 2, right: 1, color: PieceColors['Bright Orange'].color },
+  { type: 'flat', left: 2, right: 1, color: PieceColors['Medium Blue'].color }
 ];
 
 @withStyles(styles)

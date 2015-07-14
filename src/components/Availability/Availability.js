@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 import styles from './Availability.less';
 import withStyles from '../../decorators/withStyles';
-import BrickColors from '../../constants/BrickColors';
+import PieceColors from '../../brix/PieceColors';
 
 @withStyles(styles)
 class Availability extends React.Component {
@@ -14,7 +14,7 @@ class Availability extends React.Component {
   }
 
   getSizes(type) {
-    let allPieces = _.flatten(_.map(Object.values(BrickColors), (color) => {
+    let allPieces = _.flatten(_.map(Object.values(PieceColors), (color) => {
       return color.availablePieces[type];
     }));
 
@@ -51,7 +51,7 @@ class Availability extends React.Component {
   }
 
   getRowTds() {
-    let colors = _.sortBy(Object.values(BrickColors), 'officialName');
+    let colors = _.sortBy(Object.values(PieceColors), 'officialName');
     return _.map(colors, (color) => {
       return (
         <tr>
