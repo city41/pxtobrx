@@ -36,18 +36,25 @@ class PieceList extends React.Component {
     });
 
     colorGroups = _.map(colorGroups, (cg) => {
-      let sizeGroups = _.countBy(cg[1], (p) => {
+      let sizeGroups = _.groupBy(cg[1], (p) => {
         return `${Math.min(p.width, p.height)}x${Math.max(p.width, p.height)}`;
       });
       sizeGroups = _.pairs(sizeGroups);
       sizeGroups = _.sortBy(sizeGroups, '0');
+      sizeGroups = _.map(sizeGroups, (sg) => {
+        let price = sg[1][0].cost * sg[1].length;
+        sg.push(price);
+        sg[1] = sg[1].length;
+        return sg;
+      });
 
       return [cg[0], sizeGroups];
     });
 
-    // [    ['black', ['1x1', 4], ['1x2', 6]],  [...]  ]
+    // [ [ <color>, [<size>, <count>, <cost>]]]
+    // [    ['black', ['1x1', 4, 40], ['1x2', 6, 60]],  [...]  ]
     let rows = _.flatten(_.map(colorGroups, (cg) => {
-      return _.map(cg[1], (sizeAndQuantity, i) => {
+      return _.map(cg[1], (sizeQuantityAndCost, i) => {
         let headerTd;
         if (i === 0) {
           let legoColor = PieceColors[cg[0]].color;
@@ -56,14 +63,15 @@ class PieceList extends React.Component {
           headerTd = <td rowSpan={cg[1].length} className={className} style={{backgroundColor: legoColor}}>{cg[0]}</td>;
         }
 
-        let isBagged = this.state[`${cg[1]}${sizeAndQuantity[0]}`];
+        let isBagged = this.state[`${cg[1]}${sizeQuantityAndCost[0]}`];
 
         return (
-          <tr className={headerTd && 'header-row'} key={`${cg[0]}-${sizeAndQuantity.join('-')}`}>
+          <tr className={headerTd && 'header-row'} key={`${cg[0]}-${sizeQuantityAndCost.join('-')}`}>
             {headerTd}
-            <td className={isBagged && 'bagged'}>{sizeAndQuantity[0]}</td>
-            <td className={isBagged && 'bagged'}>{sizeAndQuantity[1]}</td>
-            <td><input type="checkbox" onClick={this.toggleBagged.bind(this, cg[1], sizeAndQuantity[0])}></input></td>
+            <td className={isBagged && 'bagged'}>{sizeQuantityAndCost[0]}</td>
+            <td className={isBagged && 'bagged'}>{sizeQuantityAndCost[1]}</td>
+            <td className={isBagged && 'bagged'}>${(sizeQuantityAndCost[2] / 100).toFixed(2)}</td>
+            <td><input type="checkbox" onClick={this.toggleBagged.bind(this, cg[1], sizeQuantityAndCost[0])}></input></td>
           </tr>
         );
       });
@@ -74,7 +82,7 @@ class PieceList extends React.Component {
         <table>
           <thead>
             <tr>
-              <th>Color</th><th>size</th><th>quantity</th><th>bagged</th>
+              <th>Color</th><th>size</th><th>quantity</th><th>price</th><th>bagged</th>
             </tr>
           </thead>
           <tbody>

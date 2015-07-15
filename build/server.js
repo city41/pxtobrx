@@ -8031,18 +8031,25 @@ module.exports =
         });
 
         colorGroups = _lodash2['default'].map(colorGroups, function (cg) {
-          var sizeGroups = _lodash2['default'].countBy(cg[1], function (p) {
+          var sizeGroups = _lodash2['default'].groupBy(cg[1], function (p) {
             return Math.min(p.width, p.height) + 'x' + Math.max(p.width, p.height);
           });
           sizeGroups = _lodash2['default'].pairs(sizeGroups);
           sizeGroups = _lodash2['default'].sortBy(sizeGroups, '0');
+          sizeGroups = _lodash2['default'].map(sizeGroups, function (sg) {
+            var price = sg[1][0].cost * sg[1].length;
+            sg.push(price);
+            sg[1] = sg[1].length;
+            return sg;
+          });
 
           return [cg[0], sizeGroups];
         });
 
-        // [    ['black', ['1x1', 4], ['1x2', 6]],  [...]  ]
+        // [ [ <color>, [<size>, <count>, <cost>]]]
+        // [    ['black', ['1x1', 4, 40], ['1x2', 6, 60]],  [...]  ]
         var rows = _lodash2['default'].flatten(_lodash2['default'].map(colorGroups, function (cg) {
-          return _lodash2['default'].map(cg[1], function (sizeAndQuantity, i) {
+          return _lodash2['default'].map(cg[1], function (sizeQuantityAndCost, i) {
             var headerTd = undefined;
             if (i === 0) {
               var legoColor = _brixPieceColors2['default'][cg[0]].color;
@@ -8055,26 +8062,32 @@ module.exports =
               );
             }
 
-            var isBagged = _this.state['' + cg[1] + sizeAndQuantity[0]];
+            var isBagged = _this.state['' + cg[1] + sizeQuantityAndCost[0]];
 
             return _react2['default'].createElement(
               'tr',
-              { className: headerTd && 'header-row', key: cg[0] + '-' + sizeAndQuantity.join('-') },
+              { className: headerTd && 'header-row', key: cg[0] + '-' + sizeQuantityAndCost.join('-') },
               headerTd,
               _react2['default'].createElement(
                 'td',
                 { className: isBagged && 'bagged' },
-                sizeAndQuantity[0]
+                sizeQuantityAndCost[0]
               ),
               _react2['default'].createElement(
                 'td',
                 { className: isBagged && 'bagged' },
-                sizeAndQuantity[1]
+                sizeQuantityAndCost[1]
+              ),
+              _react2['default'].createElement(
+                'td',
+                { className: isBagged && 'bagged' },
+                '$',
+                (sizeQuantityAndCost[2] / 100).toFixed(2)
               ),
               _react2['default'].createElement(
                 'td',
                 null,
-                _react2['default'].createElement('input', { type: 'checkbox', onClick: _this.toggleBagged.bind(_this, cg[1], sizeAndQuantity[0]) })
+                _react2['default'].createElement('input', { type: 'checkbox', onClick: _this.toggleBagged.bind(_this, cg[1], sizeQuantityAndCost[0]) })
               )
             );
           });
@@ -8106,6 +8119,11 @@ module.exports =
                   'th',
                   null,
                   'quantity'
+                ),
+                _react2['default'].createElement(
+                  'th',
+                  null,
+                  'price'
                 ),
                 _react2['default'].createElement(
                   'th',
