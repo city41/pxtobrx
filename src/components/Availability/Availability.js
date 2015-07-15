@@ -79,7 +79,7 @@ class Availability extends React.Component {
           Not all color and size combos exist. This can affect the mosaic build. Be sure to try your image with flats, bricks and plates to find the best color combination.
         </p>
         <p>
-          Here is a chart of what is available on  <a href="http://shop.lego.com/en-US/Pick-A-Brick-ByTheme">Pick a Brick</a>
+          Here is a chart of what is available on <a href="http://shop.lego.com/en-US/Pick-A-Brick-ByTheme">Pick a Brick</a>
         </p>
         <table className="availability-table">
           <thead>

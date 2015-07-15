@@ -50,6 +50,34 @@ class App extends React.Component {
     this.state = getState();
   }
 
+  componentDidMount() {
+    let regex = /imgur=(.*)$/;
+    let result = regex.exec(window.location.search);
+
+    if (result && result[1]) {
+      let img = new Image();
+      img.crossOrigin = 'Anonymous';
+      img.src = `http://i.imgur.com/${result[1]}`;
+
+      img.onload = () => {
+        let canvas = document.createElement('canvas');
+        let ctx = canvas.getContext('2d');
+        canvas.width = img.naturalWidth;
+        canvas.height = img.naturalHeight;
+
+        ctx.drawImage(img, 0, 0);
+
+        let pixelData = ctx.getImageData(0, 0, img.naturalWidth, img.naturalHeight).data;
+
+        setTimeout(() => {
+          AppActions.onImageData(pixelData, img.naturalWidth, img.naturalHeight);
+          AppActions.onImageDataUrl(canvas.toDataURL());
+        }, 1);
+
+      };
+    }
+  }
+
   getResults(pixelData) {
     let width = pixelData[0] && pixelData[0].length || 0;
     let height = pixelData.length;

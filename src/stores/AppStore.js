@@ -14,7 +14,7 @@ const CHANGE_EVENT = 'change';
 let calculating = false;
 let showAbout = false;
 let showAvailability = false;
-let chosenPieceType;
+let chosenPieceType = 'plate';
 let chosenScale = 1;
 let formattedPixelData = [[]];
 let neededPieces = [];

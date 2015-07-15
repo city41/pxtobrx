@@ -12,6 +12,13 @@ class PieceMap extends React.Component {
     imgHeight: PropTypes.number.isRequired
   };
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      fitToWindow: true
+    };
+  }
+
   componentDidMount() {
     this.drawImage();
   }
@@ -51,11 +58,6 @@ class PieceMap extends React.Component {
         ctx.fillRect(x + 1, y + 1, w - 2, h - 2);
       }
     });
-  }
-
-  constructor(props) {
-    super(props);
-    this.state = {};
   }
 
   render() {

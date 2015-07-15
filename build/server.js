@@ -2798,7 +2798,7 @@ module.exports =
   var calculating = false;
   var showAbout = false;
   var showAvailability = false;
-  var chosenPieceType = undefined;
+  var chosenPieceType = 'plate';
   var chosenScale = 1;
   var formattedPixelData = [[]];
   var neededPieces = [];
@@ -6675,6 +6675,36 @@ module.exports =
     }
 
     _createClass(App, [{
+      key: 'componentDidMount',
+      value: function componentDidMount() {
+        var regex = /imgur=(.*)$/;
+        var result = regex.exec(window.location.search);
+
+        if (result && result[1]) {
+          (function () {
+            var img = new Image();
+            img.crossOrigin = 'Anonymous';
+            img.src = 'http://i.imgur.com/' + result[1];
+
+            img.onload = function () {
+              var canvas = document.createElement('canvas');
+              var ctx = canvas.getContext('2d');
+              canvas.width = img.naturalWidth;
+              canvas.height = img.naturalHeight;
+
+              ctx.drawImage(img, 0, 0);
+
+              var pixelData = ctx.getImageData(0, 0, img.naturalWidth, img.naturalHeight).data;
+
+              setTimeout(function () {
+                _actionsAppActions2['default'].onImageData(pixelData, img.naturalWidth, img.naturalHeight);
+                _actionsAppActions2['default'].onImageDataUrl(canvas.toDataURL());
+              }, 1);
+            };
+          })();
+        }
+      }
+    }, {
       key: 'getResults',
       value: function getResults(pixelData) {
         var width = pixelData[0] && pixelData[0].length || 0;
@@ -7070,7 +7100,7 @@ module.exports =
           _react2['default'].createElement(
             'p',
             null,
-            'Here is a chart of what is available on  ',
+            'Here is a chart of what is available on ',
             _react2['default'].createElement(
               'a',
               { href: 'http://shop.lego.com/en-US/Pick-A-Brick-ByTheme' },
@@ -8137,6 +8167,27 @@ module.exports =
   var PieceMap = (function (_React$Component) {
     _inherits(PieceMap, _React$Component);
 
+    _createClass(PieceMap, null, [{
+      key: 'propTypes',
+      value: {
+        pieces: _react.PropTypes.array.isRequired,
+        scale: _react.PropTypes.number.isRequired,
+        userScale: _react.PropTypes.number.isRequired,
+        imgWidth: _react.PropTypes.number.isRequired,
+        imgHeight: _react.PropTypes.number.isRequired
+      },
+      enumerable: true
+    }]);
+
+    function PieceMap(props) {
+      _classCallCheck(this, _PieceMap);
+
+      _get(Object.getPrototypeOf(_PieceMap.prototype), 'constructor', this).call(this, props);
+      this.state = {
+        fitToWindow: true
+      };
+    }
+
     _createClass(PieceMap, [{
       key: 'componentDidMount',
       value: function componentDidMount() {
@@ -8183,26 +8234,7 @@ module.exports =
           }
         });
       }
-    }], [{
-      key: 'propTypes',
-      value: {
-        pieces: _react.PropTypes.array.isRequired,
-        scale: _react.PropTypes.number.isRequired,
-        userScale: _react.PropTypes.number.isRequired,
-        imgWidth: _react.PropTypes.number.isRequired,
-        imgHeight: _react.PropTypes.number.isRequired
-      },
-      enumerable: true
-    }]);
-
-    function PieceMap(props) {
-      _classCallCheck(this, _PieceMap);
-
-      _get(Object.getPrototypeOf(_PieceMap.prototype), 'constructor', this).call(this, props);
-      this.state = {};
-    }
-
-    _createClass(PieceMap, [{
+    }, {
       key: 'render',
       value: function render() {
         var _this2 = this;
