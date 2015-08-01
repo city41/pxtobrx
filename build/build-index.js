@@ -98,8 +98,8 @@ module.exports =
         };
 
         // only building App to gather all the css
-        var app = _react2['default'].createElement(_componentsApp2['default'], { // eslint-disable-line no-unused-vars
-          context: {
+        var app = _react2['default'].createElement(_componentsApp2['default'], // eslint-disable-line no-unused-vars
+        { context: {
             onInsertCss: function onInsertCss(value) {
               return css.push(value);
             },
@@ -205,9 +205,9 @@ module.exports =
 
   var _react = __webpack_require__(1);
 
-  var _react2 = _interopRequireDefault(_react);
-
   // eslint-disable-line no-unused-vars
+
+  var _react2 = _interopRequireDefault(_react);
 
   var _node_modulesReactLibInvariant = __webpack_require__(13);
 
@@ -2147,8 +2147,9 @@ module.exports =
   }
 
   function getStartingCell(input, direction) {
-    var x = lastCell.x;
-    var y = lastCell.y;
+    var _lastCell = lastCell;
+    var x = _lastCell.x;
+    var y = _lastCell.y;
 
     var height = input.length;
     var width = input[0].length;
@@ -2338,18 +2339,18 @@ module.exports =
         return _react2['default'].createElement(
           'div',
           null,
-          _react2['default'].createElement('div', { onClick: _actionsAppActions2['default'].onToggleAbout, className: 'about-mask' }),
+          _react2['default'].createElement('div', { onClick: _actionsAppActions2['default'].onToggleAbout, className: "about-mask" }),
           _react2['default'].createElement(
             'div',
-            { className: 'about' },
+            { className: "about" },
             _react2['default'].createElement(
               'div',
-              { className: 'about-close', onClick: _actionsAppActions2['default'].onToggleAbout },
+              { className: "about-close", onClick: _actionsAppActions2['default'].onToggleAbout },
               'X'
             ),
             _react2['default'].createElement(
               'div',
-              { className: 'about-body' },
+              { className: "about-body" },
               _react2['default'].createElement(
                 'h2',
                 null,
@@ -2371,13 +2372,13 @@ module.exports =
                 'You can report it on ',
                 _react2['default'].createElement(
                   'a',
-                  { href: 'https://github.com/city41/pxtobrx/issues' },
+                  { href: "https://github.com/city41/pxtobrx/issues" },
                   'GitHub'
                 ),
                 '  or ',
                 _react2['default'].createElement(
                   'a',
-                  { href: 'mailto:matt.e.greer@gmail.com' },
+                  { href: "mailto:matt.e.greer@gmail.com" },
                   'email me'
                 )
               ),
@@ -2403,7 +2404,7 @@ module.exports =
                 ' bad as a mosaic, please ',
                 _react2['default'].createElement(
                   'a',
-                  { href: 'https://github.com/city41/pxtobrx/issues' },
+                  { href: "https://github.com/city41/pxtobrx/issues" },
                   'file a bug'
                 ),
                 ' and include the sprite image in the bug report.'
@@ -2432,11 +2433,11 @@ module.exports =
             ),
             _react2['default'].createElement(
               'div',
-              { className: 'about-footer' },
+              { className: "about-footer" },
               'made by ',
               _react2['default'].createElement(
                 'a',
-                { href: 'http://mattgreer.org' },
+                { href: "http://mattgreer.org" },
                 'Matt Greer'
               )
             )
@@ -2471,7 +2472,7 @@ module.exports =
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _react = __webpack_require__(1);
 
@@ -2620,7 +2621,7 @@ module.exports =
         if (width && height && this.state.neededPieces.length) {
           return _react2['default'].createElement(
             'div',
-            { className: 'results-container' },
+            { className: "results-container" },
             _react2['default'].createElement(
               'section',
               null,
@@ -2631,29 +2632,29 @@ module.exports =
               ),
               _react2['default'].createElement(
                 'div',
-                { className: 'grid' },
+                { className: "grid" },
                 _react2['default'].createElement(
                   'div',
-                  { className: 'col-3-12' },
-                  _react2['default'].createElement('img', { className: 'preview-image', src: this.state.dataUrl })
+                  { className: "col-3-12" },
+                  _react2['default'].createElement('img', { className: "preview-image", src: this.state.dataUrl })
                 ),
                 _react2['default'].createElement(
                   'div',
-                  { className: 'col-9-12' },
+                  { className: "col-9-12" },
                   _react2['default'].createElement(
                     'div',
-                    { className: 'grid' },
+                    { className: "grid" },
                     _react2['default'].createElement(
                       'div',
-                      { className: 'col-5-12' },
+                      { className: "col-5-12" },
                       _react2['default'].createElement(_Dimensions2['default'], { scale: this.state.chosenScale, imgWidth: width, imgHeight: height })
                     ),
                     _react2['default'].createElement(
                       'div',
-                      { className: 'col-3-12' },
+                      { className: "col-3-12" },
                       _react2['default'].createElement(
                         'div',
-                        { className: 'dollars' },
+                        { className: "dollars" },
                         Number(this.state.neededPieces.length).toLocaleString()
                       ),
                       _react2['default'].createElement(
@@ -2665,7 +2666,7 @@ module.exports =
                     ),
                     _react2['default'].createElement(
                       'div',
-                      { className: 'col-4-12' },
+                      { className: "col-4-12" },
                       _react2['default'].createElement(_Price2['default'], { pieces: this.state.neededPieces })
                     )
                   )
@@ -2733,13 +2734,13 @@ module.exports =
           null,
           _react2['default'].createElement(
             'div',
-            { style: { visibility: this.state.calculating ? '' : 'hidden' }, className: 'loading' },
+            { style: { visibility: this.state.calculating ? '' : 'hidden' }, className: "loading" },
             'calculating ...'
           ),
           about,
           _react2['default'].createElement(
             'span',
-            { className: 'about-link' },
+            { className: "about-link" },
             _react2['default'].createElement(
               'a',
               { onClick: _actionsAppActions2['default'].onToggleAbout },
@@ -2748,23 +2749,23 @@ module.exports =
           ),
           _react2['default'].createElement(
             'h1',
-            { className: 'app-title' },
+            { className: "app-title" },
             'pxtobrx ',
             _react2['default'].createElement(
               'span',
-              { className: 'alpha' },
+              { className: "alpha" },
               'v0.1'
             )
           ),
           _react2['default'].createElement(
             'section',
-            { className: 'first-section drag-section' },
+            { className: "first-section drag-section" },
             _react2['default'].createElement(
               'div',
-              { className: 'grid' },
+              { className: "grid" },
               _react2['default'].createElement(
                 'div',
-                { className: 'col-4-12' },
+                { className: "col-4-12" },
                 _react2['default'].createElement(
                   'h2',
                   null,
@@ -2776,23 +2777,23 @@ module.exports =
               ),
               _react2['default'].createElement(
                 'div',
-                { className: 'col-8-12' },
+                { className: "col-8-12" },
                 _react2['default'].createElement(
                   'div',
-                  { className: 'samples-container' },
+                  { className: "samples-container" },
                   _react2['default'].createElement(
                     'h3',
-                    { className: 'drag-header' },
+                    { className: "drag-header" },
                     'or ... click one of these'
                   ),
                   _react2['default'].createElement(
                     'div',
                     null,
-                    _react2['default'].createElement(_Sample2['default'], { src: './img/samples/samus.png' }),
-                    _react2['default'].createElement(_Sample2['default'], { src: './img/samples/thwomp.png' }),
-                    _react2['default'].createElement(_Sample2['default'], { src: './img/samples/smb3-tanooki-mario.png' }),
-                    _react2['default'].createElement(_Sample2['default'], { src: './img/samples/megaman.png' }),
-                    _react2['default'].createElement(_Sample2['default'], { src: './img/samples/super-metroid.png' })
+                    _react2['default'].createElement(_Sample2['default'], { src: "./img/samples/samus.png" }),
+                    _react2['default'].createElement(_Sample2['default'], { src: "./img/samples/thwomp.png" }),
+                    _react2['default'].createElement(_Sample2['default'], { src: "./img/samples/smb3-tanooki-mario.png" }),
+                    _react2['default'].createElement(_Sample2['default'], { src: "./img/samples/megaman.png" }),
+                    _react2['default'].createElement(_Sample2['default'], { src: "./img/samples/super-metroid.png" })
                   )
                 )
               )
@@ -2800,16 +2801,16 @@ module.exports =
           ),
           _react2['default'].createElement(
             'section',
-            { className: 'choose-section' },
+            { className: "choose-section" },
             _react2['default'].createElement(
               'div',
               { className: this.state.dataUrl ? 'choose-section-container choosable' : 'choose-section-container' },
               _react2['default'].createElement(
                 'div',
-                { className: 'grid' },
+                { className: "grid" },
                 _react2['default'].createElement(
                   'div',
-                  { className: 'col-6-12' },
+                  { className: "col-6-12" },
                   _react2['default'].createElement(
                     'h2',
                     null,
@@ -2818,7 +2819,7 @@ module.exports =
                   _react2['default'].createElement(_ChoosePieceType2['default'], { choosable: !!this.state.dataUrl, chosenPieceType: this.state.chosenPieceType }),
                   _react2['default'].createElement(
                     'a',
-                    { className: 'show-availability-link', onClick: this.onAvailabilityClick.bind(this) },
+                    { className: "show-availability-link", onClick: this.onAvailabilityClick.bind(this) },
                     this.state.showAvailability ? 'hide' : 'show',
                     ' availability'
                   ),
@@ -2830,7 +2831,7 @@ module.exports =
                 ),
                 _react2['default'].createElement(
                   'div',
-                  { className: 'col-6-12' },
+                  { className: "col-6-12" },
                   _react2['default'].createElement(
                     'h2',
                     null,
@@ -2874,7 +2875,7 @@ module.exports =
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _lodash = __webpack_require__(5);
 
@@ -3010,13 +3011,13 @@ module.exports =
             'Here is a chart of what is available on ',
             _react2['default'].createElement(
               'a',
-              { href: 'http://shop.lego.com/en-US/Pick-A-Brick-ByTheme' },
+              { href: "http://shop.lego.com/en-US/Pick-A-Brick-ByTheme" },
               'Pick a Brick'
             )
           ),
           _react2['default'].createElement(
             'table',
-            { className: 'availability-table' },
+            { className: "availability-table" },
             _react2['default'].createElement(
               'thead',
               null,
@@ -3131,7 +3132,7 @@ module.exports =
             _react2['default'].createElement(_Piece2['default'], { type: def.type, left: def.left, right: def.right, color: def.color }),
             _react2['default'].createElement(
               'div',
-              { className: 'piece-type-title' },
+              { className: "piece-type-title" },
               def.type,
               's'
             )
@@ -3219,7 +3220,7 @@ module.exports =
             { key: s, onClick: onClick, className: _this.props.chosenScale === s ? 'scale-container focused' : 'scale-container' },
             _react2['default'].createElement(
               'div',
-              { className: 'scale-title' },
+              { className: "scale-title" },
               s,
               'x'
             )
@@ -3321,7 +3322,7 @@ module.exports =
           null,
           _react2['default'].createElement(
             'div',
-            { className: 'dollars' },
+            { className: "dollars" },
             mainDimension
           ),
           _react2['default'].createElement(
@@ -3383,7 +3384,7 @@ module.exports =
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _react = __webpack_require__(1);
 
@@ -3409,7 +3410,7 @@ module.exports =
 
   var _DropZone2 = _interopRequireDefault(_DropZone);
 
-  var MAX_DIM = 320;
+  var MAX_DIM = 384;
 
   var Drag = (function (_React$Component) {
     _inherits(Drag, _React$Component);
@@ -3486,7 +3487,7 @@ module.exports =
         if (this.state.error) {
           error = _react2['default'].createElement(
             'div',
-            { className: 'error' },
+            { className: "error" },
             this.state.error
           );
         }
@@ -3499,7 +3500,7 @@ module.exports =
             { userAgent: this.props.userAgent, onDrop: this.onDrop.bind(this) },
             _react2['default'].createElement(
               'div',
-              { className: 'dropzone-explanation' },
+              { className: "dropzone-explanation" },
               _react2['default'].createElement(
                 'div',
                 null,
@@ -3545,7 +3546,7 @@ module.exports =
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _react = __webpack_require__(1);
 
@@ -3652,17 +3653,17 @@ module.exports =
             null,
             _react2['default'].createElement(
               'h3',
-              { className: 'drag-header' },
+              { className: "drag-header" },
               'Choose some pixel art'
             ),
-            _react2['default'].createElement('input', { className: 'mobile-input-file', type: 'file',
+            _react2['default'].createElement('input', { className: "mobile-input-file", type: 'file',
               ref: 'fileInput',
               onChange: this.onDrop.bind(this) })
           );
         } else {
           return _react2['default'].createElement(
             'div',
-            { className: 'drop-zone',
+            { className: "drop-zone",
               onClick: this.onClick.bind(this),
               onDragLeave: this.onDragLeave,
               onDragOver: this.onDragOver.bind(this),
@@ -3799,27 +3800,27 @@ module.exports =
 
         return _react2['default'].createElement(
           'div',
-          { className: 'piece-container', style: { width: (right + left) * scale, height: (height + Math.sin(.78) * left) * scale } },
+          { className: "piece-container", style: { width: (right + left) * scale, height: (height + Math.sin(.78) * left) * scale } },
           _react2['default'].createElement(
             'div',
             { style: { width: right, height: height, position: 'relative', perspective: 1200, WebkitPerspective: 1200 } },
             _react2['default'].createElement(
               'div',
-              { className: 'piece', style: {
+              { className: "piece", style: {
                   transform: 'scale(' + scale + ') translateX(' + left / 2 + 'px) translateY(' + Math.sin(.30) * left + 'px) rotateX(-25deg) rotateY(45deg)',
                   WebkitTransform: 'scale(' + scale + ') translateX(' + left / 2 + 'px) translateY(' + Math.sin(.30) * left + 'px) rotateX(-25deg) rotateY(45deg)'
                 } },
-              _react2['default'].createElement('div', { className: 'right', style: { backgroundColor: darkerColor, width: right, height: height,
+              _react2['default'].createElement('div', { className: "right", style: { backgroundColor: darkerColor, width: right, height: height,
                   transform: 'translateZ(' + left / 2 + 'px)',
                   WebkitTransform: 'translateZ(' + left / 2 + 'px)'
                 } }),
-              _react2['default'].createElement('div', { className: 'left', style: { backgroundColor: darkerColor, width: left, height: height, left: right / 2 - left / 2,
+              _react2['default'].createElement('div', { className: "left", style: { backgroundColor: darkerColor, width: left, height: height, left: right / 2 - left / 2,
                   transform: 'rotateY(-90deg) translateZ(' + right / 2 + 'px)',
                   WebkitTransform: 'rotateY(-90deg) translateZ(' + right / 2 + 'px)'
                 } }),
               _react2['default'].createElement(
                 'div',
-                { className: 'top', style: {
+                { className: "top", style: {
                     transformStyle: 'preserve-3d',
                     WebkitTransformStyle: 'preserve-3d',
                     backgroundColor: color, width: right, height: left, top: height / 2 - left / 2,
@@ -3869,7 +3870,7 @@ module.exports =
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _lodash = __webpack_require__(5);
 
@@ -3994,7 +3995,7 @@ module.exports =
               _react2['default'].createElement(
                 'td',
                 null,
-                _react2['default'].createElement('input', { type: 'checkbox', onClick: _this.toggleBagged.bind(_this, cg[1], sizeQuantityAndCost[0]) })
+                _react2['default'].createElement('input', { type: "checkbox", onClick: _this.toggleBagged.bind(_this, cg[1], sizeQuantityAndCost[0]) })
               )
             );
           });
@@ -4002,7 +4003,7 @@ module.exports =
 
         return _react2['default'].createElement(
           'div',
-          { className: 'piece-list-container' },
+          { className: "piece-list-container" },
           _react2['default'].createElement(
             'table',
             null,
@@ -4075,7 +4076,7 @@ module.exports =
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _react = __webpack_require__(1);
 
@@ -4166,10 +4167,10 @@ module.exports =
 
         return _react2['default'].createElement(
           'div',
-          { className: 'piece-map' },
+          { className: "piece-map" },
           _react2['default'].createElement(
             'div',
-            { className: 'piece-map-options' },
+            { className: "piece-map-options" },
             _react2['default'].createElement(
               'div',
               { className: 'toggle-button ' + (this.state.fitToWindow && 'toggled-on'), onClick: function () {
@@ -4187,7 +4188,7 @@ module.exports =
               ' hide brick borders'
             )
           ),
-          _react2['default'].createElement('canvas', { ref: 'pieceMapCanvas' })
+          _react2['default'].createElement('canvas', { ref: "pieceMapCanvas" })
         );
       }
     }]);
@@ -4249,7 +4250,7 @@ module.exports =
           null,
           _react2['default'].createElement(
             'div',
-            { className: 'dollars' },
+            { className: "dollars" },
             '$',
             getPrice(this.props.pieces)
           ),
@@ -4259,7 +4260,7 @@ module.exports =
             'at ',
             _react2['default'].createElement(
               'a',
-              { href: 'http://shop.lego.com/en-US/Pick-A-Brick-ByTheme' },
+              { href: "http://shop.lego.com/en-US/Pick-A-Brick-ByTheme" },
               'Pick a Brick'
             )
           )
@@ -4299,7 +4300,7 @@ module.exports =
 
   function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) subClass.__proto__ = superClass; }
+  function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
   var _react = __webpack_require__(1);
 
@@ -4345,7 +4346,7 @@ module.exports =
     }, {
       key: 'render',
       value: function render() {
-        return _react2['default'].createElement('img', { className: 'sample-image', ref: 'sampleImg', src: this.props.src, onClick: this.onImgClick.bind(this) });
+        return _react2['default'].createElement('img', { className: "sample-image", ref: "sampleImg", src: this.props.src, onClick: this.onImgClick.bind(this) });
       }
     }], [{
       key: 'propTypes',
@@ -4385,9 +4386,9 @@ module.exports =
 
   var _react = __webpack_require__(1);
 
-  var _react2 = _interopRequireDefault(_react);
-
   // eslint-disable-line no-unused-vars
+
+  var _react2 = _interopRequireDefault(_react);
 
   var _node_modulesReactLibEmptyFunction = __webpack_require__(51);
 
@@ -4414,11 +4415,11 @@ module.exports =
         key: 'render',
         value: function render() {
           var _props = this.props;
+          // eslint-disable-line no-unused-vars
           var context = _props.context;
 
           var other = _objectWithoutProperties(_props, ['context']);
 
-          // eslint-disable-line no-unused-vars
           return _react2['default'].createElement(ComposedComponent, other);
         }
       }], [{
@@ -4469,7 +4470,7 @@ module.exports =
 /***/ function(module, exports, __webpack_require__) {
 
   exports = module.exports = __webpack_require__(2)();
-  exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,hr,main,menu,nav,section,summary{display:block}pre,textarea{overflow:auto}fieldset,h1,h2,h3,h4,hr,legend,td,th{padding:0}fieldset,hr,img,legend{border:0}body{margin:0;background-color:#c71414}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{-ms-interpolation-mode:nearest-neighbor!important;image-rendering:-webkit-optimize-contrast!important;image-rendering:-moz-crisp-edges!important;image-rendering:-o-pixelated!important;image-rendering:pixelated!important}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:1px;border-top:1px solid #ccc;margin:1em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#222;font-weight:100;font-size:1em;font-family:'Segoe UI',HelveticaNeue-Light,sans-serif;line-height:1.375}h1,h2,h3,h4{margin:0}.focused{background-color:#fff!important}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}fieldset{margin:0}.browserupgrade{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}", ""]);
+  exports.push([module.id, "/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */article,aside,details,figcaption,figure,footer,header,hgroup,hr,main,menu,nav,section,summary{display:block}pre,textarea{overflow:auto}fieldset,hr,img,legend{border:0}body,fieldset,h1,h2,h3,h4{margin:0}fieldset,h1,h2,h3,h4,hr,legend,td,th{padding:0}body{background-color:#c71414}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,optgroup,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{-ms-interpolation-mode:nearest-neighbor!important;image-rendering:-webkit-optimize-contrast!important;image-rendering:-moz-crisp-edges!important;image-rendering:-o-pixelated!important;image-rendering:pixelated!important}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box;height:1px;border-top:1px solid #ccc;margin:1em 0}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-webkit-box-sizing:content-box;-moz-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{resize:vertical}table{border-collapse:collapse;border-spacing:0}/*! React Starter Kit | MIT License | http://www.reactstarterkit.com/ */html{-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%;color:#222;font-weight:100;font-size:1em;font-family:'Segoe UI',HelveticaNeue-Light,sans-serif;line-height:1.375}.focused{background-color:#fff!important}::-moz-selection{background:#b3d4fc;text-shadow:none}::selection{background:#b3d4fc;text-shadow:none}audio,canvas,iframe,img,svg,video{vertical-align:middle}.browserupgrade{margin:.2em 0;background:#ccc;color:#000;padding:.2em 0}@media print{blockquote,img,pre,tr{page-break-inside:avoid}*,:after,:before{background:0 0!important;color:#000!important;-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}a,a:visited{text-decoration:underline}a[href]:after{content:\" (\" attr(href) \")\"}abbr[title]:after{content:\" (\" attr(title) \")\"}a[href^=\"#\"]:after,a[href^=\"javascript:\"]:after{content:\"\"}blockquote,pre{border:1px solid #999}thead{display:table-header-group}img{max-width:100%!important}h2,h3,p{orphans:3;widows:3}h2,h3{page-break-after:avoid}}", ""]);
 
 /***/ },
 /* 40 */
@@ -4627,7 +4628,7 @@ module.exports =
   var keyMirror = function(obj) {
     var ret = {};
     var key;
-    (false ? invariant(
+    ( false ? invariant(
       obj instanceof Object && !Array.isArray(obj),
       'keyMirror(...): Argument must be an object.'
     ) : invariant(obj instanceof Object && !Array.isArray(obj)));

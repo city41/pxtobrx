@@ -6,7 +6,7 @@ import AppActions from '../../actions/AppActions';
 
 import Dropzone from '../DropZone';
 
-const MAX_DIM = 320;
+const MAX_DIM = 384;
 
 @withStyles(styles)
 class Drag extends React.Component {
