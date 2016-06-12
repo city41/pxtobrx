@@ -1,0 +1,3 @@
+.npmrc
+*.log
+node_modules
