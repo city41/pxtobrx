@@ -4,7 +4,11 @@ module.exports = [
         exclude: /node_modules/,
         loaders: ['react-hot', 'babel'],
     },
-
+    {
+        test: /.tsx?$/,
+        exclude: /node_modules/,
+        loaders: ['ts-loader']
+    },
     {
         test: /\.css$/,
         loader: 'style-loader!css-loader'

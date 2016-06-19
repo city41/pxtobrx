@@ -6,7 +6,7 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
         'webpack/hot/only-dev-server',
-        './src/index.js'
+        './src/index.tsx'
     ],
     devtool: process.env.WEBPACK_DEVTOOL || 'source-map',
     output: {
@@ -14,7 +14,7 @@ module.exports = {
         filename: 'bundle.js'
     },
     resolve: {
-        extensions: ['', '.js']
+        extensions: ['', '.js', '.ts', '.tsx']
     },
     module: {
         loaders: loaders
