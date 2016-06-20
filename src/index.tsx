@@ -1,13 +1,18 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import Sample from "./components/Sample";
+import Provider from "./Provider";
+import Home from "./components/Home";
+import configureStore from "./store/configureStore";
 
-interface Props {}
-interface State {}
+const store = configureStore();
 
-export class App extends React.Component<Props, State> {
-    render() {
-        return <div>Simple React + Babel + Bootstrap + Webpack + TypeScriptss yup yup fasda</div>;
-    }
+class App extends React.Component<any, any> {
+  render() {
+    return (
+      <Provider store={store} target={Home} />
+    );
+  }
 }
 
 ReactDOM.render(<App/>, document.querySelector("#myApp"));
