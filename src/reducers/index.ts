@@ -1,5 +1,5 @@
-import { combineReducers } from 'redux';
-import Images from './images';
+import { combineReducers } from "redux";
+import Images from "./images";
 
 const rootReducer = combineReducers({
   Images

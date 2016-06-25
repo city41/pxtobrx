@@ -1,3 +1,4 @@
 .npmrc
 *.log
 node_modules
+.vscode

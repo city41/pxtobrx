@@ -3,3 +3,4 @@
 /// <reference path="redux-actions/redux-actions.d.ts" />
 /// <reference path="react-redux/react-redux.d.ts" />
 /// <reference path="redux/redux.d.ts" />
+/// <reference path="redux-thunk/redux-thunk.d.ts" />

@@ -4,8 +4,9 @@ import Sample from "./components/Sample";
 import Provider from "./Provider";
 import Home from "./components/Home";
 import configureStore from "./store/configureStore";
+import { Store } from "redux";
 
-const store = configureStore();
+const store: Store = configureStore();
 
 class App extends React.Component<any, any> {
   render() {

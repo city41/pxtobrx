@@ -18,7 +18,10 @@
       "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
     },
     "redux/redux.d.ts": {
-      "commit": "e325b363f5ee9c72ebde49f1e783ae725f64b7e2"
+      "commit": "73110d92bdab2367e326f297bef3574285cba329"
+    },
+    "redux-thunk/redux-thunk.d.ts": {
+      "commit": "73110d92bdab2367e326f297bef3574285cba329"
     }
   }
 }
