@@ -1,12 +1,12 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import Sample from "./components/Sample";
-import Provider from "./Provider";
-import Home from "./components/Home";
+import createProvider from "./createProvider";
+import Home, { HomeProps } from "./components/Home";
 import configureStore from "./store/configureStore";
-import { Store } from "redux";
 
-const store: Store = configureStore();
+const store = configureStore();
+const Provider = createProvider<HomeProps>();
 
 class App extends React.Component<any, any> {
   render() {

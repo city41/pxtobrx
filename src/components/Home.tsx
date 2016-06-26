@@ -16,7 +16,7 @@ interface DispatchProps {
   transformFromUrl(url: string)
 }
 
-type Props = StateProps & DispatchProps;
+export type HomeProps = StateProps & DispatchProps;
 
 function mapStateToProps(state) {
   return {
@@ -31,7 +31,7 @@ function mapDispatchToProps(dispatch) {
 }
 
 @connect<StateProps, DispatchProps, any>(mapStateToProps, mapDispatchToProps)
-export default class Home extends React.Component<Props, any> {
+export default class Home extends React.Component<HomeProps, any> {
   render() {
     const {
       transformFromUrl,
