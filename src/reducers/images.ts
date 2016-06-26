@@ -1,4 +1,4 @@
-import { Action } from "../actions/action";
+import Action from "../actions/action";
 import { CONVERT_IMAGE_DATA_TO_LEGO_DEF } from "../actions/images";
 import { handleActions } from "redux-actions";
 import pxtobrx from "../brix/pxtobrx";

@@ -1,4 +1,4 @@
-import { Action } from "./action";
+import Action from "./action";
 export const CONVERT_IMAGE_DATA_TO_LEGO_DEF: string = "CONVERT_IMAGE_DATA_TO_LEGO_DEF";
 export type CONVERT_IMAGE_DATA_TO_LEGO_DEF = {data: Uint8ClampedArray, width: number, height: number};
 

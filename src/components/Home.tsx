@@ -13,12 +13,12 @@ interface StateProps {
   height: number
 }
 interface DispatchProps {
-  transformFromUrl(url)
+  transformFromUrl(url: string)
 }
 
 type Props = StateProps & DispatchProps;
 
-export function mapStateToProps(state) {
+function mapStateToProps(state) {
   return {
     result: state.Images.result,
     width: state.Images.width,
@@ -26,20 +26,25 @@ export function mapStateToProps(state) {
   };
 }
 
-export function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch) {
   return bindActionCreators(ImageActions, dispatch)
 }
 
-@connect<StateProps, DispatchProps, Props>(mapStateToProps, mapDispatchToProps)
+@connect<StateProps, DispatchProps, any>(mapStateToProps, mapDispatchToProps)
 export default class Home extends React.Component<Props, any> {
   render() {
-    const { transformFromUrl, result, width, height } = this.props;
+    const {
+      transformFromUrl,
+      result = [],
+      width,
+      height
+    } = this.props;
 
     return (
       <div>
         <Sample src="img/samples/megaman.png" onClick={transformFromUrl} />
         <Sample src="img/samples/goomba.png" onClick={transformFromUrl} />
-        <PieceMap pieces={result || []} imgWidth={width} imgHeight={height} scale={20} userScale={1} />
+        <PieceMap pieces={result} imgWidth={width} imgHeight={height} scale={20} userScale={1} />
       </div>
     );
   }
