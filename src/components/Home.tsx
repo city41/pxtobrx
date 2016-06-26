@@ -1,13 +1,16 @@
 import * as React from "react";
 import { connect } from "react-redux";
 import Sample from "./Sample";
+import PieceMap from "./PieceMap";
 
 import { bindActionCreators } from "redux";
 import * as ImageActions from "../actions/images";
-import { PlacedPieceDef } from "pxtobrxlib/dist/PieceDef";
+import { PlacedPieceDef } from "../brix/PieceDef";
 
 interface StateProps {
-  result: PlacedPieceDef[]
+  result: PlacedPieceDef[],
+  width: number,
+  height: number
 }
 interface DispatchProps {
   transformFromUrl(url)
@@ -17,7 +20,9 @@ type Props = StateProps & DispatchProps;
 
 export function mapStateToProps(state) {
   return {
-    result: state.Images.result
+    result: state.Images.result,
+    width: state.Images.width,
+    height: state.Images.height
   };
 }
 
@@ -28,12 +33,13 @@ export function mapDispatchToProps(dispatch) {
 @connect<StateProps, DispatchProps, Props>(mapStateToProps, mapDispatchToProps)
 export default class Home extends React.Component<Props, any> {
   render() {
-    const { transformFromUrl, result } = this.props;
+    const { transformFromUrl, result, width, height } = this.props;
 
     return (
       <div>
         <Sample src="img/samples/megaman.png" onClick={transformFromUrl} />
-        <div><pre>{JSON.stringify(result, null, 2)}</pre></div>
+        <Sample src="img/samples/goomba.png" onClick={transformFromUrl} />
+        <PieceMap pieces={result || []} imgWidth={width} imgHeight={height} scale={20} userScale={1} />
       </div>
     );
   }

@@ -22,6 +22,9 @@
     },
     "redux-thunk/redux-thunk.d.ts": {
       "commit": "73110d92bdab2367e326f297bef3574285cba329"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "993f83fe84ba1381d006772dc3343e1b8d5304f3"
     }
   }
 }
