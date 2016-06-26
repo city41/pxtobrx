@@ -4,9 +4,10 @@ import Sample from "./Sample";
 
 import { bindActionCreators } from "redux";
 import * as ImageActions from "../actions/images";
+import { PlacedPieceDef } from "pxtobrxlib/dist/PieceDef";
 
 interface StateProps {
-  hello: string
+  result: PlacedPieceDef[]
 }
 interface DispatchProps {
   transformFromUrl(url)
@@ -16,7 +17,7 @@ type Props = StateProps & DispatchProps;
 
 export function mapStateToProps(state) {
   return {
-    hello: "why hello there"
+    result: state.Images.result
   };
 }
 
@@ -27,12 +28,12 @@ export function mapDispatchToProps(dispatch) {
 @connect<StateProps, DispatchProps, Props>(mapStateToProps, mapDispatchToProps)
 export default class Home extends React.Component<Props, any> {
   render() {
-    const { transformFromUrl, hello } = this.props;
+    const { transformFromUrl, result } = this.props;
 
     return (
       <div>
         <Sample src="img/samples/megaman.png" onClick={transformFromUrl} />
-        <div>{hello}</div>
+        <div><pre>{JSON.stringify(result, null, 2)}</pre></div>
       </div>
     );
   }
