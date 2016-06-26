@@ -1,4 +1,4 @@
-import { map } from "lodash";
+import * as map from "lodash/map";
 
 export default function scaleRects(rects: any, scale: any) {
   return map(rects, (r: any) => {

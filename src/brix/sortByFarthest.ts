@@ -1,20 +1,21 @@
-import * as _ from 'lodash';
-import * as Color from 'color';
-import * as colorDifference from 'color-difference';
-import { ColorSet } from './PieceColors';
+import * as clone from "lodash/clone";
+import * as memoize from "lodash/memoize";
+import * as Color from "color";
+import * as colorDifference from "color-difference";
+import { ColorSet } from "./PieceColors";
 
 function toHex(rgbColor): string {
-  if (_.isArray(rgbColor)) {
+  if (Array.isArray(rgbColor)) {
     return Color().rgb(rgbColor).hexString();
   }
 
   return Color(rgbColor).hexString();
 }
 
-export default function sortByFarthest(availableColors: ColorSet[], targetColor) {
+export default memoize(function sortByFarthest(availableColors: ColorSet[], targetColor: ColorSet) {
   let targetColorHex: string = toHex(targetColor.color);
 
-  return availableColors.sort((a, b) => {
+  const sorted = availableColors.sort((a, b) => {
     let aNear = colorDifference.compare(toHex(a.color), targetColorHex);
     let bNear = colorDifference.compare(toHex(b.color), targetColorHex);
 
@@ -26,4 +27,9 @@ export default function sortByFarthest(availableColors: ColorSet[], targetColor)
       return bNear - aNear;
     }
   });
-}
+
+  const result = clone(sorted);
+  return result;
+}, function(availableColors: ColorSet[], targetColor: ColorSet) {
+  return toHex(targetColor.color);
+});

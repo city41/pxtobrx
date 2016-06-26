@@ -1,4 +1,4 @@
-import { clone } from "lodash";
+import * as clone from "lodash/clone";
 import PieceType from "./PieceType";
 import { PlacedPieceDef } from "./PieceDef";
 import { ColorSet } from "./PieceColors";

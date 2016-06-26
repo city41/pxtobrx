@@ -2,7 +2,10 @@ import PieceType from "./PieceType";
 import PieceDef, { PlacedPieceDef } from "./PieceDef";
 import Direction from './Direction';
 import directions from "./Directions";
-import { map, minBy, reduce } from "lodash";
+import * as map from "lodash/map";
+import * as minBy from "lodash/minBy";
+import * as reduce from "lodash/reduce";
+import * as flatten from "lodash/flatten";
 import calculateRects from './calculateRects';
 import scaleRects from './scaleRects';
 import convertFromRaw from './convertFromRaw';
@@ -28,7 +31,7 @@ export default function pxtobrx({
     let rects = calculateRects(formattedData, direction);
     rects = scaleRects(rects, scale);
 
-    return _.flatten(_.map(rects, (rect) => {
+    return flatten(map(rects, (rect) => {
       return assignColorAndGetPieces(rect, rect.value, pieceType, PieceColors);
     }));
   });

@@ -1,4 +1,4 @@
-import * as _ from "lodash";
+import * as _clone from "lodash/clone";
 import { ColorSet } from "./PieceColors";
 import Direction from "./Direction";
 
@@ -18,7 +18,7 @@ const VISITED: ColorSet = null;
 
 function clone(input: ColorSet[][]): ColorSet[][] {
   return input.map(function(cs: ColorSet[]) {
-    return _.clone<ColorSet[]>(cs);
+    return _clone<ColorSet[]>(cs);
   });
 }
 

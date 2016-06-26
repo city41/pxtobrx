@@ -1,7 +1,7 @@
 // TODO: support rotating pieces
 // for now, rotated pieces are defined separately in PieceColors
 
-import * as _ from "lodash";
+import * as find from "lodash/find";
 import { ColorSet } from "./PieceColors";
 import PieceDef, { PlacedPieceDef } from "./PieceDef";
 import { Rect } from "./calculateRects";
@@ -23,7 +23,7 @@ function sortPieces(pieces: PieceDef[]): PieceDef[] {
 }
 
 function placeBestPiece(rect: Rect, pieces: PieceDef[]): PlacedPieceDef {
-  let fittingPiece = _.find(pieces, function(p) {
+  let fittingPiece = find(pieces, function(p) {
     return p.width <= rect.width && p.height <= rect.height;
   });
 
