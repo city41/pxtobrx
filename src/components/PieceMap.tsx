@@ -17,8 +17,8 @@ interface State {
 
 class PieceMap extends React.Component<Props, State> {
     refs: {
-        [key: string]: (Element);
-        pieceMapCanvas: (HTMLCanvasElement);
+        [key: string]: Element,
+        pieceMapCanvas: HTMLCanvasElement
     }
 
     constructor(props) {
