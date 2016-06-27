@@ -1,5 +1,4 @@
 import * as React from "react";
-import * as ReactDom from "react-dom";
 import { PlacedPieceDef } from "../brix/PieceDef";
 
 interface Props {
@@ -45,7 +44,7 @@ class PieceMap extends React.Component<Props, State> {
             s = (window.innerWidth - 40) / (this.props.imgWidth * us);
         }
 
-        let canvas: HTMLCanvasElement = ReactDom.findDOMNode(this.refs.pieceMapCanvas) as HTMLCanvasElement;
+        let canvas = this.refs.pieceMapCanvas;
         canvas.width = this.props.imgWidth * s * us;
         canvas.height = this.props.imgHeight * s * us;
         let ctx = canvas.getContext('2d');
