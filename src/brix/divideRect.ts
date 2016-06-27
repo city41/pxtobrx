@@ -22,13 +22,15 @@ function sortPieces(pieces: PieceDef[]): PieceDef[] {
   });
 }
 
-function placeBestPiece(rect: Rect, pieces: PieceDef[]): PlacedPieceDef {
+function placeBestPiece(rect: Rect, value: ColorSet, pieces: PieceDef[]): PlacedPieceDef {
   let fittingPiece = find(pieces, function(p) {
     return p.width <= rect.width && p.height <= rect.height;
   });
 
   if (fittingPiece) {
-    return fittingPiece.setInPlace(rect.x, rect.y);
+    return fittingPiece.setInPlace(rect.x, rect.y, value);
+  } else {
+    return null;
   }
 }
 
@@ -69,7 +71,7 @@ export default function divideRect(inputRect: Rect, pieces: PieceDef[], value: a
 
   while (rects.length) {
     let rect = rects.pop();
-    let piece = placeBestPiece(rect, pieces);
+    let piece = placeBestPiece(rect, value, pieces);
 
     if (!piece) {
       return null;
@@ -78,7 +80,6 @@ export default function divideRect(inputRect: Rect, pieces: PieceDef[], value: a
     let remainingRects = getRemainingRects(piece, rect);
     rects = rects.concat(remainingRects);
 
-    piece.value = value;
     chosenPieces.push(piece);
   }
 

@@ -7,11 +7,11 @@ export interface AvailablePieces {
 }
 
 export interface ColorSet {
-  id: number,
-  officialName: string,
-  commonName: string,
-  color: string,
-  availablePieces: AvailablePieces
+  id: number;
+  officialName: string;
+  commonName: string;
+  color: string;
+  availablePieces: AvailablePieces;
 }
 
 const colors: ColorSet[] = [

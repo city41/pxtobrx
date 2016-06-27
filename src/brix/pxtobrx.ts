@@ -16,14 +16,14 @@ export default function pxtobrx({
   raw,
   width,
   height,
-  pieceType,
-  scale
+  pieceType = <PieceType>"flat",
+  scale = 1
 }: {
     raw: Uint8ClampedArray,
     width: number,
     height: number,
-    pieceType: PieceType,
-    scale: number
+    pieceType?: PieceType,
+    scale?: number
   }): PlacedPieceDef[] {
   const formattedData: ColorSet[][] = convertFromRaw(raw, width, height);
 

@@ -5,13 +5,10 @@ import pxtobrx from "../brix/pxtobrx";
 
 const reducer = handleActions({
   [CONVERT_IMAGE_DATA_TO_LEGO_DEF]: function(state, action: Action<CONVERT_IMAGE_DATA_TO_LEGO_DEF>) {
-    console.log("this image is " + action.payload.width + "px wide");
     const result = pxtobrx({
       raw: action.payload.data, 
       width: action.payload.width,
-      height: action.payload.height,
-      pieceType: "plate",
-      scale: 1,
+      height: action.payload.height
     });
 
     return Object.assign({}, state, { 
