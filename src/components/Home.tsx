@@ -8,7 +8,7 @@ import * as ImageActions from "../actions/images";
 import { PlacedPieceDef } from "../brix/PieceDef";
 
 interface StateProps {
-  result: PlacedPieceDef[],
+  pieces: PlacedPieceDef[],
   width: number,
   height: number
 }
@@ -20,7 +20,7 @@ export type HomeProps = StateProps & DispatchProps;
 
 function mapStateToProps(state) {
   return {
-    result: state.Images.result,
+    pieces: state.Images.pieces,
     width: state.Images.width,
     height: state.Images.height
   };
@@ -35,16 +35,16 @@ export default class Home extends React.Component<HomeProps, any> {
   render() {
     const {
       transformFromUrl,
-      result = [],
+      pieces = [],
       width,
       height
     } = this.props;
 
     return (
       <div>
-        <Sample src="img/samples/megaman.png" onClick={transformFromUrl} />
-        <Sample src="img/samples/goomba.png" onClick={transformFromUrl} />
-        <PieceMap pieces={result} imgWidth={width} imgHeight={height} scale={20} userScale={1} />
+        <Sample src="img/samples/megaman.png" onSelect={transformFromUrl} />
+        <Sample src="img/samples/goomba.png" onSelect={transformFromUrl} />
+        <PieceMap pieces={pieces} imgWidth={width} imgHeight={height} scale={20} userScale={1} />
       </div>
     );
   }
