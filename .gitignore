@@ -1,4 +1,4 @@
 .npmrc
 *.log
 node_modules
-.vscode
+.vscode.DS_Store
