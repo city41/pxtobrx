@@ -63,7 +63,7 @@ function getRemainingRects(piece, rect: Rect): Rect[] {
   return remainingRects;
 }
 
-export default function divideRect(inputRect: Rect, pieces: PieceDef[], value: any): PlacedPieceDef[] {
+export default function divideRect(inputRect: Rect, pieces: PieceDef[], value: ColorSet): PlacedPieceDef[] {
   let rects: Rect[] = [inputRect];
   let chosenPieces: PlacedPieceDef[] = [];
 
