@@ -1,6 +1,6 @@
 # pxtobrx
 
-Up and running at [http://pxtobrx.com](http://pxtobrx.com)
+Up and running at [http://city41.github.io/pxtobrx](http://city41.github.io/pxtobrx)
 
 A simple webapp that creates instructions on how to build Lego mosaics for video game sprites.
 
